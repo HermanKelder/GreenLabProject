@@ -8,7 +8,12 @@
     }
   },
   "repetitions": 1,
+  "clear_cache": true,
   "randomization": false,
+  "usb_handler" : {
+    "enable_command"  : "adb shell dumpsys battery reset",
+    "disable_command" : "adb shell dumpsys battery unplug"
+  },
   "browsers": [
     "firefox"
   ],
@@ -142,6 +147,9 @@
         "mem_usage",
         "battery_power"
       ]
+    },
+    "perfume_js": {
+      "metrics":["fp","fcp","loadTime"]
     }
   },
   "scripts": {
