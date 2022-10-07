@@ -11,8 +11,8 @@
   "clear_cache": true,
   "randomization": false,
   "usb_handler" : {
-    "enable_command"  : "adb shell dumpsys battery reset",
-    "disable_command" : "adb shell dumpsys battery unplug"
+    "enable_command"  : "uhubctl -l 2 -a 1",
+    "disable_command" : "uhubctl -l 2 -a 0"
   },
   "browsers": [
     "firefox"
@@ -140,11 +140,10 @@
       "subject_aggregation": "default",
       "experiment_aggregation": "Scripts/aggregate_trepn.py",
       "preferences": {
-        "profiling_interval": 100,
-        "battery_power_source_selection": "Direct Power"
+        "profiling_interval": 500,
+        "battery_power_source_selection": "Estimate Power Consumption"
       },
       "data_points": [
-        "mem_usage",
         "battery_power"
       ]
     },
