@@ -10,6 +10,8 @@
   "repetitions": 1,
   "clear_cache": true,
   "randomization": false,
+  "powerprofile_path": "/home/pi/power_profile.xml",
+  "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
   "usb_handler" : {
     "enable_command"  : "uhubctl -l 2 -a 1",
     "disable_command" : "uhubctl -l 2 -a 0"
@@ -136,16 +138,9 @@
     "192.168.40.1/Websites/prefixed/100_who.int/who.int"
   ],
   "profilers": {
-    "trepn": {
-      "subject_aggregation": "default",
-      "experiment_aggregation": "Scripts/aggregate_trepn.py",
-      "preferences": {
-        "profiling_interval": 500,
-        "battery_power_source_selection": "Estimate Power Consumption"
-      },
-      "data_points": [
-        "battery_power"
-      ]
+    "batterystats": {
+      "cleanup": true,
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7"
     },
     "perfume_js": {
       "metrics":["fp","fcp","loadTime"]
