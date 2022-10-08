@@ -7,6 +7,7 @@
       "usb_charging_disabled_file": "sys/class/power_supply/battery/charging_enabled"
     }
   },
+  "duration": 20000,
   "repetitions": 1,
   "clear_cache": true,
   "randomization": true,
@@ -162,5 +163,5 @@
     "after_run": "Scripts/after_run.py",
     "after_experiment": "Scripts/after_experiment.py"
   },
-  "time_between_run": 100
+  "time_between_run": 60000
 }
