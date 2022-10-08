@@ -7,6 +7,7 @@
       "usb_charging_disabled_file": "sys/class/power_supply/battery/charging_enabled"
     }
   },
+  "duration": 20000,
   "repetitions": 1,
   "clear_cache": true,
   "randomization": true,
