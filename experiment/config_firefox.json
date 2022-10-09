@@ -13,7 +13,7 @@
   "randomization": true,
   "powerprofile_path": "/home/pi/power_profile.xml",
   "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
-  "run_stopping_condition" : {"logcat_regex" : {"regex" : "youshallnotpass"}}, 
+  "run_stopping_condition" : {"post_request" : {}}, 
   "usb_handler" : {
     "enable_command"  : "uhubctl -l 2 -a 1",
     "disable_command" : "uhubctl -l 2 -a 0"
