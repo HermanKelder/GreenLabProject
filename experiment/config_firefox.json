@@ -141,7 +141,8 @@
   "profilers": {
     "batterystats": {
       "cleanup": true,
-      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7"
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7",
+      "enable_systrace_parsing": false
     },
     "perfume_js": {
       "metrics":["fp","fcp","loadTime"]
