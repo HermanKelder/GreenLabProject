@@ -41,5 +41,4 @@ def get_data():
             # print("")
 
 
-get_perfumejs()
-get_batterystats()
+get_data()
