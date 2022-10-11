@@ -3,12 +3,12 @@ import csv
 import numpy as np
 
 base_dir = '/home/pi/experiment/output'
-experiment = '/2022.10.09_143706'
+experiment = '/2022.10.11_170448'
 data = '/data/tank'
 browsers = ['firefox']
 num_trials = 1
 results_folder = '/home/pi/experiment'
-results_order = ["Website", "Treatment", "fcp", "fp", "Joules"]
+results_order = ["Website", "Treatment", "fcp", "fp", "loadTime", "Joules"]
 
 def website_dict_to_array_results(website_dict):
     return [website_dict[results_order[i]] for i in range(len(results_order))]
@@ -64,11 +64,11 @@ def get_data():
 
 def write_results(data):
     with open(results_folder + experiment + "_results.csv", 'w+') as results:
-        writer = csv.writer(results, delimiter="\n")
-        writer.writerow('Website, Treatment, FP, FCP, Joules')
+        writer = csv.writer(results)
+        writer.writerow(["Website", "Treatment", "FCP", "FP", "LT", "Joules"])
 
         for website_result in data:
-            writer.writerow(dict_to_array_results(website_result))
+            writer.writerow(website_dict_to_array_results(website_result))
 
 
 data = get_data()
