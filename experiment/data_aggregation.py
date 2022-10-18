@@ -18,7 +18,7 @@ def get_data():
     results = []
     websites_done = []
 
-    for website in websites:
+    for website in sorted(websites):
         splitted = website.split('-')
         id = splitted[6]
         prefix_treatment = splitted[5]
@@ -52,6 +52,8 @@ def get_data():
                     website_result["Trial"] = trial
 
                     results += [website_result]
+            else:
+                print(len(perfume_csvs_fp), len(batterystats_csvs_joules), id, prefix_treatment)
 
     print("Retrieved data for", len(list(set(websites_done))), "website treatments out of", len(websites))
     return results
