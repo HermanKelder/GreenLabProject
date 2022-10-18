@@ -7,13 +7,13 @@
       "usb_charging_disabled_file": "sys/class/power_supply/battery/charging_enabled"
     }
   },
-  "duration": 20000,
-  "repetitions": 1,
+  "duration": 30000,
+  "repetitions": 10,
   "clear_cache": true,
   "randomization": true,
   "powerprofile_path": "/home/pi/power_profile.xml",
   "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
-  "run_stopping_condition" : {"post_request" : {}}, 
+  "run_stopping_condition" : {"post_request" : {}},
   "usb_handler" : {
     "enable_command"  : "uhubctl -l 2 -a 1",
     "disable_command" : "uhubctl -l 2 -a 0"
