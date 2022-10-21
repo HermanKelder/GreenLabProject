@@ -3,15 +3,49 @@ import csv
 import numpy as np
 
 base_dir = '/home/pi/experiment/output'
-experiment = '/2022.10.14_223104'
+experiment = '/2022.10.18_162413'
 data = '/data/tank'
-browsers = ['firefox']
+browsers = ['chrome']
 num_trials = 10
 results_folder = '/home/pi/experiment'
 results_order = ["Website", "Treatment", "fp", "fcp", "loadTime", "Joules", "Trial"]
 
 def website_dict_to_array_results(website_dict):
     return [website_dict[results_order[i]] for i in range(len(results_order))]
+
+def datetime_match(time1, time2):
+    year1 = time1[:4]
+    year2 = time2[:4]
+
+    month1 = time1[4:6]
+    month2 = time2[4:6]
+
+    day1 = time1[6:8]
+    day2 = time2[6:8]
+
+    h1 = int(time1[8:10])
+    h2 = int(time2[8:10])
+
+    m1 = int(time1[10:12])
+    m2 = int(time2[10:12])
+
+    s1 = int(time1[12:])
+    s2 = int(time2[12:])
+
+    if year1 == year2:
+        if month1 == month2:
+            if day1 == day2:
+                if h1 == h2:
+                    if m1 <= m2 + 1 and m1 >= m2 - 1:
+                        return 1
+                elif h1 == h2 + 1:
+                    if m1 < 2 and m2 > 58:
+                        return 1
+                elif h1 == h2 - 1:
+                    if m2 < 2 and m1 > 58:
+                        return 1
+
+    return 0
 
 def get_data():
     websites = os.listdir(base_dir + experiment + data + "/")
@@ -36,9 +70,24 @@ def get_data():
             batterystats_csvs = os.listdir(batterystats_csvs_dir)
             batterystats_csvs_joules = sorted([csv for csv in batterystats_csvs if csv.startswith("Joule_results")])
 
-            if (len(perfume_csvs_fp) == num_trials and len(batterystats_csvs_joules) == num_trials):
+            batterystats_csvs_joules_datetime = [''.join(''.join(csv.split(":")[1].split("_")[1:]).split(".")[:-1]) for csv in batterystats_csvs_joules]
+            perfume_csvs_lt_datetime = [''.join(''.join(csv.split("_")[2:]).split(".")[:-1]) for csv in perfume_csvs_lt]
+
+            valid_indices = []
+
+            current_index = 0
+            for p in perfume_csvs_lt_datetime:
+                for i, b in enumerate(batterystats_csvs_joules_datetime[current_index:]):
+                    if datetime_match(p, b):
+                        valid_indices += [i]
+                        current_index = i
+                        break
+
+            batterystats_csvs_joules = [batterystats_csvs_joules[i] for i in valid_indices]
+
+            if (len(perfume_csvs_fp) == len(batterystats_csvs_joules)):
                 websites_done += [website]
-                for trial in range(num_trials):
+                for trial in range(len(perfume_csvs_fp)):
                     website_result = {"Website" : id, "Treatment" : prefix_treatment}
                     fp_value = np.genfromtxt(perfume_csvs_dir + perfume_csvs_fp[trial], skip_header=1)
                     fcp_value = np.genfromtxt(perfume_csvs_dir + perfume_csvs_fcp[trial], skip_header=1)
