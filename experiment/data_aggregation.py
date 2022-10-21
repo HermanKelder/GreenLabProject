@@ -80,7 +80,7 @@ def get_data():
                 for i, b in enumerate(batterystats_csvs_joules_datetime[current_index:]):
                     if datetime_match(p, b):
                         valid_indices += [i]
-                        current_index = i
+                        current_index = i + 1
                         break
 
             batterystats_csvs_joules = [batterystats_csvs_joules[i] for i in valid_indices]
