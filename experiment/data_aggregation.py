@@ -36,7 +36,7 @@ def datetime_match(time1, time2):
         if month1 == month2:
             if day1 == day2:
                 if h1 == h2:
-                    if m1 <= m2 + 1 and m1 >= m2 - 1:
+                    if m1 <= m2 + 2 and m1 >= m2 - 2:
                         return 1
                 elif h1 == h2 + 1:
                     if m1 < 2 and m2 > 58:
