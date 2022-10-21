@@ -110,7 +110,7 @@ def get_data():
 def write_results(data):
     with open(results_folder + experiment + "_results.csv", 'w+') as results:
         writer = csv.writer(results)
-        writer.writerow(["Website", "Treatment", "FP", "FCP", "LT", "Joules"])
+        writer.writerow(["Website", "Treatment", "FP", "FCP", "LT", "Joules", "Trial"])
 
         for website_result in data:
             writer.writerow(website_dict_to_array_results(website_result))
