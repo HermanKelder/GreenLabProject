@@ -14,6 +14,9 @@ from pathlib import Path
 import numpy as np
 from pykalman import KalmanFilter
 
+def data_print(data, flag):
+    print("{: <30} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f}".format(flag, data.mean(), data.std(), data.min(), data.quantile(q=0.25), data.median(), data.quantile(q=0.75), data.max()))
+
 # Implements the Kalman filter for single columns.
 class KalmanFilters:
 
@@ -41,8 +44,8 @@ class KalmanFilters:
 
 
 
-chrome = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/chrome.csv')
-firefox = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/firefox.csv')
+chrome = pd.read_csv('chrome.csv')
+firefox = pd.read_csv('firefox.csv')
 KalFilter = KalmanFilters()
 
 grouped_chrome = chrome.groupby(['Website'])
@@ -251,3 +254,31 @@ print("\nmean combined_stripped lt: " )
 print(combined_stripped['LT_kalman'].mean())
 print("\nmean combined_prefixed lt: " )
 print(combined_prefixed['LT_kalman'].mean())
+
+print("\nEnergy (J)")
+print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
+data_print(concat_chrome_prefixed['Joules_kalman'], "concat_chrome_prefixed")
+data_print(concat_chrome_stripped['Joules_kalman'], "concat_chrome_stripped")
+data_print(concat_firefox_prefixed['Joules_kalman'], "concat_firefox_prefixed")
+data_print(concat_firefox_stripped['Joules_kalman'], "concat_firefox_stripped")
+data_print(combined_prefixed['Joules_kalman'], "combined_prefixed")
+data_print(combined_stripped['Joules_kalman'], "combined_stripped")
+
+
+print("\nFCP (ms)")
+print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
+data_print(concat_chrome_prefixed['FCP_kalman'], "concat_chrome_prefixed")
+data_print(concat_chrome_stripped['FCP_kalman'], "concat_chrome_stripped")
+data_print(concat_firefox_prefixed['FCP_kalman'], "concat_firefox_prefixed")
+data_print(concat_firefox_stripped['FCP_kalman'], "concat_firefox_stripped")
+data_print(combined_prefixed['FCP_kalman'], "combined_prefixed")
+data_print(combined_stripped['FCP_kalman'], "combined_stripped")
+
+print("\nLT (ms)")
+print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
+data_print(concat_chrome_prefixed['LT_kalman'], "concat_chrome_prefixed")
+data_print(concat_chrome_stripped['LT_kalman'], "concat_chrome_stripped")
+data_print(concat_firefox_prefixed['LT_kalman'], "concat_firefox_prefixed")
+data_print(concat_firefox_stripped['LT_kalman'], "concat_firefox_stripped")
+data_print(combined_prefixed['LT_kalman'], "combined_prefixed")
+data_print(combined_stripped['LT_kalman'], "combined_stripped")
