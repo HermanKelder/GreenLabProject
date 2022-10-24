@@ -57,12 +57,15 @@ ff_data_normfcp %>% predict %>% check_normality()
 
 # Plot energy consumption. 
 ggplot(data=ff_data, aes(x=Joules, group=Treatment, fill=Treatment)) +
-  geom_density(adjust=1.5, alpha=.2) + labs(caption = "Energy consumption using Firefox")
+  geom_density(adjust=1.5, alpha=.2) + xlab("Energy (J)") + theme(legend.position=c(.9,.75))
 
 # Plot first contentful paint consumption. 
 ggplot(data=ff_data, aes(x=FCP, group=Treatment, fill=Treatment)) +
-  geom_density(adjust=1.5, alpha=.2) + labs(caption = "First contentful paint using Firefox")
+  geom_density(adjust=1.5, alpha=.2) + xlab("First contentful paint time (ms)") + theme(legend.position=c(.9,.75))
 
 # Plot load time consumption. 
 ggplot(data=ff_data, aes(x=LT, group=Treatment, fill=Treatment)) +
-  geom_density(adjust=1.5, alpha=.2) + labs(caption = "Load time using Firefox")
+  geom_density(adjust=1.5, alpha=.2) + xlab("Load time (ms)") + theme(legend.position=c(.9,.75)) + xlim(c(0, 10000))
+
+
+
