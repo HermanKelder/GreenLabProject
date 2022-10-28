@@ -41,8 +41,8 @@ class KalmanFilters:
 
 
 
-chrome = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/chrome.csv')
-firefox = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/firefox.csv')
+chrome = pd.read_csv('results/chrome.csv')
+firefox = pd.read_csv('results/firefox.csv')
 KalFilter = KalmanFilters()
 
 grouped_chrome = chrome.groupby(['Website'])
@@ -132,12 +132,12 @@ concat_firefox_stripped.reset_index().drop('index', axis=1)
 combined_stripped = pd.concat([concat_chrome_stripped, concat_firefox_stripped], ignore_index=True, sort=False)
 combined_prefixed = pd.concat([concat_chrome_prefixed, concat_firefox_prefixed], ignore_index=True, sort=False)
 
-concat_chrome_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_prefixed.csv")
-concat_chrome_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_stripped.csv")
-concat_firefox_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_prefixed.csv")
-concat_firefox_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_stripped.csv")
-combined_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/combined_stripped.csv")
-combined_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/combined_prefixed.csv")
+concat_chrome_prefixed.to_csv("resources/concat_chrome_prefixed.csv")
+concat_chrome_stripped.to_csv("resources/concat_chrome_stripped.csv")
+concat_firefox_prefixed.to_csv("resources/concat_firefox_prefixed.csv")
+concat_firefox_stripped.to_csv("resources/concat_firefox_stripped.csv")
+combined_stripped.to_csv("resources/combined_stripped.csv")
+combined_prefixed.to_csv("resources/combined_prefixed.csv")
 
 shapiro_chrome_prefixed_energy = shapiro(concat_chrome_prefixed['Joules_kalman'])
 shapiro_chrome_stripped_energy = shapiro(concat_chrome_stripped['Joules_kalman'])
