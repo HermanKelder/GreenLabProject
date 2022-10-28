@@ -124,11 +124,20 @@ for x in kalman_chrome:
     concat_chrome_prefixed = pd.concat([concat_chrome_prefixed, x[0]], ignore_index=True, sort=False)
     concat_chrome_stripped = pd.concat([concat_chrome_stripped, x[1]], ignore_index=True, sort=False)
 
+
 concat_chrome_prefixed.reset_index().drop('index', axis=1)
 concat_chrome_stripped.reset_index().drop('index', axis=1)
 concat_firefox_prefixed.reset_index().drop('index', axis=1)
 concat_firefox_stripped.reset_index().drop('index', axis=1)
+combined_stripped = pd.concat([concat_chrome_stripped, concat_firefox_stripped], ignore_index=True, sort=False)
+combined_prefixed = pd.concat([concat_chrome_prefixed, concat_firefox_prefixed], ignore_index=True, sort=False)
 
+concat_chrome_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_prefixed.csv")
+concat_chrome_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_stripped.csv")
+concat_firefox_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_prefixed.csv")
+concat_firefox_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_stripped.csv")
+combined_stripped.to_csv("/home/tim/vu/GreenLabProject-main/resources/combined_stripped.csv")
+combined_prefixed.to_csv("/home/tim/vu/GreenLabProject-main/resources/combined_prefixed.csv")
 
 shapiro_chrome_prefixed_energy = shapiro(concat_chrome_prefixed['Joules_kalman'])
 shapiro_chrome_stripped_energy = shapiro(concat_chrome_stripped['Joules_kalman'])
@@ -174,8 +183,7 @@ print("\nshapiro_firefox_stripped energy lt: ")
 print(shapiro_firefox_stripped_lt)
 print("\n\n")
 
-combined_stripped = pd.concat([concat_chrome_stripped, concat_firefox_stripped], ignore_index=True, sort=False)
-combined_prefixed = pd.concat([concat_chrome_prefixed, concat_firefox_prefixed], ignore_index=True, sort=False)
+
 
 shapiro_combined_prefixed_joule = shapiro(combined_prefixed['Joules'])
 shapiro_combined_stripped_joule = shapiro(combined_stripped['Joules'])
