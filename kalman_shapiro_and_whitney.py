@@ -1,6 +1,6 @@
 import pandas as pd
 from scipy.stats import shapiro
-from scipy.stats import mannwhitneyu
+from scipy.stats import wilcoxon
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,9 +13,6 @@ from pathlib import Path
 
 import numpy as np
 from pykalman import KalmanFilter
-
-def data_print(data, flag):
-    print("{: <30} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f} {:<10.2f}".format(flag, data.mean(), data.std(), data.min(), data.quantile(q=0.25), data.median(), data.quantile(q=0.75), data.max()))
 
 # Implements the Kalman filter for single columns.
 class KalmanFilters:
@@ -44,8 +41,8 @@ class KalmanFilters:
 
 
 
-chrome = pd.read_csv('chrome.csv')
-firefox = pd.read_csv('firefox.csv')
+chrome = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/chrome.csv')
+firefox = pd.read_csv('/home/tim/vu/GreenLabProject-main/results/firefox.csv')
 KalFilter = KalmanFilters()
 
 grouped_chrome = chrome.groupby(['Website'])
@@ -180,19 +177,46 @@ print("\n\n")
 combined_stripped = pd.concat([concat_chrome_stripped, concat_firefox_stripped], ignore_index=True, sort=False)
 combined_prefixed = pd.concat([concat_chrome_prefixed, concat_firefox_prefixed], ignore_index=True, sort=False)
 
-results_chrome_energy = mannwhitneyu(concat_chrome_prefixed['Joules_kalman'], concat_chrome_stripped['Joules_kalman'])
-results_firefox_energy = mannwhitneyu(concat_firefox_prefixed['Joules_kalman'], concat_firefox_stripped['Joules_kalman'])
-results_combined_energy = mannwhitneyu(combined_stripped['Joules_kalman'], combined_prefixed['Joules_kalman'])
+shapiro_combined_prefixed_joule = shapiro(combined_prefixed['Joules'])
+shapiro_combined_stripped_joule = shapiro(combined_stripped['Joules'])
+shapiro_combined_prefixed_lt = shapiro(combined_prefixed['LT_kalman'])
+shapiro_combined_stripped_lt = shapiro(combined_stripped['LT_kalman'])
+shapiro_combined_prefixed_fcp = shapiro(combined_prefixed['FCP_kalman'])
+shapiro_combined_stripped_fcp = shapiro(combined_stripped['FCP_kalman'])
 
-results_chrome_fcp = mannwhitneyu(concat_chrome_prefixed['FCP_kalman'], concat_chrome_stripped['FCP_kalman'])
-results_firefox_fcp = mannwhitneyu(concat_firefox_prefixed['FCP_kalman'], concat_firefox_stripped['FCP_kalman'])
-results_combined_fcp = mannwhitneyu(combined_stripped['FCP_kalman'], combined_prefixed['FCP_kalman'])
+print("\nshapiro_combined_prefixed_joule: ")
+print(shapiro_combined_prefixed_joule)
 
-results_chrome_lt = mannwhitneyu(concat_chrome_prefixed['LT_kalman'], concat_chrome_stripped['LT_kalman'])
-results_firefox_lt = mannwhitneyu(concat_firefox_prefixed['LT_kalman'], concat_firefox_stripped['LT_kalman'])
-results_combined_lt = mannwhitneyu(combined_stripped['LT_kalman'], combined_prefixed['LT_kalman'])
+print("\nshapiro_combined_stripped_joule: ")
+print(shapiro_combined_stripped_joule)
 
-print("mannwhitneyu results")
+print("\nshapiro_combined_prefixed_lt: ")
+print(shapiro_combined_prefixed_lt)
+
+print("\nshapiro_combined_stripped_lt: ")
+print(shapiro_combined_stripped_lt)
+
+print("\nshapiro_combined_prefixed_fcp: ")
+print(shapiro_combined_prefixed_fcp)
+
+print("\nshapiro_combined_stripped_fcp: ")
+print(shapiro_combined_stripped_fcp)
+print(len(concat_chrome_prefixed), len(concat_chrome_stripped))
+print(len(concat_firefox_prefixed), len(concat_firefox_stripped))
+print(len(combined_stripped), len(combined_prefixed))
+results_chrome_energy = wilcoxon(concat_chrome_prefixed['Joules_kalman'][0:453], concat_chrome_stripped['Joules_kalman'][0:453])
+results_firefox_energy = wilcoxon(concat_firefox_prefixed['Joules_kalman'][0:480], concat_firefox_stripped['Joules_kalman'][0:480])
+results_combined_energy = wilcoxon(combined_stripped['Joules_kalman'][0:933], combined_prefixed['Joules_kalman'][0:933])
+
+results_chrome_fcp = wilcoxon(concat_chrome_prefixed['FCP_kalman'][0:453], concat_chrome_stripped['FCP_kalman'][0:453])
+results_firefox_fcp = wilcoxon(concat_firefox_prefixed['FCP_kalman'][0:480], concat_firefox_stripped['FCP_kalman'][0:480])
+results_combined_fcp = wilcoxon(combined_stripped['FCP_kalman'][0:933], combined_prefixed['FCP_kalman'][0:933])
+
+results_chrome_lt = wilcoxon(concat_chrome_prefixed['LT_kalman'][0:453], concat_chrome_stripped['LT_kalman'][0:453])
+results_firefox_lt = wilcoxon(concat_firefox_prefixed['LT_kalman'][0:480], concat_firefox_stripped['LT_kalman'][0:480])
+results_combined_lt = wilcoxon(combined_stripped['LT_kalman'][0:933], combined_prefixed['LT_kalman'][0:933])
+
+print("wilcoxon results")
 print("chrome energy: " )
 print(results_chrome_energy)
 print("\nfirefox energy: ")
@@ -215,30 +239,42 @@ print("\ncombined lt: " )
 print(results_combined_lt)
 print("\n\n")
 
-print("\nEnergy (J)")
-print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
-data_print(concat_chrome_prefixed['Joules_kalman'], "concat_chrome_prefixed")
-data_print(concat_chrome_stripped['Joules_kalman'], "concat_chrome_stripped")
-data_print(concat_firefox_prefixed['Joules_kalman'], "concat_firefox_prefixed")
-data_print(concat_firefox_stripped['Joules_kalman'], "concat_firefox_stripped")
-data_print(combined_prefixed['Joules_kalman'], "combined_prefixed")
-data_print(combined_stripped['Joules_kalman'], "combined_stripped")
+print("mean results")
+print("mean concat_chrome_prefixed energy: " )
+print(concat_chrome_prefixed['Joules_kalman'].mean())
+print("\nmean concat_chrome_stripped energy: ")
+print(concat_chrome_stripped['Joules_kalman'].mean())
+print("\nmean concat_firefox_prefixed energy: " )
+print(concat_firefox_prefixed['Joules_kalman'].mean())
+print("\nmean concat_firefox_stripped energy: ")
+print(concat_firefox_stripped['Joules_kalman'].mean())
+print("\nmean combined_stripped energy: " )
+print(combined_stripped['Joules_kalman'].mean())
+print("\nmean combined_prefixed energy: " )
+print(combined_prefixed['Joules_kalman'].mean())
 
+print("mean concat_chrome_prefixed fcp: " )
+print(concat_chrome_prefixed['FCP_kalman'].mean())
+print("\nmean concat_chrome_stripped fcp: ")
+print(concat_chrome_stripped['FCP_kalman'].mean())
+print("\nmean concat_firefox_prefixed fcp: " )
+print(concat_firefox_prefixed['FCP_kalman'].mean())
+print("\nmean concat_firefox_stripped fcp: ")
+print(concat_firefox_stripped['FCP_kalman'].mean())
+print("\nmean combined_stripped fcp: " )
+print(combined_stripped['FCP_kalman'].mean())
+print("\nmean combined_prefixed fcp: " )
+print(combined_prefixed['FCP_kalman'].mean())
 
-print("\nFCP (ms)")
-print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
-data_print(concat_chrome_prefixed['FCP_kalman'], "concat_chrome_prefixed")
-data_print(concat_chrome_stripped['FCP_kalman'], "concat_chrome_stripped")
-data_print(concat_firefox_prefixed['FCP_kalman'], "concat_firefox_prefixed")
-data_print(concat_firefox_stripped['FCP_kalman'], "concat_firefox_stripped")
-data_print(combined_prefixed['FCP_kalman'], "combined_prefixed")
-data_print(combined_stripped['FCP_kalman'], "combined_stripped")
-
-print("\nLT (ms)")
-print("{: <30} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("", "mean", "std", "min", "25%", "median", "75%", "max"))
-data_print(concat_chrome_prefixed['LT_kalman'], "concat_chrome_prefixed")
-data_print(concat_chrome_stripped['LT_kalman'], "concat_chrome_stripped")
-data_print(concat_firefox_prefixed['LT_kalman'], "concat_firefox_prefixed")
-data_print(concat_firefox_stripped['LT_kalman'], "concat_firefox_stripped")
-data_print(combined_prefixed['LT_kalman'], "combined_prefixed")
-data_print(combined_stripped['LT_kalman'], "combined_stripped")
+print("mean concat_chrome_prefixed lt: " )
+print(concat_chrome_prefixed['LT_kalman'].mean())
+print("\nmean concat_chrome_stripped lt: ")
+print(concat_chrome_stripped['LT_kalman'].mean())
+print("\nmean concat_firefox_prefixed lt: " )
+print(concat_firefox_prefixed['LT_kalman'].mean())
+print("\nmean concat_firefox_stripped lt: ")
+print(concat_firefox_stripped['LT_kalman'].mean())
+print("\nmean combined_stripped lt: " )
+print(combined_stripped['LT_kalman'].mean())
+print("\nmean combined_prefixed lt: " )
+print(combined_prefixed['LT_kalman'].mean())
