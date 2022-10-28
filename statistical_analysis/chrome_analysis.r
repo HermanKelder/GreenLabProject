@@ -20,7 +20,7 @@ check_normality <- function(data) {
 }
 
 # Read data from csv.
-chrome_data = read_csv("firefox.csv")
+chrome_data = read_csv("chrome.csv")
 head(chrome_data)
 
 # Remove columns with unnecessary or useless data.
