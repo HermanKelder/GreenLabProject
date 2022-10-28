@@ -6,12 +6,12 @@ library(bestNormalize)
 library(effsize)
 library(ggplot2)
 
-concat_chrome_prefixed = read_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_prefixed.csv")
-concat_chrome_stripped = read_csv("/home/tim/vu/GreenLabProject-main/resources/concat_chrome_stripped.csv")
-concat_firefox_prefixed = read_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_prefixed.csv")
-concat_firefox_stripped = read_csv("/home/tim/vu/GreenLabProject-main/resources/concat_firefox_stripped.csv")
-combined_stripped = read_csv("/home/tim/vu/GreenLabProject-main/resources/combined_stripped.csv")
-combined_prefixed = read_csv("/home/tim/vu/GreenLabProject-main/resources/combined_prefixed.csv")
+concat_chrome_prefixed = read_csv("resources/concat_chrome_prefixed.csv")
+concat_chrome_stripped = read_csv("resources/concat_chrome_stripped.csv")
+concat_firefox_prefixed = read_csv("resources/concat_firefox_prefixed.csv")
+concat_firefox_stripped = read_csv("resources/concat_firefox_stripped.csv")
+combined_stripped = read_csv("resources/combined_stripped.csv")
+combined_prefixed = read_csv("resources/combined_prefixed.csv")
 
 concat_chrome_prefixed_shapiro_energy = shapiro.test(concat_chrome_prefixed$Joules_kalman)
 concat_chrome_stripped_shapiro_energy = shapiro.test(concat_chrome_stripped$Joules_kalman)
@@ -48,3 +48,9 @@ wilcox_fcp_combined = wilcox.test(combined_stripped$FCP_kalman[0:933],combined_p
 
 cliffs_delta_energy_chrome = cliff.delta(concat_chrome_prefixed$Joules_kalman[0:453],concat_chrome_stripped$Joules_kalman[0:453])
 
+summary(concat_chrome_prefixed)
+summary(concat_chrome_stripped)
+summary(concat_firefox_prefixed)
+summary(concat_firefox_stripped)
+summary(combined_stripped)
+summary(combined_prefixed)
