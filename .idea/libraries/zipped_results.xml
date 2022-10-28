@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="zipped_results">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/results/zipped_results.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

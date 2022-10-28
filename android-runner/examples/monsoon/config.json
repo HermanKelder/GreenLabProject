@@ -1,0 +1,33 @@
+{
+  "type": "web",
+  "devices": {
+    "nexus5x": {
+      "power_device": {
+        "script_path": "my_path/androidrunner/android-runner/AndroidRunner/Plugins/monsoon/script/power_device.py",
+        "py_path": "python3",
+        "vout": "3.8",
+        "serial_num": "23171"
+        }
+    }
+  },
+  "clear_cache": true,
+  "repetitions": 3,
+  "duration": 180000,
+  "browsers": ["firefox"],
+  "paths": [
+    "https://google.com/"
+ ],
+  "profilers":{
+    "monsoon": {
+        }
+  },
+  "scripts": {
+    "before_experiment": "scripts/before_experiment.py",
+    "before_run": "scripts/before_run.py",
+    "after_launch": "scripts/after_launch.py",
+    "before_close": "scripts/before_close.py",
+    "after_run": "scripts/after_run.py",
+    "after_experiment": "scripts/after_experiment.py"
+  },
+  "time_between_run": 120000
+}

@@ -1,0 +1,30 @@
+{
+  "type": "native",
+  "devices": {
+    "nexus5x": {}
+  },
+  "repetitions": 2,
+  "monkeyrunner_path": "/usr/bin/monkeyrunner",
+  "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
+  "powerprofile_path": "android-runner/examples/monkeyplayer/Scripts/power_profile.xml",
+  "profilers": {
+    "batterystats": {
+      "cleanup": true, 
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7"
+    }
+  },
+  "paths": [
+    "android-runner/examples/monkeyplayer/com.example.simplebutton.apk"
+  ],
+  "scripts": {
+    "after_launch": "Scripts/after_launch.py",
+    "before_close": "Scripts/before_close.py",
+    "interaction": [
+      {
+        "type": "monkeyreplay",
+        "path": "simplebutton-actions.monkeyplayer"
+      }
+    ]
+  },
+  "time_between_run": 5000
+}
