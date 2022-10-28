@@ -44,6 +44,9 @@ levels(combined_data$Treatment)
 levels(combined_data$Browser)
 summary(combined_data)
 
+# Normalize data.
+combined_data = bestNormalize(combined_data)
+
 # Statistical tests for Chrome.
 summary(combined_data)
 combined_data_prefixed_cons = combined_data %>% filter(Browser == 'Chrome', Treatment == 'prefixed', ) %>% select("Joules") %>% unlist(use.names=FALSE)
@@ -85,6 +88,4 @@ wilcox.test(combined_data_prefixed_fcp, combined_data_stripped_fcp)
 combined_data_prefixed_lt = combined_data %>% filter(Treatment == 'prefixed') %>% select("LT") %>% unlist(use.names=FALSE)
 combined_data_stripped_lt = combined_data %>% filter(Treatment == 'stripped') %>% select("LT") %>% unlist(use.names=FALSE)
 wilcox.test(combined_data_prefixed_lt, combined_data_stripped_lt)
-
-
 

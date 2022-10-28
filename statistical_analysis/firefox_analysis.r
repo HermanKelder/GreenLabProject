@@ -73,17 +73,3 @@ ggplot(data=ff_data, aes(x=FCP, group=Treatment, fill=Treatment)) +
 # Plot load time consumption. 
 ggplot(data=ff_data, aes(x=LT, group=Treatment, fill=Treatment)) +
   geom_density(adjust=1.5, alpha=.2) + xlab("Load time (ms)") + theme(legend.position=c(.9,.75)) + xlim(c(0, 10000))
-
-# Statistical tests
-summary(ff_data)
-ff_data_prefixed_cons = ff_data %>% filter(Treatment == 'prefixed') %>% select("Joules") %>% unlist(use.names=FALSE)
-ff_data_stripped_cons = ff_data %>% filter(Treatment == 'stripped') %>% select("Joules") %>% unlist(use.names=FALSE)
-wilcox.test(ff_data_prefixed_cons, ff_data_stripped_cons)
-
-ff_data_prefixed_fcp = ff_data %>% filter(Treatment == 'prefixed') %>% select("FCP") %>% unlist(use.names=FALSE)
-ff_data_stripped_fcp = ff_data %>% filter(Treatment == 'stripped') %>% select("FCP") %>% unlist(use.names=FALSE)
-wilcox.test(ff_data_prefixed_fcp, ff_data_stripped_fcp)
-
-ff_data_prefixed_lt = ff_data %>% filter(Treatment == 'prefixed') %>% select("LT") %>% unlist(use.names=FALSE)
-ff_data_stripped_lt = ff_data %>% filter(Treatment == 'stripped') %>% select("LT") %>% unlist(use.names=FALSE)
-wilcox.test(ff_data_prefixed_lt, ff_data_stripped_lt)
