@@ -28,7 +28,7 @@ Contains CSV files for the results and the top 300 web apps from the Tranco list
 To download, prefix and strip web apps, several scripts were created. The process is semi-automated and requires manual interaction to first download web apps, then prefix and strip them, and finally to add the Javascript that calls the perfumeJS server when an app has finished loading. After the sites have been downloaded, they can be hosted on a webserver like Apache2.
 
 ### statistical_analysis/
-Contains some of the R code used to generate plots and run statistical tests. Some of the analysis is also done on Python, as Python was used to generate the violin plots and the data for the tables in the final report.
+Contains some the R code used to generate plots and run statistical tests. Additionaly some Python files are included, as Python was used to extract the data from the experiment and automatically aggregate it into a single file to be used in the R scripts.
 
 ### ./
 All the other miscellaneous files that do not belong to a folder. 
