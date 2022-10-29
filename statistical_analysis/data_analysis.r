@@ -102,7 +102,7 @@ violin_combined_joules <- ggplot(combined_data, aes(x=Treatment, y=Joules, fill=
 print(violin_combined_joules)
 
 violins_joule <- ggarrange(violin_ff_joules, violin_chrome_joules, violin_combined_joules, ncol=3, nrow=1)
-ggsave("Joules.pdf", violins_joule, width=12, height=4)
+#ggsave("Violin_Joules.pdf", violins_joule, width=12, height=4)
 print(violins_joule)
 
 
@@ -128,7 +128,7 @@ violin_combined_fcp <- ggplot(combined_data, aes(x=Treatment, y=FCP, fill=Treatm
 print(violin_combined_fcp)
 
 violins_fcp <- ggarrange(violin_ff_fcp, violin_chrome_fcp, violin_combined_fcp, ncol=3, nrow=1)
-ggsave("FCP.pdf", violins_fcp, width=12, height=4)
+#ggsave("Violin_FCP.pdf", violins_fcp, width=12, height=4)
 print(violins_fcp)
 
 
@@ -156,5 +156,5 @@ violin_combined_lt <- ggplot(combined_data, aes(x=Treatment, y=FCP, fill=Treatme
 print(violin_combined_lt)
 
 violins_lt <- ggarrange(violin_ff_lt, violin_chrome_lt, violin_combined_lt, ncol=3, nrow=1)
-ggsave("LT.pdf", violins_lt, width=12, height=4)
+#ggsave("Violin_LT.pdf", violins_lt, width=12, height=4)
 print(violins_lt)
