@@ -54,3 +54,107 @@ summary(concat_firefox_prefixed)
 summary(concat_firefox_stripped)
 summary(combined_stripped)
 summary(combined_prefixed)
+
+
+# Import datasets.
+ff_data = read_csv("../results/firefox.csv")
+chrome_data = read_csv("../results/chrome.csv")
+
+# Remove unnecessary columns and create a new one for the browser.
+ff_data = ff_data[-c(3, 7)]
+chrome_data = chrome_data[-c(3, 7)]
+ff_data$Browser <- "Firefox"
+chrome_data$Browser <- "Chrome"
+summary(ff_data)
+summary(chrome_data)
+
+# Combine the datasets.
+combined_data = rbind(ff_data, chrome_data)
+summary(combined_data)
+
+boundry = 10
+joules_min = min(combined_data$Joules) - boundry
+joules_max = max(combined_data$Joules) + boundry
+
+fcp_min = min(combined_data$FCP) - boundry
+fcp_max = max(combined_data$FCP) + boundry
+
+lt_min = min(combined_data$LT) - boundry
+lt_max = max(combined_data$LT) + boundry
+
+
+violin_ff_joules <- ggplot(ff_data, aes(x=Treatment, y=Joules, fill=Treatment)) + ggtitle("Firefox energy consumption") + 
+  geom_violin(trim=FALSE, bw=1.5) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(joules_min, joules_max) + 
+  scale_y_continuous(breaks=c(0, 20, 40, 60, 80)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_ff_joules)
+
+violin_chrome_joules <- ggplot(chrome_data, aes(x=Treatment, y=Joules, fill=Treatment)) + ggtitle("Chrome energy consumption") + 
+  geom_violin(trim=FALSE, bw=1.5) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(joules_min, joules_max) + 
+  scale_y_continuous(breaks=c(0, 20, 40, 60, 80)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_chrome_joules)
+
+violin_combined_joules <- ggplot(combined_data, aes(x=Treatment, y=Joules, fill=Treatment)) + ggtitle("Combined energy consumption") + 
+  geom_violin(trim=FALSE, bw=1.5) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(joules_min, joules_max) + 
+  scale_y_continuous(breaks=c(0, 20, 40, 60, 80)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_combined_joules)
+
+violins_joule <- ggarrange(violin_ff_joules, violin_chrome_joules, violin_combined_joules, ncol=3, nrow=1)
+
+print(violins_joule)
+
+
+
+
+
+violin_ff_fcp <- ggplot(ff_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Firefox First Contentful Paint") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(fcp_min, fcp_max) + 
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_ff_fcp)
+
+violin_chrome_fcp <- ggplot(chrome_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Chrome First Contentful Paint") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(fcp_min, fcp_max) +  
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_chrome_fcp)
+
+violin_combined_fcp <- ggplot(combined_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Combined First Contentful Paint") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(fcp_min, fcp_max) + 
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_combined_fcp)
+
+violins_fcp <- ggarrange(violin_ff_fcp, violin_chrome_fcp, violin_combined_fcp, ncol=3, nrow=1)
+
+print(violins_fcp)
+
+
+
+
+
+
+
+violin_ff_lt <- ggplot(ff_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Firefox Load Times") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(lt_min, lt_max) + 
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_ff_lt)
+
+violin_chrome_lt <- ggplot(chrome_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Chrome Load Times") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(lt_min, lt_max) + 
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_chrome_lt)
+
+violin_combined_lt <- ggplot(combined_data, aes(x=Treatment, y=FCP, fill=Treatment)) + ggtitle("Combined Load Times") + 
+  geom_violin(trim=FALSE, bw=3) + geom_boxplot(width=0.04, outlier.shape=NA, show.legend=FALSE) + ylim(lt_min, lt_max) + 
+  scale_y_continuous(breaks=c(0, 5000, 10000, 15000, 20000, 25000)) + scale_fill_brewer(palette="Set3") +
+  theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=22), panel.border=element_rect(color="black", fill=NA, size=1), legend.position = "none")
+print(violin_combined_lt)
+
+violins_lt <- ggarrange(violin_ff_lt, violin_chrome_lt, violin_combined_lt, ncol=3, nrow=1)
+
+print(violins_lt)
