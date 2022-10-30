@@ -19,8 +19,6 @@ ff_data = read_csv("../results/firefox.csv")
 chrome_data = read_csv("../results/chrome.csv")
 
 # Remove unnecessary columns and create a new one for the browser.
-ff_data = ff_data[-c(3, 7)]
-chrome_data = chrome_data[-c(3, 7)]
 ff_data$Browser <- "Firefox"
 chrome_data$Browser <- "Chrome"
 summary(ff_data)
@@ -30,5 +28,26 @@ summary(chrome_data)
 combined_data = rbind(ff_data, chrome_data)
 summary(combined_data)
 
-grouped_chrome = group_by(chrome_data, Website, Treatment) %>% mutate(Joules_kalman=kalman(Joules))
-print(grouped_chrome)
+kalman_chrome = group_by(chrome_data, Website, Treatment) %>% mutate(Joules_kalman=kalman(Joules)) %>% mutate(group_index=row_number(Treatment)) %>% ungroup() %>% mutate(Joules_kalman=mapply(function(l, i) l[i], Joules_kalman, group_index))
+kalman_chrome = group_by(kalman_chrome, Website, Treatment) %>% mutate(FCP_kalman=kalman(FCP)) %>% ungroup() %>% mutate(FCP_kalman=mapply(function(l, i) l[i], FCP_kalman, group_index))
+kalman_chrome = group_by(kalman_chrome, Website, Treatment) %>% mutate(LT_kalman=kalman(LT)) %>% ungroup() %>% mutate(LT_kalman=mapply(function(l, i) l[i], LT_kalman, group_index))
+kalman_chrome = kalman_chrome[-c(8, 10)]
+print(kalman_chrome)
+write.csv(kalman_chrome, "kalman_chrome.csv")
+
+kalman_ff = group_by(ff_data, Website, Treatment) %>% mutate(Joules_kalman=kalman(Joules)) %>% mutate(group_index=row_number(Treatment)) %>% ungroup() %>% mutate(Joules_kalman=mapply(function(l, i) l[i], Joules_kalman, group_index))
+kalman_ff = group_by(kalman_ff, Website, Treatment) %>% mutate(FCP_kalman=kalman(FCP)) %>% ungroup() %>% mutate(FCP_kalman=mapply(function(l, i) l[i], FCP_kalman, group_index))
+kalman_ff = group_by(kalman_ff, Website, Treatment) %>% mutate(LT_kalman=kalman(LT)) %>% ungroup() %>% mutate(LT_kalman=mapply(function(l, i) l[i], LT_kalman, group_index))
+kalman_ff = kalman_ff[-c(8, 10)]
+print(kalman_ff)
+write.csv(kalman_ff, "kalman_firefox.csv")
+
+
+write.csv(kalman_ff %>% filter(Treatment == 'prefixed'), "concat_firefox_prefixed.csv")
+write.csv(kalman_ff %>% filter(Treatment == 'stripped'), "concat_firefox_stripped.csv")
+
+write.csv(kalman_chrome %>% filter(Treatment == 'prefixed'), "concat_chrome_prefixed.csv")
+write.csv(kalman_chrome %>% filter(Treatment == 'stripped'), "concat_chrome_stripped.csv")
+
+write.csv(rbind(kalman_ff %>% filter(Treatment == 'prefixed'), kalman_chrome %>% filter(Treatment == 'prefixed')), "combined_prefixed.csv")
+write.csv(rbind(kalman_ff %>% filter(Treatment == 'stripped'), kalman_chrome %>% filter(Treatment == 'stripped')), "combined_stripped.csv")
