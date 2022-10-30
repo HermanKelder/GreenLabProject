@@ -24,6 +24,9 @@ This folder contains all the JSON files with settings for the AndroidRunner expe
 ### resources/
 Contains CSV files for the Kalman filtered results and the top 300 web apps from the Tranco list.
 
+### results/
+Contains the raw results and the aggregated results from the experiment. 
+
 ### scripts/
 To download, prefix and strip web apps, several scripts were created. The process is semi-automated and requires manual interaction to first download web apps, then prefix and strip them, and finally to add the Javascript that calls the perfumeJS server when an app has finished loading. After the sites have been downloaded, they can be hosted on a webserver like Apache2.
 
