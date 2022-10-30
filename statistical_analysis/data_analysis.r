@@ -36,9 +36,7 @@ combined_prefixed_shapiro_fcp = shapiro.test(combined_prefixed$FCP_kalman)
 
 # Due to potentially mismatched number of measurements
 w_concat_chrome_prefixed = semi_join(concat_chrome_prefixed, concat_chrome_stripped, by = c("Website", "Trial"))
-write.csv(w_concat_chrome_prefixed, "test.csv")
 w_concat_chrome_stripped = semi_join(concat_chrome_stripped, concat_chrome_prefixed, by = c("Website", "Trial"))
-write.csv(w_concat_chrome_stripped, "test2.csv")
 w_concat_firefox_prefixed = semi_join(concat_firefox_prefixed, concat_firefox_stripped, by = c("Website", "Trial"))
 w_concat_firefox_stripped = semi_join(concat_firefox_stripped, concat_firefox_prefixed, by = c("Website", "Trial"))
 w_combined_prefixed = rbind(w_concat_chrome_prefixed, w_concat_firefox_prefixed)
