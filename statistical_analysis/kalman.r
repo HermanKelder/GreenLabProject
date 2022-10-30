@@ -43,11 +43,11 @@ print(kalman_ff)
 write.csv(kalman_ff, "kalman_firefox.csv")
 
 
-write.csv(kalman_ff %>% filter(Treatment == 'prefixed'), "concat_firefox_prefixed.csv")
-write.csv(kalman_ff %>% filter(Treatment == 'stripped'), "concat_firefox_stripped.csv")
+write.csv(kalman_ff %>% filter(Treatment == 'prefixed'), "../resources/concat_firefox_prefixed.csv")
+write.csv(kalman_ff %>% filter(Treatment == 'stripped'), "../resources/concat_firefox_stripped.csv")
 
-write.csv(kalman_chrome %>% filter(Treatment == 'prefixed'), "concat_chrome_prefixed.csv")
-write.csv(kalman_chrome %>% filter(Treatment == 'stripped'), "concat_chrome_stripped.csv")
+write.csv(kalman_chrome %>% filter(Treatment == 'prefixed'), "../resources/concat_chrome_prefixed.csv")
+write.csv(kalman_chrome %>% filter(Treatment == 'stripped'), "../resources/concat_chrome_stripped.csv")
 
-write.csv(rbind(kalman_ff %>% filter(Treatment == 'prefixed'), kalman_chrome %>% filter(Treatment == 'prefixed')), "combined_prefixed.csv")
-write.csv(rbind(kalman_ff %>% filter(Treatment == 'stripped'), kalman_chrome %>% filter(Treatment == 'stripped')), "combined_stripped.csv")
+write.csv(rbind(kalman_chrome %>% filter(Treatment == 'prefixed'), kalman_ff %>% filter(Treatment == 'prefixed')), "../resources/combined_prefixed.csv")
+write.csv(rbind(kalman_chrome %>% filter(Treatment == 'stripped'), kalman_ff %>% filter(Treatment == 'stripped')), "../resources/combined_stripped.csv")
