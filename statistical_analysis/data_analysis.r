@@ -34,20 +34,33 @@ concat_firefox_stripped_shapiro_fcp = shapiro.test(concat_firefox_stripped$FCP_k
 combined_stripped_shapiro_fcp = shapiro.test(combined_stripped$FCP_kalman)
 combined_prefixed_shapiro_fcp = shapiro.test(combined_prefixed$FCP_kalman)
 
-wilcox_energy_chrome = wilcox.test(concat_chrome_prefixed$Joules_kalman[0:453],concat_chrome_stripped$Joules_kalman[0:453], paired = TRUE)
-wilcox_energy_firefox = wilcox.test(concat_firefox_prefixed$Joules_kalman[0:480],concat_firefox_stripped$Joules_kalman[0:480], paired = TRUE)
-wilcox_energy_combined = wilcox.test(combined_stripped$Joules_kalman[0:933],combined_prefixed$Joules_kalman[0:933], paired = TRUE)
+# Due to potentially mismatched number of measurements
+w_concat_chrome_prefixed = semi_join(concat_chrome_prefixed, concat_chrome_stripped, by = c("Website", "Trial"))
+write.csv(w_concat_chrome_prefixed, "test.csv")
+w_concat_chrome_stripped = semi_join(concat_chrome_stripped, concat_chrome_prefixed, by = c("Website", "Trial"))
+write.csv(w_concat_chrome_stripped, "test2.csv")
+w_concat_firefox_prefixed = semi_join(concat_firefox_prefixed, concat_firefox_stripped, by = c("Website", "Trial"))
+w_concat_firefox_stripped = semi_join(concat_firefox_stripped, concat_firefox_prefixed, by = c("Website", "Trial"))
+w_combined_prefixed = rbind(w_concat_chrome_prefixed, w_concat_firefox_prefixed)
+w_combined_stripped = rbind(w_concat_chrome_stripped, w_concat_firefox_stripped)
 
-wilcox_lt_chrome = wilcox.test(concat_chrome_prefixed$LT_kalman[0:453],concat_chrome_stripped$LT_kalman[0:453], paired = TRUE)
-wilcox_lt_firefox = wilcox.test(concat_firefox_prefixed$LT_kalman[0:480],concat_firefox_stripped$LT_kalman[0:480], paired = TRUE)
-wilcox_lt_combined = wilcox.test(combined_stripped$LT_kalman[0:933],combined_prefixed$LT_kalman[0:933], paired = TRUE)
 
-wilcox_fcp_chrome = wilcox.test(concat_chrome_prefixed$FCP_kalman[0:453],concat_chrome_stripped$FCP_kalman[0:453], paired = TRUE)
-wilcox_fcp_firefox = wilcox.test(concat_firefox_prefixed$FCP_kalman[0:480],concat_firefox_stripped$FCP_kalman[0:480], paired = TRUE)
-wilcox_fcp_combined = wilcox.test(combined_stripped$FCP_kalman[0:933],combined_prefixed$FCP_kalman[0:933], paired = TRUE)
+wilcox_energy_chrome = wilcox.test(w_concat_chrome_prefixed$Joules_kalman,w_concat_chrome_stripped$Joules_kalman, paired = TRUE)
+wilcox_energy_firefox = wilcox.test(w_concat_firefox_prefixed$Joules_kalman,w_concat_firefox_stripped$Joules_kalman, paired = TRUE)
+wilcox_energy_combined = wilcox.test(w_combined_prefixed$Joules_kalman,w_combined_stripped$Joules_kalman, paired = TRUE)
 
-cliffs_delta_energy_chrome = cliff.delta(concat_chrome_prefixed$Joules_kalman[0:453],concat_chrome_stripped$Joules_kalman[0:453])
-cliffs_delta_lt_firefox = cliff.delta(concat_firefox_prefixed$LT_kalman[0:480],concat_firefox_stripped$LT_kalman[0:480])
+wilcox_lt_chrome = wilcox.test(w_concat_chrome_prefixed$LT_kalman,w_concat_chrome_stripped$LT_kalman, paired = TRUE)
+wilcox_lt_firefox = wilcox.test(w_concat_firefox_prefixed$LT_kalman,w_concat_firefox_stripped$LT_kalman, paired = TRUE)
+wilcox_lt_combined = wilcox.test(w_combined_prefixed$LT_kalman,w_combined_stripped$LT_kalman, paired = TRUE)
+
+wilcox_fcp_chrome = wilcox.test(w_concat_chrome_prefixed$FCP_kalman,w_concat_chrome_stripped$FCP_kalman, paired = TRUE)
+wilcox_fcp_firefox = wilcox.test(w_concat_firefox_prefixed$FCP_kalman,w_concat_firefox_stripped$FCP_kalman, paired = TRUE)
+wilcox_fcp_combined = wilcox.test(w_combined_prefixed$FCP_kalman,w_combined_stripped$FCP_kalman, paired = TRUE)
+
+cliffs_delta_energy_chrome = cliff.delta(w_concat_chrome_prefixed$Joules_kalman,w_concat_chrome_stripped$Joules_kalman)
+cliffs_delta_fcp_firefox = cliff.delta(w_concat_firefox_prefixed$FCP_kalman,w_concat_firefox_stripped$FCP_kalman)
+cliffs_delta_lt_firefox = cliff.delta(w_concat_firefox_prefixed$LT_kalman,w_concat_firefox_stripped$LT_kalman)
+cliffs_delta_lt_combined = cliff.delta(w_combined_prefixed$LT_kalman,w_combined_stripped$LT_kalman)
 
 summary(concat_chrome_prefixed)
 summary(concat_chrome_stripped)
