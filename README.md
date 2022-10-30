@@ -22,7 +22,7 @@ For a quick overview of how the software interacts, please refer to the followin
 This folder contains all the JSON files with settings for the AndroidRunner experiments. A seperate file for both Chrome and Firefox exists, because AndroidRunner crashes when a single file is used for the settings of Chrome and Firefox. There is also a Python script that automatically creates an ADB connection over wifi and another script to aggregate the AndroidRunner result files into an easily parsable CSV file.
 
 ### resources/
-Contains CSV files for the results and the top 300 web apps from the Tranco list. This includes pre-processed data that is used in other scripts, like the script used to generate graphs or to download web app content.
+Contains CSV files for the Kalman filtered results and the top 300 web apps from the Tranco list.
 
 ### scripts/
 To download, prefix and strip web apps, several scripts were created. The process is semi-automated and requires manual interaction to first download web apps, then prefix and strip them, and finally to add the Javascript that calls the perfumeJS server when an app has finished loading. After the sites have been downloaded, they can be hosted on a webserver like Apache2.
