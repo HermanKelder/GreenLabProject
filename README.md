@@ -1,7 +1,7 @@
 # GreenLabProject 2022 (CSS prefixes)
 
 ## Abstract
-In this paper, we will assess the impact of CSS prefixes on performance and energy consumption of web apps on an Android phone. Browsing the internet on Android phones has become ubiquitous and even small changes in energy consumption could lead to big savings on a global scale. We will look at fifty of the most popular web apps and test them with and without CSS prefixes. Prefixes are vendor specific and increase the packet size and network traffic, but were traditionally used to test new features, like rounded corners on page elements. During our tests, we conclude that there is no noticeable difference in both performance and energy consumption when using CSS prefixes. 
+In this paper, we will assess the impact of CSS prefixes on performance and energy consumption of web apps on an Android phone. Browsing the internet on Android phones has become ubiquitous and even small changes in energy consumption could lead to big savings on a global scale. We will look at fifty of the most popular web apps and test them with and without CSS prefixes. Prefixes are vendor specific and increase the packet size and network traffic, but were traditionally used to test new features, like rounded corners on page elements. During our tests, we conclude that there is no noticeable difference in both performance and energy consumption when using CSS prefixes.
 
 ## Software stack
 The key software used to run the experiment is listed below:
@@ -28,7 +28,7 @@ Contains CSV files for the results and the top 300 web apps from the Tranco list
 To download, prefix and strip web apps, several scripts were created. The process is semi-automated and requires manual interaction to first download web apps, then prefix and strip them, and finally to add the Javascript that calls the perfumeJS server when an app has finished loading. After the sites have been downloaded, they can be hosted on a webserver like Apache2.
 
 ### statistical_analysis/
-Contains the R code used to generate plots and run statistical tests. Additionaly some Python files are included, as Python was used to extract the data from the experiment and automatically aggregate it into a single file to be used in the R statistical analysis scripts.
+Contains the R code used to generate plots and run statistical tests.
 
 ### ./
-All the other miscellaneous files that do not belong to a folder. 
+All the other miscellaneous files that do not belong to a folder.
