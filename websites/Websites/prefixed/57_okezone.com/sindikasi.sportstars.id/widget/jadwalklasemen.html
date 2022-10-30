@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+<meta name="theme-color" content="#0db2f0">
+<title>Sportstars - Score</title>
+<meta name="title" content="Sportstars - Score">
+<meta name="description" content="Sportstars - Score">
+<meta name="author" content="sportstars.id">
+<meta name="image_src" content="">
+<meta name="google-site-verification" content="">
+<meta name="msvalidate.01" content="">
+<meta name="googlebot-news" content="index,follow">
+<link rel="stylesheet" href="../assets/css/styles_desktop.css">
+<link rel="stylesheet" href="../assets/fonts/fa-5.15.1/css/all.css">
+<link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+
+<script async src="../../www.googletagmanager.com/gtag/js%3Fid=UA-194807661-2"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-194807661-2');
+	</script>
+</head>
+<body>
+
+<div class="warp-jadwal-hasil">
+<div class="sin-row">
+<div class="jadwal-hasil">
+<div class="title-jadwal-hasil">
+JADWAL <br> & HASIL
+</div>
+<select class="cmb-kategori-jadwal" onchange="getval(this);" id="select_klasemen">
+<option value="now">Jadwal Terbaru</option>
+<option value="ligainggrispremierleague">Liga Inggris Premier League</option>
+<option value="ligaitaliaseriea">Liga Italia Serie A</option>
+<option value="ligaspanyollaligasantander">Liga Spanyol Laliga Santander</option>
+<option value="ligachampionseropa">Liga Champions Eropa</option>
+<option value="liga1indonesia">Liga 1 Indonesia</option>
+<option value="liga2indonesia">Liga 2 Indonesia</option>
+</select>
+</div>
+<div class="detail-jadwal-hasil klasemen">
+</div>
+
+<div class="control-jadwal-hasil">
+<div class="control-jadwal-hasil-next">
+<i class="fa fa-chevron-right" aria-hidden="true"></i>
+</div>
+<div class="control-jadwal-hasil-prev">
+<i class="fa fa-chevron-left" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/swiper-bundle.js"></script>
+
+<script>
+		  $(document).ready(function() {
+		    $('.klasemen').load('https://sindikasi.sportstars.id/load-jadwal/now');
+				//$('#title').value('');
+				$("select_klasemen select").val("euro2020").change();
+		  });
+
+		  function getval(sel)
+		  {
+		    $('.klasemen').load('https://sindikasi.sportstars.id/load-jadwal/'+sel.value);
+			 // $('#title').value(sel.value);
+		  }
+		</script>
+<script defer src="../../static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"74e95b9fcdab0c8d","token":"6381ba9d98f14bc38f3cc38955b1bef1","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

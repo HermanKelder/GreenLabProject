@@ -1,0 +1,68 @@
+{
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "gcm_user_visible_only": true,
+    "icons": [
+        {
+            "sizes": "48x48",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_48.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "72x72",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_72.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "96x96",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_96.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "128x128",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_128.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "144x144",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_144.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "152x152",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_152.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "192x192",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_192.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "384x384",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_384.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "512x512",
+            "src": "https://s.yimg.com/cv/apiv2/09062018/manifest/yahoo_install_512.png",
+            "type": "image/png"
+        }
+    ],
+    "name": "Yahoo",
+    "orientation": "portrait",
+    "permissions": [
+        "gcm"
+    ],
+    "android_package_name": "com.yahoo.www.twa",
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "id": "com.yahoo.www.twa",
+            "platform": "chromeos_play"
+        }
+    ],
+    "short_name": "Yahoo",
+    "start_url": "/?start_url=homescreenicon&requesttype=appshell&apptype=pwa",
+    "theme_color": "#ffffff"
+}

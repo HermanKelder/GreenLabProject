@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon / Video Controls / Volume / mute</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon-/-Video-Controls-/-Volume-/-mute" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="volume-off" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M20,19.17 L20,5 L18,5 L18,17.17 L16,15.17 L16,8 L14,8 L14,13.17 L12,11.17 L12,4 L9.59,4 L7.21,6.38 L1.41,0.59 L0,2 L20,22 L21.41,20.59 L20,19.17 Z M10,9.17 L8.62,7.79 L10,6.41 L10,9.17 Z" id="Shape"></path>
+            <polygon id="Path" points="10 17.59 6.41 14 2 14 2 10 5.17 10 3.17 8 0 8 0 16 5.59 16 9.59 20 12 20 12 16.83 10 14.83"></polygon>
+        </g>
+    </g>
+</svg>

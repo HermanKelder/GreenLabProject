@@ -1,0 +1,4 @@
+.noprint, #w3c_mast, .secondary_nav, .rec_support_data, .filter, .offscreen, p.date > a, p.more, img {display: none;}
+.headline p.date {padding: 0; margin: 0;}
+a:link, a:visited {color: #333; text-decoration: none;}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlYWxwcmludC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsc0dBQXNHLGFBQWEsQ0FBQztBQUNwSCxrQkFBa0IsVUFBVSxFQUFFLFNBQVMsQ0FBQztBQUN4QyxtQkFBbUIsV0FBVyxFQUFFLHFCQUFxQixDQUFDIiwiZmlsZSI6InJlYWxwcmludC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubm9wcmludCwgI3czY19tYXN0LCAuc2Vjb25kYXJ5X25hdiwgLnJlY19zdXBwb3J0X2RhdGEsIC5maWx0ZXIsIC5vZmZzY3JlZW4sIHAuZGF0ZSA+IGEsIHAubW9yZSwgaW1nIHtkaXNwbGF5OiBub25lO31cbi5oZWFkbGluZSBwLmRhdGUge3BhZGRpbmc6IDA7IG1hcmdpbjogMDt9XG5hOmxpbmssIGE6dmlzaXRlZCB7Y29sb3I6ICMzMzM7IHRleHQtZGVjb3JhdGlvbjogbm9uZTt9Il19 */

@@ -1,0 +1,10 @@
+User-Agent: *
+
+Disallow:/*.js
+Disallow:/*.css
+Disallow:/*.php*
+Disallow:/head/
+Disallow:/index2.shtml
+Disallow:/ipad/
+Disallow:/*wm=*
+Disallow:/?*

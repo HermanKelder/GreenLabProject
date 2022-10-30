@@ -1,0 +1,36 @@
+ /* Hide the credit card / paypal toggle */
+
+#gform_page_3_3{
+  padding-bottom: 40px;
+}
+
+#field_3_14 {
+  display: none;
+}
+
+#field_3_26 {
+  position: relative;
+}
+
+@media only screen and (min-width : 44.375em) {
+  /* Styles */
+  .paypal-toggle {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (min-width : 75em) {
+  /* Styles */
+  .paypal-toggle {
+    padding-left: 175px;
+  }
+}
+
+.paypal-toggle {
+  cursor: pointer;
+  cursor: hand;
+  font-size: .9em;
+  color: #999999;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNjLWRvbmF0ZS5jc3MlM0Z2ZXI9MjAxNzEwMTEuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJDQUFDLHlDQUF5Qzs7QUFFMUM7RUFDRSxvQkFBb0I7QUFDdEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxXQUFXO0VBQ1g7SUFDRSxrQkFBa0I7RUFDcEI7QUFDRjs7QUFFQTtFQUNFLFdBQVc7RUFDWDtJQUNFLG1CQUFtQjtFQUNyQjtBQUNGOztBQUVBO0VBQ0UsZUFBZTtFQUNmLFlBQVk7RUFDWixlQUFlO0VBQ2YsY0FBYztBQUNoQiIsImZpbGUiOiJjYy1kb25hdGUuY3NzP3Zlcj0yMDE3MTAxMS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgLyogSGlkZSB0aGUgY3JlZGl0IGNhcmQgLyBwYXlwYWwgdG9nZ2xlICovXG5cbiNnZm9ybV9wYWdlXzNfM3tcbiAgcGFkZGluZy1ib3R0b206IDQwcHg7XG59XG5cbiNmaWVsZF8zXzE0IHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2ZpZWxkXzNfMjYge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDQ0LjM3NWVtKSB7XG4gIC8qIFN0eWxlcyAqL1xuICAucGF5cGFsLXRvZ2dsZSB7XG4gICAgcGFkZGluZy1sZWZ0OiA1MHB4O1xuICB9XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDc1ZW0pIHtcbiAgLyogU3R5bGVzICovXG4gIC5wYXlwYWwtdG9nZ2xlIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDE3NXB4O1xuICB9XG59XG5cbi5wYXlwYWwtdG9nZ2xlIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjdXJzb3I6IGhhbmQ7XG4gIGZvbnQtc2l6ZTogLjllbTtcbiAgY29sb3I6ICM5OTk5OTk7XG59XG4iXX0= */

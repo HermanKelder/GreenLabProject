@@ -1,0 +1,670 @@
+/** @format */
+
+( function( $ ) {
+	/**
+	 * H4 utilities.
+	 */
+	window.h4 = window.h4 || {};
+
+	/**
+	 * Higher-order debounce (like Lodash).
+	 *
+	 * @since 2018-12-15
+	 *
+	 * @param  {function} func  Function to call.
+	 * @param  {number}   delay Delay in milliseconds.
+	 *
+	 * @return {function}       Function wrapped in debouncer.
+	 */
+	h4.debounce = function( func, delay ) {
+		var timeout;
+
+		return function() {
+			var _this = this;
+			var args = arguments;
+
+			clearTimeout( timeout );
+			timeout = setTimeout( function() {
+				func.apply( _this, args );
+			}, delay );
+		};
+	};
+
+	/**
+	 * Adjusts the height of a set of elements.
+	 *
+	 * @since 2019-01-24
+	 *
+	 * @param  {string|jQuery|HTMLElement|HTMLElement[]|object} elements jQuery selector.
+	 * @param  {number} breakpoint Optional mobile breakpoint at which to adjust height.
+	 */
+	h4.adjustHeight = function( elements, breakpoint ) {
+		var $elements = $( elements );
+
+		if ( ! $elements.length ) {
+			return; // Not applicable.
+		}
+
+		breakpoint =
+			breakpoint ||
+			$elements
+				.first()
+				.closest( '[data-adjust-height-breakpoint]' )
+				.attr( 'data-adjust-height-breakpoint' ) ||
+			660; // Default breakpoint.
+
+		if ( window.innerWidth > breakpoint ) {
+			var highestHeight = 0;
+
+			$elements.each( function() {
+				var currentHeight;
+				var $this = $( this );
+
+				$this.css( { 'min-height': 0 } );
+				currentHeight = $this.outerHeight( true );
+
+				if ( currentHeight > highestHeight ) {
+					highestHeight = currentHeight;
+				}
+			} );
+
+			$elements.each( function() {
+				$( this ).css( { 'min-height': highestHeight + 'px' } );
+			} );
+		} else {
+			$elements.each( function() {
+				$( this ).css( { 'min-height': 0 } );
+			} );
+		}
+	};
+
+	/**
+	 * Parses a URL.
+	 *
+	 * @since 2019-05-10
+	 *
+	 * @param  {string} url  Optional URL. Defaults to `document.URL`.
+	 * @param  {string} base Optional base URL. Defaults to `''`.
+	 *
+	 * @return {URL|null}    URL object, else `null`.
+	 */
+	h4.parseURL = function( url, base ) {
+		if ( 'function' !== typeof window.URL ) {
+			return null; // Not possible.
+		}
+		try {
+			url = url ? url.replace( /^\/\//, location.protocol + '//' ) : '';
+			return new URL( url || document.URL, base );
+		} catch ( error ) {
+			return null; // Not possible.
+		}
+	};
+
+	/**
+	 * Gets a query string variable.
+	 *
+	 * @since 2019-04-18
+	 *
+	 * @param  {string} name Variable name.
+	 * @param  {string} url  Optional. Defaults to `document.URL`.
+	 *
+	 * @return {mixed}       Value, else `null`.
+	 */
+	h4.getQueryVar = function( name, url ) {
+		var queryVars = h4.getQueryVars( url );
+		return 'undefined' === typeof queryVars[ name ] ? null : queryVars[ name ] || '';
+	};
+
+	/**
+	 * Gets a query string variable.
+	 *
+	 * @since 2019-04-18
+	 *
+	 * @param  {string} name  Variable name.
+	 * @param  {string} url   Optional. Defaults to `document.URL`.
+	 * @param  {array}  names Optional. If given, only return these query vars.
+	 *
+	 * @return {mixed}        Value, else `null`.
+	 */
+	h4.getQueryVars = function( url, names ) {
+		url = url || document.URL;
+		names = names || [];
+
+		var searchParams = {};
+		var tkAmpSearchParams = {};
+
+		if ( ! ( url = h4.parseURL( url ) ) ) {
+			return {}; // Not possible.
+		}
+		if ( ! url.searchParams ) {
+			return {};
+		}
+
+		if ( url.searchParams.has( 'tk_amp' ) ) {
+			var tkAmp = url.searchParams.get( 'tk_amp' ) || '';
+			tkAmpSearchParams = h4.parseAmpEncodedSearchParams( tkAmp );
+		}
+
+		url.searchParams.forEach( function( value, name ) {
+			searchParams[ name ] = value;
+		} );
+		searchParams = $.extend( {}, tkAmpSearchParams, searchParams );
+
+		if ( names.length ) {
+			for ( var _name in searchParams ) {
+				if ( -1 === names.indexOf( _name ) ) {
+					delete searchParams[ _name ];
+				}
+			}
+		}
+
+		return searchParams;
+	};
+
+	/**
+	 * Adds a variable to a URL.
+	 *
+	 * @since 2019-05-10
+	 *
+	 * @param  {string}  name            Variable name.
+	 * @param  {string}  value           Variable value.
+	 * @param  {string}  url             Optional. Defaults to `document.URL`.
+	 * @param  {boolean} replaceExisting Optional. Defaults to `true`.
+	 *
+	 * @return {string}                  New URL.
+	 */
+	h4.addQueryVar = function( name, value, url, replaceExisting ) {
+		url = url || document.URL;
+		var originalURL = url;
+
+		if ( ! ( url = h4.parseURL( url ) ) ) {
+			return originalURL; // Not possible.
+		}
+		if ( ! url.searchParams ) {
+			return originalURL;
+		}
+		replaceExisting = undefined === replaceExisting ? true : replaceExisting;
+
+		if ( replaceExisting || ! url.searchParams.has( name ) ) {
+			url.searchParams.set( name, value );
+		}
+
+		return url.toString();
+	};
+
+	/**
+	 * Parses AMP-encoded query parameters.
+	 *
+	 * @since 2019-04-18
+	 *
+	 * @param  {string} tkAmp AMP-encode query parameters string.
+	 *
+	 * @return {object}       Name: value pairs.
+	 */
+	h4.parseAmpEncodedSearchParams = function( tkAmp ) {
+		tkAmp = tkAmp
+			.split( '*' )
+			.filter( function( v ) {
+				return v.length > 0;
+			} )
+			.slice( 2 );
+
+		if ( ! tkAmp.length || 0 !== tkAmp.length % 2 ) {
+			return {};
+		}
+
+		for ( var searchParams = {}, _i = 0; _i < tkAmp.length; _i += 2 ) {
+			searchParams[ tkAmp[ _i ] ] = h4.urlSafeBase64DecodeString( tkAmp[ _i + 1 ] );
+		}
+
+		return searchParams;
+	};
+
+	/**
+	 * Escapes regex pattern.
+	 *
+	 * @since 2019-05-10
+	 *
+	 * @param  {string} str String to escape.
+	 *
+	 * @return {string}     Escaped string.
+	 */
+	h4.escRegex = function( str ) {
+		return str.replace( /[.*+?^${}()|[\]\\\-]/g, '\\$&' );
+	};
+
+	/**
+	 * Escapes a jQuery selector.
+	 *
+	 * @since 2019-05-10
+	 *
+	 * @param  {string} str String to escape.
+	 *
+	 * @return {string}     Escaped string.
+	 */
+	h4.escJQSelector = function( str ) {
+		return str.replace( /[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, '\\\\$&' );
+	};
+
+	/**
+	 * Escapes HTML markup.
+	 *
+	 * @since 2019-05-10
+	 *
+	 * @param  {string} str String to escape.
+	 *
+	 * @return {string}     Escaped string.
+	 */
+	h4.escHtml = function( str ) {
+		var entityMap = {
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			'"': '&quot;',
+			"'": '&#39;',
+		};
+		return str.replace( /[&<>"']/g, function( char ) {
+			return entityMap[ char ];
+		} );
+	};
+
+	/**
+	 * Decodes a URL-safe, base64-encoded string.
+	 *
+	 * @since 2019-04-18
+	 *
+	 * @param  {string} str URL-safe, base64-encoded string.
+	 *
+	 * @return {string}     Decoded string.
+	 */
+	h4.urlSafeBase64DecodeString = function( str ) {
+		var decodeMap = {
+			'-': '+',
+			_: '/',
+			'.': '=',
+		};
+		return atob(
+			str.replace( /[\-_.]/g, function( c ) {
+				return decodeMap[ c ];
+			} )
+		);
+	};
+} )( jQuery );
+;
+!function(){"use strict";var t={387:function(t,e){const n=t=>{o(document,"DOMContentLoaded",t)};function o(t,e,n){let o=!1;const r=()=>{o||(n(document),o=!0)};if("complete"===document.readyState)return setTimeout(r,0);t.addEventListener(e,r)}n.load=t=>{o(window,"load",t)},e.Z=n}},e={};function n(o){var r=e[o];if(void 0!==r)return r.exports;var i=e[o]={exports:{}};return t[o](i,i.exports,n),i.exports}n.d=function(t,e){for(var o in e)n.o(e,o)&&!n.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:e[o]})},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},function(){var t={};n.r(t),n.d(t,{linear:function(){return m},quadraticOut:function(){return f},quinticOut:function(){return h}});var e=(t,e,n)=>{var o;o=t,"[object String]"===Object.prototype.toString.call(o)&&(n=e,e=t,t=window);const r=n?new CustomEvent(e,{detail:n}):new Event(e);t.dispatchEvent(r)},o=n(387);(0,o.Z)((()=>{!function(t){const n=function(){const t=document.createElement("div");return t.className="x-hidden",t.style.font="-apple-system-body",document.body.appendChild(t)}();requestAnimationFrame((()=>{const t=window.getComputedStyle(n),o=t.getPropertyValue("font-family"),r=parseInt(t.getPropertyValue("font-size"),10),i="UICTFontTextStyleBody"===o&&r>17?()=>{return t="js-dynamic-type-on",document.documentElement.classList.add(t),void e("lp:detect:dynamic-type");var t}:()=>{};requestAnimationFrame((()=>{n.remove(),requestAnimationFrame(i)}))}))}()}));var r=(t,e,n)=>{if(n=Boolean(n),t.setAttribute(`aria-${e}`,String(n)),"hidden"===e&&n){const e=document.activeElement;e!==document.body&&t.contains(e)&&e.blur()}},i=t=>"function"==typeof t;function a(t){return(()=>{}).toString.call(t)}var s=t=>c(t);function c(t){const e={};return Object.keys(t).forEach((n=>{const o=t[n];if(!(t=>{if(!t)return!1;const e=Object.getPrototypeOf(Object(t));if(null===e)return!0;const n={}.hasOwnProperty.call(e,"constructor")&&e.constructor;return i(n)&&a(n)===a(Object)})(o))return void(e[n]=o);const r=c(o);Object.keys(r).forEach((t=>{e[n+"."+t]=r[t]}))})),e}var d=(t,e)=>Array.from(t).reduce(((t,n)=>{const o=n.getAttribute(`data-${e}`);return o&&(t[o]=n),t}),{}),u=(t,e)=>{const n=!i(e);return Object.keys(t).reduce(((o,r)=>({...o,[r]:n?e:e(t[r],r)})),{})},l=t=>!isNaN(t)&&"number"==typeof t,p=(t,e,n,o,r)=>{const i=[e,n,o].map((function(t){return t?`${t}px`:0}));let a=`translate3d(${i.join(", ")})`;return l(r)&&(a+=` scale(${r})`),t.style.transform=a};function m(t){return t}function f(t){return t*(2-t)}function h(t){return--t*t*t*t*t+1}const v=()=>{},y=()=>performance.now();class g{constructor(e){this.running=!1,this._valuesFrom={...e.from},this._valuesTo={...e.to},this._duration=e.duration,this._ease=t[e.ease]||m}start(t){return this._onUpdateCallback=t.update,this._onEndCallback=t.end,i(this._onUpdateCallback)||(this._onUpdateCallback=v),i(this._onEndCallback)||(this._onEndCallback=v),this._startAnimation(),this}stop(){return this.running?(this._interrupted=!0,this._endAnimation(),this):this}_startAnimation(){this.running=!0,this._interrupted=!1,this._start=y(),requestAnimationFrame(this._runAnimation.bind(this))}_runAnimation(){this.running&&(this._nextFrame(),requestAnimationFrame(this._runAnimation.bind(this)))}_updateAnimation(){const t=this._getInterpolatedValues();this._onUpdateCallback(t,this._progress)}_endAnimation(){this.running=!1,this._interrupted||this._onUpdateCallback({...this._valuesTo},1),this._onEndCallback()}_nextFrame(){this._progress=(y()-this._start)/this._duration,this._progress<1?this._updateAnimation():this._endAnimation()}_getInterpolatedValues(){const t={};return Object.keys(this._valuesFrom).forEach((e=>{let n=this._valuesFrom[e],o=this._valuesTo[e];l(n)||(n=0),l(o)||(o=0),t[e]=this._ease(this._progress)*(o-n)+n}).bind(this)),t}}(0,o.Z)((()=>{const t=document.querySelector(".x-dropdown");if(!t)return;const n=t.querySelector(".x-dropdown-bottom"),o=n.querySelector(".x-dropdown-bottom-fill"),i=d(t.querySelectorAll(".x-dropdown-content"),"dropdown-name"),a=Object.keys(i),c=u(i,(t=>t.querySelectorAll("[role=menuitem]"))),l=d(document.querySelectorAll("[data-dropdown-trigger]"),"dropdown-trigger");let m,f,h,v=0,y=0,w={},E={};function b(){v=t.offsetWidth,w=u(i,(t=>t.offsetHeight)),y=Object.values(w).reduce(((t,e)=>Math.max(t,e)),0),E=u(l,(t=>Math.round((t=>{const e=t.getBoundingClientRect(),n=t.ownerDocument.defaultView;return{top:e.top+n.pageYOffset,left:e.left+n.pageXOffset}})(t).left+(t.offsetWidth-v)/2)));const e=y+"px";n.style.height=e,o.style.height=e}let _,x={};const L=u(i,0),O=new IntersectionObserver((t=>{t.forEach((t=>{let{intersectionRatio:n}=t;n<=0&&e("lp:dropdown:_leave")}))}));function k(e,n){!function(e,n){(n||e!==_)&&(t.style.opacity=e,_=e)}(e["dropdown.opacity"],n),function(t,e){a.forEach((n=>{const o=t["contents.opacity."+n];(e||o!==L[n])&&(i[n].style.opacity=o,L[n]=o)}))}(e,n),function(e,n){const o=e.x||0,r=e.y||0,i=e.scale,a=x;(n||a.x!==o||a.y!==r||a.scale!==i)&&(p(t,o,r,0,i),x={x:o,y:r,scale:i})}({x:e["dropdown.transform.x"],y:e["dropdown.transform.y"],scale:e["dropdown.transform.scale"]},n),function(t,e){t=Math.min(t,y),(e||t!==h)&&(p(o,0,t-y),h=t)}(e["dropdown.height"],n)}function S(t,n){if(m===t)return;f&&f.stop();const o=!(m||f&&f.running),c=!t,d={dropdown:o?{height:w[t],opacity:_,transform:{x:E[t],y:-6,scale:.85}}:{height:h,opacity:_,transform:x},contents:{opacity:o?u(L,0):L}},l={dropdown:c?{height:h,opacity:0,transform:{x:x.x,y:-6,scale:.85}}:{height:w[t],opacity:1,transform:{x:E[t],y:0,scale:1}},contents:{opacity:c?L:u(L,((e,n)=>t===n?1:0))}},p={from:s(d),to:s(l),duration:c?150:450,ease:c?"quadraticOut":"quinticOut"};!function(t){m=t,O.disconnect(),t&&O.observe(i[t]),a.forEach((e=>{r(i[e],"hidden",e!==t)})),t?e("lp:dropdown:show",{name:t}):e("lp:dropdown:hide")}(t),n?f=new g(p).start({update:k,complete(){f=!1}}):k(p.to)}function A(){S(!1),b()}function q(t){return a.includes(t)}function j(t){if(!q(m))return;const e=c[m],n=e.length,o=e[(t.detail.index+n)%n];o&&o.focus()}A(),addEventListener("resize",A),addEventListener("load",(function(){b()})),addEventListener("lp:detect:dynamic-type",A),addEventListener("lp:dropdown:_leave",(()=>S(!1))),addEventListener("lp:trigger:select",(t=>{const{name:e}=t.detail;S(!!q(e)&&e,!0)})),addEventListener("lp:trigger:arrow-down",j),addEventListener("lp:trigger:arrow-up",j),a.forEach((t=>{const n=i[t];["mouseenter","mouseleave"].forEach((o=>{n.addEventListener(o,(()=>{e(`lp:dropdown:${o}`,{name:t})}))}))}))})),(0,o.Z)((()=>{const t=document.querySelector(".x-menu");if(!t)return;const n=t.querySelector(".x-menu-content"),o=t.querySelector(".x-menu-button"),i=n.querySelectorAll("[role=menuitem]"),a=i.length;let s=!1,c=!1;const d=new IntersectionObserver((t=>{t.forEach((t=>{let{intersectionRatio:n}=t;n<=0&&e("lp:menu:_leave")}))}));function u(o){s&&o!==c&&(c=o,r(t,"hidden",!o),t.classList.toggle("x-menu--open",o),o?(d.observe(n),e("lp:menu:show")):(d.disconnect(),e("lp:menu:hide")))}function l(t){if(!c)return;const e=(t.detail.index+a)%a,n=i[e];n&&n.focus()}function p(t){s&&t.stopPropagation()}setTimeout((()=>{s||(t.classList.add("x-menu--active"),s=!0)}),0),addEventListener("lp:trigger:select",(t=>{u("menu"===t.detail.name)})),addEventListener("lp:menu:_leave",(()=>u(!1))),addEventListener("lp:trigger:arrow-down",l),addEventListener("lp:trigger:arrow-up",l),o.addEventListener("click",(()=>{s&&(o.blur(),u(!1))})),n.addEventListener("click",p),n.addEventListener("touchstart",p)})),(0,o.Z)((()=>{const t=document.querySelector(".x-nav-link--menu"),n={...d(document.querySelectorAll("[data-dropdown-trigger]"),"dropdown-trigger"),...t&&{menu:t}},o=Object.keys(n);if(0===o.length)return;let i,a,s,c;function u(t,n){e(`lp:trigger:${t}`,{...n,name:i})}function p(t){const e=n[i],o=Boolean(e&&e===document.activeElement);switch(t.which){case 38:case 37:t.preventDefault(),u("arrow-up",{index:(c=l(c)?c-1:-1,c)});break;case 40:case 39:t.preventDefault(),u("arrow-down",{index:(c=l(c)?c+1:0,c)});break;case 27:case 9:o||(t.preventDefault(),e.focus()),m(0,!1)}}function m(t,e){clearTimeout(a),a=setTimeout((()=>{!function(t){i!==t&&(i=t,c=null,o.forEach((e=>{r(n[e],"expanded",e===t)})),u("select"))}(e),e?s||(s=!0,document.addEventListener("keydown",p)):(s=!1,document.removeEventListener("keydown",p))}),t)}o.forEach((t=>{const e=n[t],o=e=>{e.preventDefault(),e.stopPropagation(),e.target.closest("button").blur(),m(0,t)},r=()=>{m(0,t)};e.addEventListener("click",o),e.addEventListener("touchstart",o),"menu"!==t&&(e.addEventListener("focus",r),e.addEventListener("mouseenter",(()=>{e.removeEventListener("focus",r),document.activeElement.blur(),m(i?0:150,t)})),e.addEventListener("mouseleave",(()=>{e.addEventListener("focus",r),m(50,!1)})))})),addEventListener("lp:dropdown:mouseenter",(t=>{m(0,t.detail.name)})),addEventListener("lp:dropdown:mouseleave",(()=>{m(350,!1)})),addEventListener("lp:dropdown:hide",(()=>{m(0,!1)})),addEventListener("lp:menu:hide",(()=>{m(0,!1)})),document.addEventListener("click",(()=>{m(50,!1)}))}))}()}();;
+/** @format */
+
+( function( $ ) {
+	'use strict';
+
+	$( document ).ready( function() {
+        if ( ! $( '.lpc-plans-interval-type-toggle .lpc-toggle-option' ).length ) {
+            return;
+        }
+		$( '.lpc-plans-interval-type-toggle .lpc-toggle-option' ).on( 'click', function( e ) {
+			e.preventDefault();
+			const $selectedOption = $(this);
+			$selectedOption.parent().children().removeAttr( 'selected' );
+			$selectedOption.attr( 'selected', true );
+			var intervalType = $selectedOption.attr( 'option' );
+			$( '.lpc-plans-table.plans-table' ).attr( 'class', 'lpc-plans-table plans-table ' + ( intervalType == 'annual' ? 'lpc-plans-table-interval-type-month-hide' : 'lpc-plans-table-interval-type-annual-hide' ) );
+			if ( window && window._tkq ) {
+				window._tkq.push( [ 'recordEvent', 'wpcom_landing_pages_interval_type_toggle', {
+					'interval_type': intervalType
+				}] )
+			}
+		} )
+	} );
+} )( window.jQuery );
+;
+( function( $ ) {
+	"use strict";
+
+	if ( window.homepage && ! homepage.overriden_prices ) {
+		return;
+	}
+
+	const noop = () => {};
+	const store = window.localStorage || { getItem: noop, setItem: noop };
+	const storageKeyMessage = 'marketing_messages';
+	const storageKeyDismissed = 'marketing_messages_dismissed';
+	const MINUTES_IN_MS = 60 * 1000;
+
+	function getCached() {
+		return JSON.parse( store.getItem( storageKeyMessage ) || '{ "valid_until": 0 }' );
+	}
+
+	function getDismissed() {
+		return JSON.parse( store.getItem( storageKeyDismissed ) || '[]' );
+	}
+
+	function removeDismissedMessages( messages ) {
+		const dismissed = getDismissed();
+		return messages.filter( ( msg ) => ! dismissed.includes( msg.id ) );
+	}
+
+	async function getMessages() {
+		const cached = getCached();
+		const locale = document.documentElement.lang || 'en';
+
+		if ( cached.valid_until > Date.now() && cached.messages && locale === cached.locale ) {
+			return cached.messages;
+		}
+
+		try {
+			const res = await fetch(
+				'https://public-api.wordpress.com/rest/v1/marketing/messages?locale=' + locale,
+				{
+					mode: 'cors',
+					credentials: 'include',
+					cache: 'no-cache',
+				}
+			);
+			const data = await res.json();
+
+			const validUntil = Date.parse( data.valid_until );
+				store.setItem(
+					storageKeyMessage,
+					JSON.stringify( {
+						valid_until: validUntil,
+						locale: locale,
+						messages: removeDismissedMessages( data.messages ),
+					} )
+				);
+
+				return data.messages;
+		} catch (e) {
+			// If the request fails, do not try again for 30 minutes.
+			store.setItem(
+				storageKeyMessage,
+				JSON.stringify( {
+					valid_until: Date.now() + 30 * MINUTES_IN_MS,
+					locale: locale,
+					messages: [],
+				} )
+			);
+		}
+
+		return [];
+	}
+
+	function dismiss( id ) {
+		const cached = getCached();
+		const dismissed = getDismissed();
+
+		store.setItem(
+			storageKeyDismissed,
+			JSON.stringify( [ ...new Set( dismissed.concat( id ) ) ] )
+		);
+
+		store.setItem(
+			storageKeyMessage,
+			JSON.stringify( {
+				...cached,
+				messages: cached.messages.filter( msg => msg.id !== id ),
+			} )
+		);
+	}
+
+	function render( messages, $tpl, $container ) {
+		$( document.body ).toggleClass( 'has-marketing-message', !! messages.length );
+
+		$container.empty();
+
+		messages.forEach( ( msg ) => {
+			const $msg = $tpl.clone();
+
+			$msg.find( 'p' ).text( msg.text );
+			$msg.find( 'button' ).on( 'click', () => {
+				dismiss( msg.id );
+				render( getCached().messages, $tpl, $container );
+			} );
+
+			$msg.appendTo( $container );
+		} );
+	}
+
+	const promisedMessages = getMessages();
+
+	$( function() {
+		const $container = $( '#lpc-international-discounts-banner' );
+		const $tpl = $( $container.find('template').html() ).remove();
+		
+		promisedMessages.then( msgs => {
+			render( msgs, $tpl, $container );
+		} );
+	} );
+} )( window.jQuery );;
+/*
+ * Initialize the language picker control.
+ */
+
+( function ( document ) {
+	'use strict';
+
+	document.addEventListener( 'DOMContentLoaded', () => {
+		Array.from(
+			document.querySelectorAll( '.lp-language-picker__content' )
+		).forEach( ( element ) => {
+			element.addEventListener( 'change', handleLanguageChange );
+		} );
+	} );
+
+	function handleLanguageChange( event ) {
+		const target = event.target;
+		const localeHref = target.value;
+		const locale = target.options[ target.selectedIndex ].getAttribute( 'lang' );
+
+		// Find a corresponding language switching link and trigger a click
+		// event on it so that our analytics suite could intercept it
+		triggerLinkClick(
+			document.querySelector(
+				`.lp-language-picker__link[href="${ localeHref }"]`
+			)
+		);
+
+		createLocaleCookie( locale );
+	}
+
+	function createLocaleCookie( locale ) {
+		var cookieDomain = '.wordpress.com';
+		var cookieName   = 'wpcom_locale';
+
+		var date = new Date();
+		date.setTime( date.getTime() + ( 5 * 365 * 24 * 60 * 60 * 1000 ) );
+
+		var expires = " expires=" + date.toGMTString();
+		document.cookie = cookieName + '=' + locale + ';' + expires +'; path=/; domain=' + cookieDomain;
+	}
+
+	function triggerLinkClick( element ) {
+		if ( ! element ) {
+			return;
+		}
+		const href = element.getAttribute( 'href' ) + document.location.search;
+		element.setAttribute( 'href', href );
+
+		element.click();
+	}
+} )( document );
+;
+/*
+ * Removes the California Consumer Privacy Act link from the footer for all
+ * visitors outside of California.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    const API_GEO_ENDPOINT = 'https://public-api.wordpress.com/geo/';
+	// The selector targeting all CCPA links in the footer
+	const CCPA_LINK_SELECTOR = '.lpc-footer-nav [data-is-ccpa]';
+
+	function verifyCCPA() {
+		return fetch( API_GEO_ENDPOINT )
+			.then( ( res ) => res.json() )
+			.then( ( res ) => res && pertainsToCCPA( res ) );
+	}
+
+	function pertainsToCCPA( data ) {
+		return Boolean( data && /california/i.test( data.region ) );
+	}
+
+	function handleCCPALink( isCCPA ) {
+		// The CCPA link is included in the markup by default, so there is
+		// no action required when `isCCPA` is truthy
+		if ( isCCPA ) {
+			return;
+		}
+
+		document
+			.querySelectorAll( CCPA_LINK_SELECTOR )
+			.forEach( ( element ) => {
+				const parent = element.parentNode;
+				const parentTagName = parent.tagName.toLowerCase();
+
+				// If the link in a part of a list, remove the entire parent
+				// item. Otherwise, remove only the link element.
+				( parentTagName === 'li' ? parent : element ).remove();
+			} );
+	}
+
+	verifyCCPA().then( handleCCPALink );
+} );
+;
+!function(){"use strict";if("undefined"!=typeof window){var t=window.navigator.userAgent.match(/Edge\/(\d{2})\./),e=!!t&&parseInt(t[1],10)>=16;if("objectFit"in document.documentElement.style!=!1&&!e)return void(window.objectFitPolyfill=function(){return!1});var i=function(t){var e=window.getComputedStyle(t,null),i=e.getPropertyValue("position"),n=e.getPropertyValue("overflow"),o=e.getPropertyValue("display");i&&"static"!==i||(t.style.position="relative"),"hidden"!==n&&(t.style.overflow="hidden"),o&&"inline"!==o||(t.style.display="block"),0===t.clientHeight&&(t.style.height="100%"),-1===t.className.indexOf("object-fit-polyfill")&&(t.className=t.className+" object-fit-polyfill")},n=function(t){var e=window.getComputedStyle(t,null),i={"max-width":"none","max-height":"none","min-width":"0px","min-height":"0px",top:"auto",right:"auto",bottom:"auto",left:"auto","margin-top":"0px","margin-right":"0px","margin-bottom":"0px","margin-left":"0px"};for(var n in i){e.getPropertyValue(n)!==i[n]&&(t.style[n]=i[n])}},o=function(t,e,i){var n,o,l,a,d;if(i=i.split(" "),i.length<2&&(i[1]=i[0]),"x"===t)n=i[0],o=i[1],l="left",a="right",d=e.clientWidth;else{if("y"!==t)return;n=i[1],o=i[0],l="top",a="bottom",d=e.clientHeight}return n===l||o===l?void(e.style[l]="0"):n===a||o===a?void(e.style[a]="0"):"center"===n||"50%"===n?(e.style[l]="50%",void(e.style["margin-"+l]=d/-2+"px")):n.indexOf("%")>=0?(n=parseInt(n),void(n<50?(e.style[l]=n+"%",e.style["margin-"+l]=d*(n/-100)+"px"):(n=100-n,e.style[a]=n+"%",e.style["margin-"+a]=d*(n/-100)+"px"))):void(e.style[l]=n)},l=function(t){var e=t.dataset?t.dataset.objectFit:t.getAttribute("data-object-fit"),l=t.dataset?t.dataset.objectPosition:t.getAttribute("data-object-position");e=e||"cover",l=l||"50% 50%";var a=t.parentNode;i(a),n(t),t.style.position="absolute",t.style.height="100%",t.style.width="auto","scale-down"===e&&(t.style.height="auto",t.clientWidth<a.clientWidth&&t.clientHeight<a.clientHeight?(o("x",t,l),o("y",t,l)):(e="contain",t.style.height="100%")),"none"===e?(t.style.width="auto",t.style.height="auto",o("x",t,l),o("y",t,l)):"cover"===e&&t.clientWidth>a.clientWidth||"contain"===e&&t.clientWidth<a.clientWidth?(t.style.top="0",t.style.marginTop="0",o("x",t,l)):"scale-down"!==e&&(t.style.width="100%",t.style.height="auto",t.style.left="0",t.style.marginLeft="0",o("y",t,l))},a=function(t){if(void 0===t)t=document.querySelectorAll("[data-object-fit]");else if(t&&t.nodeName)t=[t];else{if("object"!=typeof t||!t.length||!t[0].nodeName)return!1;t=t}for(var i=0;i<t.length;i++)if(t[i].nodeName){var n=t[i].nodeName.toLowerCase();"img"!==n||e?"video"===n&&(t[i].readyState>0?l(t[i]):t[i].addEventListener("loadedmetadata",function(){l(this)})):t[i].complete?l(t[i]):t[i].addEventListener("load",function(){l(this)})}return!0};document.addEventListener("DOMContentLoaded",function(){a()}),window.addEventListener("resize",function(){a()}),window.objectFitPolyfill=a}}();
+;
+/** @format */
+
+( function( $ ) {
+	'use strict';
+
+	$( document ).ready( function() {
+		$( '.block-hero-images img' )
+			.load()
+			.fadeIn( 1500 );
+	} );
+
+	$( window ).load( function() {
+		var $window = $( window );
+		var currentSlide = 0;
+		var $slides = $( '.slideshow-slide' );
+
+		var setCurrentSlide = function() {
+			requestAnimationFrame( doSetCurrentSlide );
+		};
+		var doSetCurrentSlide = function() {
+			$( $slides[ currentSlide ] ).removeClass( 'slideshow-current' );
+
+			currentSlide = ( currentSlide + 1 ) % $slides.length;
+			$( $slides[ currentSlide ] ).addClass( 'slideshow-current' );
+
+			setTimeout( setCurrentSlide, 3500 );
+		};
+		setTimeout( setCurrentSlide, 3500 );
+
+		$( '.lpc-video.lazy video' ).each( function( i, video ) {
+			var $video = $( video );
+
+			// Skip any viewport-specific logic when no sources are provided
+			if ( ! $video.find( '[data-mobile-src], [data-desktop-src]' ).length ) {
+				return video.play();
+			}
+
+			if ( $window.width() <= 480 ) {
+				$video.find( 'source[src], source[data-desktop-src]' ).remove();
+				$video.find( 'source[data-mobile-src]' ).each( function( i, source ) {
+					var $source = $( source );
+					$source.attr( 'src', $source.data( 'mobileSrc' ) );
+				} );
+			} else {
+				$video.find( 'source[src], source[data-mobile-src]' ).remove();
+				$video.find( 'source[data-desktop-src]' ).each( function( i, source ) {
+					var $source = $( source );
+					$source.attr( 'src', $source.data( 'desktopSrc' ) );
+				} );
+			}
+			video.load();
+			video.play();
+		} );
+
+		$( '.security-image-wrapper .lpc-picture-fill picture' ).each( function( i, picture ) {
+			var $picture = $( picture );
+
+			$picture.find( '> *' ).each( function( i, element ) {
+				var $element = $( element );
+				var src = $element.attr( 'src' );
+				var srcset = $element.attr( 'srcset' );
+
+				if ( src ) {
+					$element.attr( 'src', src.replace( /\.jpg($|[?#])/gi, '.gif$1' ) );
+				}
+				if ( srcset ) {
+					$element.attr( 'srcset', srcset.replace( /\.jpg($|[\s?#])/gi, '.gif$1' ) );
+				}
+			} );
+			$picture.replaceWith( $picture );
+		} );
+	} );
+} )( window.jQuery );
+;
+/**
+ * A class to log JS errors to Kibana
+ * @class
+ *
+ * @constructor
+ *
+ * @property event the event object
+ * @property feature the feature property on the API endpoint
+ */
+( function() {
+	function LogErrors( event, feature ) {
+		this.event = event || window.event;
+		this.feature = feature || '';
+	}
+
+	/**
+	 * Makes POST request to js-errors public API endpoint
+	 */
+	LogErrors.prototype.logToEndpoint = function() {
+		var xhr = new XMLHttpRequest();
+		var errorData = JSON.stringify( {
+			feature: this.feature,
+			message: 'Error Message: "' + this.event.message + '"'
+				+ '\nLine Number: ' + this.event.lineno
+				+ '\nURL: ' + this.event.target.location.href
+				+ '\nFile: ' + this.event.filename,
+		} );
+		var params = 'error=' + encodeURIComponent( errorData );
+
+		xhr.onreadystatechange = function() {
+			if ( xhr.readyState === 4 && xhr.status === 200 ) {
+				console.log( 'The JavaScript errors have successfully been reported.' );
+			}
+		}
+		xhr.open( 'POST', 'https://public-api.wordpress.com/rest/v1.1/js-error', true );
+		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+		xhr.send( params );
+	};
+
+	/**
+	 * Instantiates LogErrors and fires off call to endpoint,
+	 * removing itself after executed once.
+	 *
+	 * @property event the event object
+	 */
+	var handleInitialError = function( event ) {
+		if ( event.message && 0 === event.message.toLowerCase().indexOf( 'script error' ) && ! event.filename ) {
+			return;
+		}
+
+		var errors = new LogErrors( event, 'h4_js_errors' );
+		errors.logToEndpoint();
+
+		window.removeEventListener( 'error', handleInitialError );
+	};
+
+	/**
+	 * Attach handleInitialError to 'error' event
+	 */
+	window.addEventListener( 'error', handleInitialError );
+} )();
+
+;

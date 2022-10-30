@@ -1,0 +1,1 @@
+'use strict';$(document).ready(function(){$(".modal-trigger").on("keypress",function(a){a=a.charCode||a.keyCode;32!==a&&13!==a||this.click()})});

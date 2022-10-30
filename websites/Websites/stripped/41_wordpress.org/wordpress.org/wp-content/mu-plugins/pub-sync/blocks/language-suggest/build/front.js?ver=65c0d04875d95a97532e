@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector(".wp-block-wporg-language-suggest");if(!e)return;const t=encodeURIComponent(window.location.pathname);fetch(`https://wordpress.org/lang-guess/lang-guess-ajax.php?uri=${t}`).then((e=>{if(!e.ok)throw Error(e.statusText);return e.text()})).then((t=>e.innerHTML=t)).catch((()=>{}))}));

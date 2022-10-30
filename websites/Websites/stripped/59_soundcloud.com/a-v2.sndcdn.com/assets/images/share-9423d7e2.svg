@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>share</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="share" sketch:type="MSLayerGroup">
+            <path d="M12,3 C8.03216553,3 7,4.8 7,7.8 C8.64221191,4.79999995 11.1574707,5.00518801 12,5.00518799 L12,3 Z M12,1 L12,7 L15,4 L12,1 Z" id="Fill-2" fill="rgb(255, 255, 255)" sketch:type="MSShapeGroup"/>
+            <path d="M14,7 L14,11.000385 C14,12.1125667 13.1007504,13 11.9914698,13 L4.0085302,13 C2.90195036,13 2,12.1047419 2,11.000385 L2,4.99961498 C2,3.88743329 2.8992496,3 4.0085302,3 L7.19964749,3 C6.60344356,3.55901688 6.15091777,4.22852852 5.81607607,5 L4,5 L4,11 L12,11 L12,9 L14,7 Z M11,5 L10.9594487,5 C10.9729863,4.9968494 10.9865035,4.99373829 11,4.9906662 L11,5 Z" id="Rectangle-44" fill="rgb(255, 255, 255)" sketch:type="MSShapeGroup"/>
+        </g>
+    </g>
+</svg>

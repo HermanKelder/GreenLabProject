@@ -1,0 +1,33 @@
+/*Override Teams UHF*/
+
+(function() {
+    function init() {
+        if (window.location.pathname === "/content/microsoft/bade/en-us/qa-folder/aditya-test-folder/education11.html") {
+            var firstOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] li.single-link.js-nav-menu[id="c-uhf-nav-cta"]');
+            var secondOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] li.single-link.js-nav-menu.uhf-menu-item:nth-child(5)');
+            var thirdOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] #uhfCatLogo span');
+            var fourthOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] a#c-shellmenu_15');
+            var fifthOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] li.single-link.js-nav-menu[id="c-uhf-nav-cta"] a');
+            var sixthOverride = document.querySelector('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] #c-uhf-nav-cta a.c-uhf-nav-link');
+            var psuedoRules = document.createElement('style');
+
+            firstOverride.style.float = "right";
+            firstOverride.style.marginTop = "10px";
+            thirdOverride.setAttribute("style", "color: #0b556a !important;");
+            fourthOverride.setAttribute("style", "color: #0b556a !important;");
+            secondOverride.setAttribute("style", "color: #0b556a !important; float: right;");
+            fifthOverride.setAttribute("style", "color: #0b556a !important;");
+            sixthOverride.setAttribute('style', 'border: 0 !important; margin-top: 3px; color: #0b556a !important; font-weight: 400;');
+
+            psuedoRules.type = "text/css";
+            psuedoRules.appendChild(document.createTextNode('[data-component-id="cf9a86dceae618e01d6e6399d243873c"] #c-uhf-nav-cta a.c-uhf-nav-link:hover { text-decoration: underline 1px !important; text-underline-offset: 4px !important; }'));
+            document.head.appendChild(psuedoRules);
+        }
+    }
+
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        init();
+    } else {
+        document.addEventListener("DOMContentLoaded", init, false);
+    }
+})();

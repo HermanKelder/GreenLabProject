@@ -1,0 +1,65 @@
+/** @generated -- This file is automatically synced from dig-fonts@2.1.1. DO NOT MODIFY! **/
+
+/**
+  This file should not imported into your CSS or SASS files - the CSS variables will be available on the page for you to use.
+  DO NOT USE THIS FILE OR THE CSS VARIABLE TOKENS WITHOUT FIRST TALKING TO mtole@ OR THE DESIGN SYSTEMS ON-CALL (SEE #design-systems ON SLACK)
+**/
+
+/**
+ * Sharp Grotesk 23 is not a sanctioned DIG font. Usage is solely approved for logged out web. If you find
+ * yourself needing Sharp Grotesk 23 for any other purpose, please consult #design-systems.
+ */
+
+/**
+ * Font: Sharp Grotesk 23 (Cyrillic supported)
+ */
+@font-face {
+    font-family: 'Sharp Grotesk 23';
+    src: url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflX-NIwB.woff2')
+            format('woff2'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflhLOtUe.woff')
+            format('woff'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflZqb0CY.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sharp Grotesk 23';
+    src: url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vfl0CYa6P.woff2')
+            format('woff2'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vflA942ch.woff')
+            format('woff'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vflJyUTTA.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Korean Support - Does not support italics */
+@font-face {
+    font-family: 'Sharp Grotesk 23 KR';
+    src: url('../../fonts/dig-fonts/sharp_grotesk_23/korean/SharpGroteskDBKO-Book23-vfluMID1E.woff2')
+            format('woff2'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/korean/SharpGroteskDBKO-Book23-vfltpPVtF.woff')
+            format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/**
+  * Thai language support
+  */
+@font-face {
+    font-family: 'Sharp Grotesk 23 Thai';
+    src: url('../../fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vflI6JzwN.woff2')
+            format('woff2'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vflR8oDZe.woff')
+            format('woff'),
+        url('../../fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vfl_zl2Gi.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNoYXJwX2dyb3Rlc2tfMjMubWV0YXNlcnZlci12ZmxLQXhZajAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDJGQUEyRjs7QUFFM0Y7OztFQUdFOztBQUVGOzs7RUFHRTs7QUFFRjs7RUFFRTtBQUNGO0lBQ0ksK0JBQStCO0lBQy9COzs7Ozs4QkFLMEI7SUFDMUIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksK0JBQStCO0lBQy9COzs7Ozs4QkFLMEI7SUFDMUIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQSw4Q0FBOEM7QUFDOUM7SUFDSSxrQ0FBa0M7SUFDbEM7OzswQkFHc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTs7R0FFRztBQUNIO0lBQ0ksb0NBQW9DO0lBQ3BDOzs7Ozs4QkFLMEI7SUFDMUIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzaGFycF9ncm90ZXNrXzIzLm1ldGFzZXJ2ZXItdmZsS0F4WWowLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKiBAZ2VuZXJhdGVkIC0tIFRoaXMgZmlsZSBpcyBhdXRvbWF0aWNhbGx5IHN5bmNlZCBmcm9tIGRpZy1mb250c0AyLjEuMS4gRE8gTk9UIE1PRElGWSEgKiovXG5cbi8qKlxuICBUaGlzIGZpbGUgc2hvdWxkIG5vdCBpbXBvcnRlZCBpbnRvIHlvdXIgQ1NTIG9yIFNBU1MgZmlsZXMgLSB0aGUgQ1NTIHZhcmlhYmxlcyB3aWxsIGJlIGF2YWlsYWJsZSBvbiB0aGUgcGFnZSBmb3IgeW91IHRvIHVzZS5cbiAgRE8gTk9UIFVTRSBUSElTIEZJTEUgT1IgVEhFIENTUyBWQVJJQUJMRSBUT0tFTlMgV0lUSE9VVCBGSVJTVCBUQUxLSU5HIFRPIG10b2xlQCBPUiBUSEUgREVTSUdOIFNZU1RFTVMgT04tQ0FMTCAoU0VFICNkZXNpZ24tc3lzdGVtcyBPTiBTTEFDSylcbioqL1xuXG4vKipcbiAqIFNoYXJwIEdyb3Rlc2sgMjMgaXMgbm90IGEgc2FuY3Rpb25lZCBESUcgZm9udC4gVXNhZ2UgaXMgc29sZWx5IGFwcHJvdmVkIGZvciBsb2dnZWQgb3V0IHdlYi4gSWYgeW91IGZpbmRcbiAqIHlvdXJzZWxmIG5lZWRpbmcgU2hhcnAgR3JvdGVzayAyMyBmb3IgYW55IG90aGVyIHB1cnBvc2UsIHBsZWFzZSBjb25zdWx0ICNkZXNpZ24tc3lzdGVtcy5cbiAqL1xuXG4vKipcbiAqIEZvbnQ6IFNoYXJwIEdyb3Rlc2sgMjMgKEN5cmlsbGljIHN1cHBvcnRlZClcbiAqL1xuQGZvbnQtZmFjZSB7XG4gICAgZm9udC1mYW1pbHk6ICdTaGFycCBHcm90ZXNrIDIzJztcbiAgICBzcmM6IHVybCgnLi4vLi4vZm9udHMvZGlnLWZvbnRzL3NoYXJwX2dyb3Rlc2tfMjMvU2hhcnBHcm90ZXNrREJDeXJCb29rMjMtdmZsWC1OSXdCLndvZmYyJylcbiAgICAgICAgICAgIGZvcm1hdCgnd29mZjInKSxcbiAgICAgICAgdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy9TaGFycEdyb3Rlc2tEQkN5ckJvb2syMy12ZmxoTE90VWUud29mZicpXG4gICAgICAgICAgICBmb3JtYXQoJ3dvZmYnKSxcbiAgICAgICAgdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy9TaGFycEdyb3Rlc2tEQkN5ckJvb2syMy12ZmxacWIwQ1kudHRmJylcbiAgICAgICAgICAgIGZvcm1hdCgndHJ1ZXR5cGUnKTtcbiAgICBmb250LXdlaWdodDogNDAwO1xuICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbn1cbkBmb250LWZhY2Uge1xuICAgIGZvbnQtZmFtaWx5OiAnU2hhcnAgR3JvdGVzayAyMyc7XG4gICAgc3JjOiB1cmwoJy4uLy4uL2ZvbnRzL2RpZy1mb250cy9zaGFycF9ncm90ZXNrXzIzL1NoYXJwR3JvdGVza0RCQ3lyQm9va0l0YWxpYzIzLXZmbDBDWWE2UC53b2ZmMicpXG4gICAgICAgICAgICBmb3JtYXQoJ3dvZmYyJyksXG4gICAgICAgIHVybCgnLi4vLi4vZm9udHMvZGlnLWZvbnRzL3NoYXJwX2dyb3Rlc2tfMjMvU2hhcnBHcm90ZXNrREJDeXJCb29rSXRhbGljMjMtdmZsQTk0MmNoLndvZmYnKVxuICAgICAgICAgICAgZm9ybWF0KCd3b2ZmJyksXG4gICAgICAgIHVybCgnLi4vLi4vZm9udHMvZGlnLWZvbnRzL3NoYXJwX2dyb3Rlc2tfMjMvU2hhcnBHcm90ZXNrREJDeXJCb29rSXRhbGljMjMtdmZsSnlVVFRBLnR0ZicpXG4gICAgICAgICAgICBmb3JtYXQoJ3RydWV0eXBlJyk7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBmb250LXN0eWxlOiBpdGFsaWM7XG59XG5cbi8qIEtvcmVhbiBTdXBwb3J0IC0gRG9lcyBub3Qgc3VwcG9ydCBpdGFsaWNzICovXG5AZm9udC1mYWNlIHtcbiAgICBmb250LWZhbWlseTogJ1NoYXJwIEdyb3Rlc2sgMjMgS1InO1xuICAgIHNyYzogdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy9rb3JlYW4vU2hhcnBHcm90ZXNrREJLTy1Cb29rMjMtdmZsdU1JRDFFLndvZmYyJylcbiAgICAgICAgICAgIGZvcm1hdCgnd29mZjInKSxcbiAgICAgICAgdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy9rb3JlYW4vU2hhcnBHcm90ZXNrREJLTy1Cb29rMjMtdmZsdHBQVnRGLndvZmYnKVxuICAgICAgICAgICAgZm9ybWF0KCd3b2ZmJyk7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBmb250LXN0eWxlOiBub3JtYWw7XG59XG5cbi8qKlxuICAqIFRoYWkgbGFuZ3VhZ2Ugc3VwcG9ydFxuICAqL1xuQGZvbnQtZmFjZSB7XG4gICAgZm9udC1mYW1pbHk6ICdTaGFycCBHcm90ZXNrIDIzIFRoYWknO1xuICAgIHNyYzogdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy90aGFpL1NoYXJwR3JvdGVza0RCVGhhaUJvb2stMjMtdmZsSTZKendOLndvZmYyJylcbiAgICAgICAgICAgIGZvcm1hdCgnd29mZjInKSxcbiAgICAgICAgdXJsKCcuLi8uLi9mb250cy9kaWctZm9udHMvc2hhcnBfZ3JvdGVza18yMy90aGFpL1NoYXJwR3JvdGVza0RCVGhhaUJvb2stMjMtdmZsUjhvRFplLndvZmYnKVxuICAgICAgICAgICAgZm9ybWF0KCd3b2ZmJyksXG4gICAgICAgIHVybCgnLi4vLi4vZm9udHMvZGlnLWZvbnRzL3NoYXJwX2dyb3Rlc2tfMjMvdGhhaS9TaGFycEdyb3Rlc2tEQlRoYWlCb29rLTIzLXZmbF96bDJHaS50dGYnKVxuICAgICAgICAgICAgZm9ybWF0KCd0cnVldHlwZScpO1xuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgZm9udC1zdHlsZTogbm9ybWFsO1xufVxuIl19 */

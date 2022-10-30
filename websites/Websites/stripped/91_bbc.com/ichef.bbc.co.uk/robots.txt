@@ -1,0 +1,7 @@
+
+# version: c9e1f704aa6cad30c8a74138e8c3379798bc2766
+
+# ichef.bbci.co.uk
+
+User-agent: Googlebot-Image
+Disallow: /news/*/media/images/80230000/jpg/_80230430_img_2454.jpg

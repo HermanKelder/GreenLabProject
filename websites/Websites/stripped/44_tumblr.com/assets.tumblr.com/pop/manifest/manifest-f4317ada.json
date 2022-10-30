@@ -1,0 +1,20 @@
+{
+  "name": "Tumblr",
+  "short_name": "Tumblr",
+  "background_color": "#36465d",
+  "theme_color": "#36465d",
+  "display": "standalone",
+  "start_url": "/dashboard?installed=true",
+  "icons": [
+    {
+      "type": "image/png",
+      "sizes": "192x192",
+      "src": "https://assets.tumblr.com/pop/manifest/icon_192-a35de8be.png"
+    },
+    {
+      "type": "image/png",
+      "sizes": "512x512",
+      "src": "https://assets.tumblr.com/pop/manifest/icon_512-5fae259e.png"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[locale]\u002Fplatform-rules","\u002F[locale]\u002Fplatform-rules\u002Factions","\u002F[locale]\u002Fplatform-rules\u002Factions\u002Fplain","\u002F[locale]\u002Fplatform-rules\u002Fplain"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

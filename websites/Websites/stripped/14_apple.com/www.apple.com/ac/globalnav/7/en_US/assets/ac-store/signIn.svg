@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+  <title>person.crop.circle_tiny@1x</title>
+  <g>
+    <rect x="0.01" width="21" height="21" fill="none"/>
+    <g>
+      <path d="M10.5,3.5a7,7,0,1,0,7,7A7,7,0,0,0,10.5,3.5Zm4.443,11.018c-.469-.935-2.275-1.75-4.443-1.75s-3.974.815-4.443,1.75a6,6,0,1,1,8.886,0Z" fill="#06c"/>
+      <ellipse cx="10.5" cy="9" rx="2.375" ry="2.5" fill="#06c"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/robotomono/v22/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/robotomono/v22/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_7PqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/varelaround/v19/w8gdH283Tvk__Lua32TysjIvoA.ttf) format('truetype');
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzczIlM0ZmYW1pbHk9Um9ib3RvK01vbm86d2dodEA0MDA7NTAwJmZhbWlseT1WYXJlbGErUm91bmQmZGlzcGxheT1zd2FwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDBCQUEwQjtFQUMxQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixpSEFBaUg7QUFDbkg7QUFDQTtFQUNFLDBCQUEwQjtFQUMxQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixpSEFBaUg7QUFDbkg7QUFDQTtFQUNFLDJCQUEyQjtFQUMzQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixrR0FBa0c7QUFDcEciLCJmaWxlIjoiY3NzMj9mYW1pbHk9Um9ib3RvK01vbm86d2dodEA0MDA7NTAwJmZhbWlseT1WYXJlbGErUm91bmQmZGlzcGxheT1zd2FwLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byBNb25vJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogNDAwO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIHNyYzogdXJsKC4uL2ZvbnRzLmdzdGF0aWMuY29tL3Mvcm9ib3RvbW9uby92MjIvTDB4dURGNHhsVk1GLUJmUjhiWE1JaEpIZzQ1bXdnR0VGbDBfM3ZxUFF3LnR0ZikgZm9ybWF0KCd0cnVldHlwZScpO1xufVxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvIE1vbm8nO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgc3JjOiB1cmwoLi4vZm9udHMuZ3N0YXRpYy5jb20vcy9yb2JvdG9tb25vL3YyMi9MMHh1REY0eGxWTUYtQmZSOGJYTUloSkhnNDVtd2dHRUZsMF83UHFQUXcudHRmKSBmb3JtYXQoJ3RydWV0eXBlJyk7XG59XG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICdWYXJlbGEgUm91bmQnO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgc3JjOiB1cmwoLi4vZm9udHMuZ3N0YXRpYy5jb20vcy92YXJlbGFyb3VuZC92MTkvdzhnZEgyODNUdmtfX0x1YTMyVHlzakl2b0EudHRmKSBmb3JtYXQoJ3RydWV0eXBlJyk7XG59XG4iXX0= */

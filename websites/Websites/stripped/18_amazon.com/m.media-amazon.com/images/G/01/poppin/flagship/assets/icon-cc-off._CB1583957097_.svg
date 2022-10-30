@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon / Video Controls / cc / off</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon-/-Video-Controls-/-cc-/-off" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="video-closed-caption" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M0,0 L0,20 L24,20 L24,0 L0,0 Z M22,18 L2,18 L2,2 L22,2 L22,18 Z" id="Shape"></path>
+            <polygon id="Shape" points="10.6970773 16.1350657 10.6970773 13.6810394 7.54747874 13.6810394 7.04889365 13.177964 7.04889365 6.82203595 7.54747874 6.31896057 10.6970773 6.31896057 10.6970773 3.86493428 6.55030855 3.86493428 4.61677123 5.81588518 4.61677123 14.1841148 6.55030855 16.1350657"></polygon>
+            <polygon id="Shape" points="19.3832288 16.1350657 19.3832288 13.6810394 16.2336302 13.6810394 15.7350451 13.177964 15.7350451 6.82203595 16.2336302 6.31896057 19.3832288 6.31896057 19.3832288 3.86493428 15.23646 3.86493428 13.3029227 5.81588518 13.3029227 14.1841148 15.23646 16.1350657"></polygon>
+        </g>
+    </g>
+</svg>

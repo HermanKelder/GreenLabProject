@@ -1,0 +1,63 @@
+/** @generated -- This file is automatically synced from dig-fonts@2.1.1. DO NOT MODIFY! **/
+
+/**
+  This file should not imported into your CSS or SASS files - the CSS variables will be available on the page for you to use.
+  DO NOT USE THIS FILE OR THE CSS VARIABLE TOKENS WITHOUT FIRST TALKING TO mtole@ OR THE DESIGN SYSTEMS ON-CALL (SEE #design-systems ON SLACK)
+**/
+
+/**
+ * Sharp Grotesk 23 is not a sanctioned DIG font. Usage is solely approved for logged out web. If you find
+ * yourself needing Sharp Grotesk 23 for any other purpose, please consult #design-systems.
+ */
+
+/**
+ * Font: Sharp Grotesk 23 (Cyrillic supported)
+ */
+@font-face {
+    font-family: 'Sharp Grotesk 23';
+    src: url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflX-NIwB.woff2')
+            format('woff2'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflhLOtUe.woff')
+            format('woff'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBook23-vflZqb0CY.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sharp Grotesk 23';
+    src: url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vfl0CYa6P.woff2')
+            format('woff2'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vflA942ch.woff')
+            format('woff'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/SharpGroteskDBCyrBookItalic23-vflJyUTTA.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Korean Support - Does not support italics */
+@font-face {
+    font-family: 'Sharp Grotesk 23 KR';
+    src: url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/korean/SharpGroteskDBKO-Book23-vfluMID1E.woff2')
+            format('woff2'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/korean/SharpGroteskDBKO-Book23-vfltpPVtF.woff')
+            format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/**
+  * Thai language support
+  */
+@font-face {
+    font-family: 'Sharp Grotesk 23 Thai';
+    src: url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vflI6JzwN.woff2')
+            format('woff2'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vflR8oDZe.woff')
+            format('woff'),
+        url('/static/metaserver/static/fonts/dig-fonts/sharp_grotesk_23/thai/SharpGroteskDBThaiBook-23-vfl_zl2Gi.ttf')
+            format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

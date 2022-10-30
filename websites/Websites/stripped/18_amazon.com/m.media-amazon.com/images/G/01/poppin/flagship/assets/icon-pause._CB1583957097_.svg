@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon / Video Controls / pause</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon-/-Video-Controls-/-pause" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M3,0 C3.55228475,-1.01453063e-16 4,0.44771525 4,1 L4,15 C4,15.5522847 3.55228475,16 3,16 L1,16 C0.44771525,16 6.76353751e-17,15.5522847 0,15 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 L3,0 Z M12,0 C12.5522847,-1.01453063e-16 13,0.44771525 13,1 L13,15 C13,15.5522847 12.5522847,16 12,16 L10,16 C9.44771525,16 9,15.5522847 9,15 L9,1 C9,0.44771525 9.44771525,1.01453063e-16 10,0 L12,0 Z" id="pause" fill="#FFFFFF"></path>
+    </g>
+</svg>

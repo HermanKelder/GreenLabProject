@@ -1,0 +1,185 @@
+{
+  "dir": "ltr",
+  "lang": "English",
+  "name": "World Health Organization",
+  "short_name": "WHO",
+  "scope": "/",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#007eb4",
+  "description": "WHO's primary role is to direct international health within the United Nations' system and to lead partners in global health responses.",
+  "orientation": "any",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=org.who.infoapp",
+      "id": "org.who.infoapp"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/us/app/id895463794"
+    }
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/maskable-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-76x76.png",
+      "type": "image/png",
+      "sizes": "76x76",
+      "purpose": "any"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60",
+      "purpose": "any"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/apple-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57",
+      "purpose": "any"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "purpose": "any"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/icons/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "WHO News",
+      "short_name": "News releases",
+      "description": "View news from the World Health Organization",
+      "url": "/news?source=pwa",
+      "icons": [
+        {
+          "src": "/ResourcePackages/WHO/assets/icons/android-icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "WHO Health topics",
+      "short_name": "Health topics",
+      "description": "View the World Health Organization's health topics",
+      "url": "/health-topics/?source=pwa",
+      "icons": [
+        {
+          "src": "/ResourcePackages/WHO/assets/icons/android-icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "WHO Questions and answers",
+      "short_name": "Questions and answers",
+      "description": "Find answers to questions from the World Health Organization",
+      "url": "/health-topics/?source=pwa",
+      "icons": [
+        {
+          "src": "/ResourcePackages/WHO/assets/icons/android-icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "WHO publications",
+      "short_name": "publications",
+      "description": "View the World Health Organization's publications",
+      "url": "/publications/i?source=pwa",
+      "icons": [
+        {
+          "src": "/ResourcePackages/WHO/assets/icons/android-icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "url": "https://www.who.int",
+  "screenshots": [
+    {
+      "src": "/ResourcePackages/WHO/assets/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Homescreen of World Health Organization Website"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/screenshots/publication.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Publication Hub of World Health Organization Website"
+    },
+    {
+      "src": "/ResourcePackages/WHO/assets/screenshots/covid.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Covid-19 page of World Health Organization Website"
+    }
+  ]
+}

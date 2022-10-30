@@ -1,0 +1,1204 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="nl-NL">
+<head><script src="/node_modules/perfume.js/dist/perfume.umd.min.js"></script><script>perfumeResults = []; loadResults = []; function xml_http_post(url, data, callback) { var req = new XMLHttpRequest(); req.open("POST", url, true); req.send(data); } const perfume = new Perfume({ analyticsTracker: (options) => { const { metricName, data, eventProperties, navigatorInformation } = options; perfumeResults.push(options); } }); function load_log() { var load_time = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart; loadResults.push({'load' : load_time}); objectToSend = "{'perfumeResults':"+JSON.stringify(perfumeResults)+JSON.stringify(loadResults)+"}"; xml_http_post("http://192.168.40.1:8080/",objectToSend,null); xml_http_post("http://192.168.40.1:8000",objectToSend,null); }; window.addEventListener? window.addEventListener("load",load_log, true) : window.attachEvent && window.attachEvent("onload", load_log);</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<link href="../www.microsoft.com/favicon.ico%3Fv2" rel="SHORTCUT ICON" type="image/x-icon"/>
+<meta content="index, follow" name="robots"/>
+<meta content="mscom" name="template"/>
+<meta content="web" name="awa-canvasType"/>
+<meta content="false" name="awa-isTented"/>
+<meta content="Category" name="awa-pageType"/>
+<meta content="mscom" name="awa-pgtmp"/>
+<meta content="5c2ff65284a80b29a8f3661a4ce4b728" name="awa-pageId"/>
+<meta content="nl-nl" name="awa-market"/>
+<meta content="AEM" name="awa-cms"/>
+<meta content="contentbackfillgenerate;experimentation;esiproductcards;feature-controlled-mwf;uhf-ms-io-endpoint;uhf-esi-cache;fraud-greenid;contentsquare;mediapixel;holiday-themer;lazyload-static-components;clientlibDefer;componentLocalization;upsellEnabled;contentbackfillpkgdelete;healthcheck;demo-feature;contentbackfillhttpgenerate;remove-jsll;perf-tracker-1ds;dynamic-bundle;cvIncrementer;tentingEnabled;chatCookiesImplemented;alertCountDownWithoutServerTime;pdpDynamicRendering;bundlesDynamicRendering;contentbackfillmetadatachangesvideo;contentbackfillmetadatachangesnonvideo;listDynamicRendering;experimentation-without-personalization;generic-list-importer;cvStoreHomepages;combinedUHF;disbale-experimentation-query-param;exp-load-exp-cc-async;cvCallEnabled" name="awa-enabledFeatures"/>
+<meta content="v21" name="thirdparty-config"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Microsoft – Cloud, computers, apps en games</title>
+<link href="https://www.microsoft.com/nl-nl" rel="canonical"/>
+<meta content="Kom meer te weten over Microsoft-producten en -services voor persoonlijk of zakelijk gebruik. Koop Surface, Microsoft 365, Xbox, Windows, Azure en meer. Zoek downloads en krijg ondersteuning." name="description"/>
+<meta content="https://www.microsoft.com/nl-nl" name="twitter:url"/>
+<meta content="Microsoft – Cloud, computers, apps en games" name="twitter:title"/>
+<meta content="Kom meer te weten over Microsoft-producten en -services voor persoonlijk of zakelijk gebruik. Koop Surface, Microsoft 365, Xbox, Windows, Azure en meer. Zoek downloads en krijg ondersteuning." name="twitter:description"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="https://www.microsoft.com/nl-nl" property="og:url"/>
+<meta content="Microsoft – Cloud, computers, apps en games" property="og:title"/>
+<meta content="Kom meer te weten over Microsoft-producten en -services voor persoonlijk of zakelijk gebruik. Koop Surface, Microsoft 365, Xbox, Windows, Azure en meer. Zoek downloads en krijg ondersteuning." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-mwf-featureControlled/main-light.min.ACSHASH3e822d6827d4b41cd4b5e8a7d66a7e5f.css" rel="stylesheet" type="text/css"/>
+<link href="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-base.min.ACSHASH50628e34bba9f2b65078edc419e409b3.css" rel="stylesheet" type="text/css"/>
+<link href="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-uhf.min.ACSHASHf9f2395c582fa601707b7a5dfae9f05f.css" rel="stylesheet" type="text/css"/>
+<script id="ie11-polyfill-script">
+
+        var isModernBrowser = (
+            'fetch' in window &&
+            'assign' in Object
+        );
+
+        if ( !isModernBrowser ) {
+            var scriptElement = document.createElement('script');
+
+            scriptElement.async = false;
+            scriptElement.src = '/etc.clientlibs/microsoft/clientlibs/clientlib-polyfills/resources/ie11-polyfills.js';
+
+            var polyfillScriptElement = document.querySelector('#ie11-polyfill-script');
+
+            if (polyfillScriptElement) {
+                polyfillScriptElement.parentNode.insertBefore(scriptElement, polyfillScriptElement.nextSibling);
+            }
+        }
+    </script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-polyfills-featureControlled.min.ACSHASH82d823c918c2f9ae17d16f980f9bffa0.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-jquery.min.ACSHASHb1168f0ce867875996c28ca9e8b4949b.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-jquery-cookie.min.ACSHASHa67d659f582bf93e1d8156fc182326f5.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/exp-analytics/v1.min.ACSHASHd825183b3614c7a5dca53474beaec39e.js"></script>
+<script type="text/javascript">
+                var expToken = {
+                    "exp": {
+                        "target": {
+                            "propertyToken": "8c1e142d-c7db-a269-dc00-3656897ea8b0",
+                            "visitorJsHash": "a8d964dfb2a9c82f0b538a7b74dbd6be",
+                            "expJsHash": "895e2a12062f1ee44d7d72d266904bde",
+                            "isExpWithoutPersonalizationEnabled": ("false"==="true")
+                        }
+                    }
+                };
+                window.cas = expToken;
+            </script>
+<script async="" src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/exp-cookiecomp/v1.min.ACSHASH3007ee72081412fbd8b665a01afb7cad.js" type="text/javascript"></script>
+<meta content="" name="exp-visitor-anchor"/>
+<meta content="" name="exp-atjs-anchor"/>
+<link href="https://cdn-dynmedia-1.microsoft.com" rel="dns-prefetch"/>
+<link href="https://cdn-dynmedia-1.microsoft.com" rel="preconnect"/>
+<link href="https://web.vortex.data.microsoft.com" rel="dns-prefetch"/>
+<link href="https://web.vortex.data.microsoft.com" rel="preconnect"/>
+<link href="https://img-prod-cms-rt-microsoft-com.akamaized.net" rel="dns-prefetch"/>
+<link href="https://img-prod-cms-rt-microsoft-com.akamaized.net" rel="preconnect"/>
+</head>
+<body class="page basicpage">
+<span style="display:none">
+<script>
+  	  			window.mscv = '3pJKLDY4SHW+qDB/.0'
+  			</script>
+<script>
+  	  			window.msservercv = '3pJKLDY4SHW+qDB/.0'
+  			</script>
+</span>
+<script type="text/javascript">
+						window.msauthSkipRefresh = true;
+					</script>
+<div id="page-top" tabindex="-1"></div>
+<div id="modalsRenderedAfterPageLoad">
+</div>
+<div class="universalheader" data-component-id="cf9a86dceae618e01d6e6399d243873c">
+<link href="../www.microsoft.com/onerfstatics/marketingsites-neu-prod/west-european/shell/_scrf/css/themes=default.device=uplevel_web_pc/79-4cdd0a/33-ae3d41/a5-4bf7a2/13-8e1ceb/81-32f0c0/5c-b7b685/1a-bb39e7/ef-a24652%3Fver=2.0&amp;_cf=02242021_3231.css" media="all" rel="stylesheet" type="text/css"/><link href="../statics-marketingsites-neu-ms-com.akamaized.net/statics/override.css" rel="stylesheet" type="text/css"/> <div class="uhf" data-m='{"cN":"headerArea","cT":"Area_coreuiArea","id":"a1Body","sN":1,"aN":"Body"}' id="headerArea">
+<div data-m='{"cN":"headerRegion","cT":"Region_coreui-region","id":"r1a1","sN":1,"aN":"a1"}' data-region-key="headerregion" id="headerRegion">
+<div data-m='{"cN":"headerUniversalHeader","cT":"Module_coreui-universalheader","id":"m1r1a1","sN":1,"aN":"r1a1"}' data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader" id="headerUniversalHeader">
+<div class="x-hidden x-hidden-vp-mobile-st uhfc-universal-context context-uhf" data-m='{"cN":"epb_cont","cT":"Container","id":"c1m1r1a1","sN":1,"aN":"m1r1a1"}' id="epb">
+<div aria-label="Reclamebanner" class="c-uhfh-alert f-information epb-container theme-light" data-m='{"cT":"Container","id":"c1c1m1r1a1","sN":1,"aN":"c1m1r1a1"}' data-pb='[{"Browser":"non-anaheim","ExtensionType":"windows10only","ExtensionUrl":"https://aka.ms/UHF_Banner_15mkts","BackgroundColorDarkTheme":"b-black","LogoUrlDarkTheme":"http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWO4yJ?ver=2ab3","ActionLinkBackgroundColorDarkTheme":"btn-white","BackgroundColorLightTheme":"b-white","LogoUrlLightTheme":"http://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOalS?ver=cc6e","ActionLinkBackgroundColorLightTheme":"btn-light-blue","Title":"Download de nieuwe Microsoft Start-app voor Android of iOS","Paragraph":"Blijf onderweg op de hoogte met nieuwsberichten, weersverwachtingen, games etc.","ActionLinkText":"Nu starten","ActionLinkAriaLabel":"Nu starten","DismissText":"Sluiten","DismissAriaLabel":"Sluiten","CookieExpiration":"30","CurrentTheme":"theme-light"},{"Browser":"firefox","ExtensionType":"msn","ExtensionUrl":"https://browserdefaults.microsoft.com/BNP/redirect?br=mf&amp;xid=2&amp;channel=uhf","BackgroundColorDarkTheme":"b-blue","LogoUrlDarkTheme":"https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3zanz?ver=4e18","ActionLinkBackgroundColorDarkTheme":"btn-white","BackgroundColorLightTheme":"b-white","LogoUrlLightTheme":"https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3zcX5?ver=0d48","ActionLinkBackgroundColorLightTheme":"btn-blue","Title":"Het laatste nieuws van over de hele wereld","Paragraph":"Download de Bing + MSN-extensie","ActionLinkText":"Nu toevoegen","ActionLinkAriaLabel":"Nu toevoegen","DismissText":"Nee, bedankt","DismissAriaLabel":"Nee, bedankt","CookieExpiration":"30","CurrentTheme":"theme-light"}]' data-pb-g="true" role="dialog">
+<div>
+<div class="c-paragraph">
+<img alt="" class="f-img-lzy" data-src="" src="index.html"/>
+<span class="c-text-group pb-content">
+<span class="epb-launch pb-content-heading"></span>
+<span class="epb-text pb-content-text"></span>
+</span>
+</div>
+<span class="c-group">
+<button class="c-action-trigger c-action-cancel glyph-cancel" data-m='{"cN":"PB-dismiss_nonnav","id":"nn1c1c1m1r1a1","sN":1,"aN":"c1c1m1r1a1"}' id="close-epb"></button>
+<a class="epb-launch c-action-trigger c-action-open" data-m='{"cN":"PB-launch_nav","id":"n2c1c1m1r1a1","sN":2,"aN":"c1c1m1r1a1"}' href="index.html" id="epbTryNow" target="_blank"></a>
+</span>
+</div>
+</div>
+</div>
+<div data-m='{"cN":"cookiebanner_cont","cT":"Container","id":"c2c1m1r1a1","sN":2,"aN":"c1m1r1a1"}'>
+<div data-locale="nl-nl" id="uhfCookieAlert">
+<div id="msccBannerV2"></div>
+</div>
+</div>
+<a class="m-skip-to-main" data-href="#primaryArea" data-m='{"cN":"Skip to content_nonnav","id":"nn3c1m1r1a1","sN":3,"aN":"c1m1r1a1"}' href="javascript:void(0)" id="uhfSkipToMain" tabindex="0">Overslaan naar hoofdinhoud</a>
+<header class="c-uhfh context-uhf no-js c-sgl-stck" data-header-footprint="/mshomepage/mshomepageheader, fromService: True" data-magict="true" itemscope="itemscope" itemtype="http://schema.org/Organization">
+<div class="theme-light js-global-head f-closed global-head-cont" data-m='{"cN":"Universal Header_cont","cT":"Container","id":"c4c1m1r1a1","sN":4,"aN":"c1m1r1a1"}'>
+<div class="c-uhfh-gcontainer-st">
+<button aria-expanded="false" aria-label="Alles van Microsoft uitvouwen om een lijst met Microsoft-producten en -services te zien" class="c-action-trigger c-glyph glyph-global-nav-button" data-m='{"cN":"Mobile menu button_nonnav","id":"nn1c4c1m1r1a1","sN":1,"aN":"c4c1m1r1a1"}' initialstate-label="Alles van Microsoft uitvouwen om een lijst met Microsoft-producten en -services te zien" togglestate-label="Close All Microsoft list" type="button"></button>
+<button aria-expanded="false" aria-label="Zoekopdracht sluiten" class="c-action-trigger c-glyph glyph-arrow-htmllegacy c-close-search" data-m='{"cN":"Close Search_nonnav","id":"nn2c4c1m1r1a1","sN":2,"aN":"c4c1m1r1a1"}' type="button"></button>
+<a aria-label="Microsoft" class="c-logo c-sgl-stk-uhfLogo" data-m='{"cN":"GlobalNav_Logo_cont","cT":"Container","id":"c3c4c1m1r1a1","sN":3,"aN":"c4c1m1r1a1"}' href="https://www.microsoft.com" id="uhfLogo" itemprop="url">
+<img alt="" aria-hidden="true" class="c-image" itemprop="logo" role="presentation" src="../img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b%3Fver=5c31"/>
+<span aria-hidden="true" itemprop="name" role="presentation">Microsoft</span>
+</a>
+<div class="f-mobile-title">
+<button aria-label="Meer menuopties weergeven" class="c-action-trigger c-glyph glyph-chevron-left" data-m='{"cN":"Mobile back button_nonnav","id":"nn4c4c1m1r1a1","sN":4,"aN":"c4c1m1r1a1"}' type="button"></button>
+<span class="js-mobile-title" data-global-title="Startpagina Microsoft"></span>
+<button aria-label="Meer menuopties weergeven" class="c-action-trigger c-glyph glyph-chevron-right" data-m='{"cN":"Mobile forward button_nonnav","id":"nn5c4c1m1r1a1","sN":5,"aN":"c4c1m1r1a1"}' type="button"></button>
+</div>
+<nav aria-label="Contextmenu" class="c-uhfh-gnav" data-m='{"cN":"Category nav_cont","cT":"Container","id":"c6c4c1m1r1a1","sN":6,"aN":"c4c1m1r1a1"}' id="uhf-g-nav">
+<ul class="js-paddle-items">
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_M365_nav","id":"n1c6c4c1m1r1a1","sN":1,"aN":"c6c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-365" id="shellmenu_0">Microsoft 365</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Teams_nav","id":"n2c6c4c1m1r1a1","sN":2,"aN":"c6c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-teams/group-chat-software" id="l0_Teams">Teams</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Windows_nav","id":"n3c6c4c1m1r1a1","sN":3,"aN":"c6c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/windows/" id="shellmenu_2">Windows</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Surface_nav","id":"n4c6c4c1m1r1a1","sN":4,"aN":"c6c4c1m1r1a1"}' href="https://www.microsoft.com/surface" id="shellmenu_3">Surface</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Xbox_nav","id":"n5c6c4c1m1r1a1","sN":5,"aN":"c6c4c1m1r1a1"}' href="https://www.xbox.com/" id="shellmenu_4">Xbox</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Deals_nav","id":"n6c6c4c1m1r1a1","sN":6,"aN":"c6c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/b/sale?icid=TopNavDealsSale" id="shellmenu_5">Speciale aanbiedingen</a>
+</li>
+<li class="single-link js-nav-menu uhf-menu-item">
+<a class="c-uhf-nav-link" data-m='{"cN":"CatNav_Support_nav","id":"n7c6c4c1m1r1a1","sN":7,"aN":"c6c4c1m1r1a1"}' href="https://support.microsoft.com/nl-nl" id="l1_support">Ondersteuning</a>
+</li>
+<li class="overflow-menu x-hidden uhf-menu-item" id="overflow-menu">
+<div class="c-uhf-menu js-nav-menu">
+<button aria-expanded="false" aria-label="Meer" data-m='{"pid":"Meer","id":"nn8c6c4c1m1r1a1","sN":8,"aN":"c6c4c1m1r1a1"}' type="button">Meer</button>
+<ul aria-hidden="true" class="overflow-menu-list" id="overflow-menu-list">
+</ul>
+</div>
+</li>
+</ul>
+</nav>
+<div class="c-uhfh-actions" data-m='{"cN":"Header actions_cont","cT":"Container","id":"c7c4c1m1r1a1","sN":7,"aN":"c4c1m1r1a1"}'>
+<div class="wf-menu"> <nav aria-label="Menu Alles van Microsoft" data-m='{"cN":"GlobalNav_cont","cT":"Container","id":"c1c7c4c1m1r1a1","sN":1,"aN":"c7c4c1m1r1a1"}' id="uhf-c-nav">
+<ul class="js-paddle-items">
+<li>
+<div class="c-uhf-menu js-nav-menu">
+<button aria-expanded="false" aria-label="Alles van Microsoft uitvouwen om een lijst met Microsoft-producten en -services te zien" class="c-button-logo all-ms-nav" data-m='{"cN":"GlobalNav_More_nonnav","id":"nn1c1c7c4c1m1r1a1","sN":1,"aN":"c1c7c4c1m1r1a1"}' type="button"> <span>Alles van Microsoft</span></button>
+<ul aria-hidden="true" class="f-multi-column f-multi-column-6" data-m='{"cN":"More_cont","cT":"Container","id":"c2c1c7c4c1m1r1a1","sN":2,"aN":"c1c7c4c1m1r1a1"}'>
+<li class="c-w0-contr c-w0-contr-desktop-hidden">
+<ul class="c-w0">
+<li class="js-nav-menu single-link" data-m='{"cN":"M365_cont","cT":"Container","id":"c1c2c1c7c4c1m1r1a1","sN":1,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_M365_nav","id":"n1c1c2c1c7c4c1m1r1a1","sN":1,"aN":"c1c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-365" id="shellmenu_0-mo">Microsoft 365</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Teams_cont","cT":"Container","id":"c2c2c1c7c4c1m1r1a1","sN":2,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Teams_nav","id":"n1c2c2c1c7c4c1m1r1a1","sN":1,"aN":"c2c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-teams/group-chat-software" id="l0_Teams-mo">Teams</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Windows_cont","cT":"Container","id":"c3c2c1c7c4c1m1r1a1","sN":3,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Windows_nav","id":"n1c3c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/windows/" id="shellmenu_2-mo">Windows</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Surface_cont","cT":"Container","id":"c4c2c1c7c4c1m1r1a1","sN":4,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Surface_nav","id":"n1c4c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/surface" id="shellmenu_3-mo">Surface</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Xbox_cont","cT":"Container","id":"c5c2c1c7c4c1m1r1a1","sN":5,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Xbox_nav","id":"n1c5c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c2c1c7c4c1m1r1a1"}' href="https://www.xbox.com/" id="shellmenu_4-mo">Xbox</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Deals_cont","cT":"Container","id":"c6c2c1c7c4c1m1r1a1","sN":6,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Deals_nav","id":"n1c6c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/b/sale?icid=TopNavDealsSale" id="shellmenu_5-mo">Speciale aanbiedingen</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Support_cont","cT":"Container","id":"c7c2c1c7c4c1m1r1a1","sN":7,"aN":"c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"W0Nav_Support_nav","id":"n1c7c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c2c1c7c4c1m1r1a1"}' href="https://support.microsoft.com/nl-nl" id="l1_support-mo">Ondersteuning</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cT":"Container","id":"c8c2c1c7c4c1m1r1a1","sN":8,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"id":"nn1c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c8c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_8-span" style="display:none">Software</span>
+<button aria-expanded="false" data-m='{"id":"nn2c8c2c1c7c4c1m1r1a1","sN":2,"aN":"c8c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_8-button" type="button">Software</button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_8-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_WindowsApps_cont","cT":"Container","id":"c3c8c2c1c7c4c1m1r1a1","sN":3,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_WindowsApps_nav","id":"n1c3c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c8c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/apps/windows?icid=CNavAppsWindowsApps" id="shellmenu_9">Windows-apps</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_OneDrive_cont","cT":"Container","id":"c4c8c2c1c7c4c1m1r1a1","sN":4,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_OneDrive_nav","id":"n1c4c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c8c2c1c7c4c1m1r1a1"}' href="https://onedrive.live.com/about/nl-nl/" id="shellmenu_10">OneDrive</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_Outlook_cont","cT":"Container","id":"c5c8c2c1c7c4c1m1r1a1","sN":5,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_Outlook_nav","id":"n1c5c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c8c2c1c7c4c1m1r1a1"}' href="https://outlook.live.com/owa/" id="shellmenu_11">Outlook</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_Skype_cont","cT":"Container","id":"c6c8c2c1c7c4c1m1r1a1","sN":6,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_Skype_nav","id":"n1c6c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c8c2c1c7c4c1m1r1a1"}' href="https://www.skype.com/nl/" id="shellmenu_12">Skype</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_OneNote_cont","cT":"Container","id":"c7c8c2c1c7c4c1m1r1a1","sN":7,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_OneNote_nav","id":"n1c7c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c8c2c1c7c4c1m1r1a1"}' href="https://www.onenote.com/?omkt=nl-NL" id="shellmenu_13">OneNote</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Software_Microsoft Teams_cont","cT":"Container","id":"c8c8c2c1c7c4c1m1r1a1","sN":8,"aN":"c8c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Software_Microsoft Teams_nav","id":"n1c8c8c2c1c7c4c1m1r1a1","sN":1,"aN":"c8c8c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-teams/group-chat-software" id="shellmenu_14">Microsoft Teams</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cN":"PCsAndDevices_cont","cT":"Container","id":"c9c2c1c7c4c1m1r1a1","sN":9,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"cN":"GlobalNav_PCsAndDevices_nonnav","id":"nn1c9c2c1c7c4c1m1r1a1","sN":1,"aN":"c9c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_15-span" style="display:none">PCs &amp; Apparaten  </span>
+<button aria-expanded="false" data-m='{"cN":"GlobalNav_PCsAndDevices_nonnav","id":"nn2c9c2c1c7c4c1m1r1a1","sN":2,"aN":"c9c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_15-button" type="button">PCs &amp; Apparaten  </button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_15-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"More_PCAndDevices_ShopXbox_cont","cT":"Container","id":"c3c9c2c1c7c4c1m1r1a1","sN":3,"aN":"c9c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_PCAndDevices_ShopXbox_nav","id":"n1c3c9c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c9c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/b/xbox?icid=CNavDevicesXbox" id="shellmenu_16">Naar Xbox store</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_PCAndDevices_Accessories_cont","cT":"Container","id":"c4c9c2c1c7c4c1m1r1a1","sN":4,"aN":"c9c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_PCAndDevices_Accessories_nav","id":"n1c4c9c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c9c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/b/accessories?icid=CNavDevicesAccessories" id="shellmenu_17">Accessoires</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cT":"Container","id":"c10c2c1c7c4c1m1r1a1","sN":10,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"id":"nn1c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c10c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_18-span" style="display:none">Entertainment</span>
+<button aria-expanded="false" data-m='{"id":"nn2c10c2c1c7c4c1m1r1a1","sN":2,"aN":"c10c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_18-button" type="button">Entertainment</button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_18-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"Products_DevicesAndXbox_XboxGamePassUltimate_cont","cT":"Container","id":"c3c10c2c1c7c4c1m1r1a1","sN":3,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Products_DevicesAndXbox_XboxGamePassUltimate_nav","id":"n1c3c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/p/xbox-game-pass-ultimate/cfq7ttc0khs0?WT.mc_id=CNavGamesXboxGamePassUltimate" id="shellmenu_19">Xbox Game Pass Ultimate</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Products_DevicesAndXbox_Xbox Live Gold_cont","cT":"Container","id":"c4c10c2c1c7c4c1m1r1a1","sN":4,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Products_DevicesAndXbox_Xbox Live Gold_nav","id":"n1c4c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/p/xbox-live-gold/cfq7ttc0k5dj?WT.mc_id=CNavGamesXboxLiveGold" id="shellmenu_20">Xbox Live Gold</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Products_DevicesAndXbox_XboxAndGames_cont","cT":"Container","id":"c5c10c2c1c7c4c1m1r1a1","sN":5,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav","id":"n1c5c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/top-paid/games/xbox" id="shellmenu_21">Xbox &amp; games</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Entertainment_PCGames_cont","cT":"Container","id":"c6c10c2c1c7c4c1m1r1a1","sN":6,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Entertainment_PCGames_nav","id":"n1c6c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/games/windows?icid=CNavGamesWindowsGames" id="shellmenu_22">Pc-games</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Entertainment_WindowsDigitalGames_cont","cT":"Container","id":"c7c10c2c1c7c4c1m1r1a1","sN":7,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Entertainment_WindowsDigitalGames_nav","id":"n1c7c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/games/windows?icid=TopNavWindowsGames" id="shellmenu_23">Windows-games </a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Entertainment_MoviesAndTV_cont","cT":"Container","id":"c8c10c2c1c7c4c1m1r1a1","sN":8,"aN":"c10c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Entertainment_MoviesAndTV_nav","id":"n1c8c10c2c1c7c4c1m1r1a1","sN":1,"aN":"c8c10c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/movies-and-tv?icid=TopNavMoviesAndTv" id="shellmenu_24">Films</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cT":"Container","id":"c11c2c1c7c4c1m1r1a1","sN":11,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"id":"nn1c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c11c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_25-span" style="display:none">Zakelijk</span>
+<button aria-expanded="false" data-m='{"id":"nn2c11c2c1c7c4c1m1r1a1","sN":2,"aN":"c11c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_25-button" type="button">Zakelijk</button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_25-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_Microsoft_Cloud_cont","cT":"Container","id":"c3c11c2c1c7c4c1m1r1a1","sN":3,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_Microsoft_Cloud_nav","id":"n1c3c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c11c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-cloud" id="shellmenu_26">Microsoft Cloud</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_Microsoft Security_cont","cT":"Container","id":"c4c11c2c1c7c4c1m1r1a1","sN":4,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_Microsoft Security_nav","id":"n1c4c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c11c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/security" id="shellmenu_27">Microsoft Beveiliging</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_MicrosoftAzure_cont","cT":"Container","id":"c5c11c2c1c7c4c1m1r1a1","sN":5,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_MicrosoftAzure_nav","id":"n1c5c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c11c2c1c7c4c1m1r1a1"}' href="https://azure.microsoft.com/" id="shellmenu_28">Azure</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_MicrosoftDynamics365_cont","cT":"Container","id":"c6c11c2c1c7c4c1m1r1a1","sN":6,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_MicrosoftDynamics365_nav","id":"n1c6c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c11c2c1c7c4c1m1r1a1"}' href="https://dynamics.microsoft.com/" id="shellmenu_29">Dynamics 365</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_Microsoft365forbusiness_cont","cT":"Container","id":"c7c11c2c1c7c4c1m1r1a1","sN":7,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_Microsoft365forbusiness_nav","id":"n1c7c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c11c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/microsoft-365/business" id="shellmenu_30">Microsoft 365 voor bedrijven</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_MicrosoftIndustry_cont","cT":"Container","id":"c8c11c2c1c7c4c1m1r1a1","sN":8,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_MicrosoftIndustry_nav","id":"n1c8c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c8c11c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/industry" id="shellmenu_31">Microsoft Industry</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_MicrosoftPowerPlatform_cont","cT":"Container","id":"c9c11c2c1c7c4c1m1r1a1","sN":9,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_MicrosoftPowerPlatform_nav","id":"n1c9c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c9c11c2c1c7c4c1m1r1a1"}' href="https://powerplatform.microsoft.com/" id="shellmenu_32">Microsoft Power Platform</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Business_Windows365_cont","cT":"Container","id":"c10c11c2c1c7c4c1m1r1a1","sN":10,"aN":"c11c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Business_Windows365_nav","id":"n1c10c11c2c1c7c4c1m1r1a1","sN":1,"aN":"c10c11c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/windows-365" id="shellmenu_33">Windows 365</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cT":"Container","id":"c12c2c1c7c4c1m1r1a1","sN":12,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"id":"nn1c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c12c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_34-span" style="display:none">Ontwikkelaar &amp; IT</span>
+<button aria-expanded="false" data-m='{"id":"nn2c12c2c1c7c4c1m1r1a1","sN":2,"aN":"c12c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_34-button" type="button">Ontwikkelaar &amp; IT</button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_34-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_DeveloperCenter_cont","cT":"Container","id":"c3c12c2c1c7c4c1m1r1a1","sN":3,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_DeveloperCenter_nav","id":"n1c3c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c12c2c1c7c4c1m1r1a1"}' href="https://developer.microsoft.com/" id="shellmenu_35">Ontwikkelaarscentrum</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_Documentation_cont","cT":"Container","id":"c4c12c2c1c7c4c1m1r1a1","sN":4,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_Documentation_nav","id":"n1c4c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c12c2c1c7c4c1m1r1a1"}' href="https://docs.microsoft.com/" id="shellmenu_36">Documentatie</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_MicrosoftLearn_cont","cT":"Container","id":"c5c12c2c1c7c4c1m1r1a1","sN":5,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_MicrosoftLearn_nav","id":"n1c5c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c12c2c1c7c4c1m1r1a1"}' href="https://docs.microsoft.com/learn/" id="shellmenu_37">Microsoft Learn</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_MicrosoftTechCommunity_cont","cT":"Container","id":"c6c12c2c1c7c4c1m1r1a1","sN":6,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_MicrosoftTechCommunity_nav","id":"n1c6c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c12c2c1c7c4c1m1r1a1"}' href="https://techcommunity.microsoft.com/" id="shellmenu_38">Microsoft Tech Community</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_AzureMarketplace_cont","cT":"Container","id":"c7c12c2c1c7c4c1m1r1a1","sN":7,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_AzureMarketplace_nav","id":"n1c7c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c12c2c1c7c4c1m1r1a1"}' href="https://azuremarketplace.microsoft.com/" id="shellmenu_39">Azure Marketplace</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DeveloperAndIT_AppSource_cont","cT":"Container","id":"c8c12c2c1c7c4c1m1r1a1","sN":8,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DeveloperAndIT_AppSource_nav","id":"n1c8c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c8c12c2c1c7c4c1m1r1a1"}' href="https://appsource.microsoft.com/" id="shellmenu_40">AppSource</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"More_DevelopersAndIT_VisualStudio_cont","cT":"Container","id":"c9c12c2c1c7c4c1m1r1a1","sN":9,"aN":"c12c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_DevelopersAndIT_VisualStudio_nav","id":"n1c9c12c2c1c7c4c1m1r1a1","sN":1,"aN":"c9c12c2c1c7c4c1m1r1a1"}' href="https://visualstudio.microsoft.com/" id="shellmenu_41">Visual Studio</a>
+</li>
+</ul>
+</li>
+<li class="f-sub-menu js-nav-menu nested-menu" data-m='{"cT":"Container","id":"c13c2c1c7c4c1m1r1a1","sN":13,"aN":"c2c1c7c4c1m1r1a1"}'>
+<span aria-expanded="false" data-m='{"id":"nn1c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c13c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navspn-shellmenu_42-span" style="display:none">Overig</span>
+<button aria-expanded="false" data-m='{"id":"nn2c13c2c1c7c4c1m1r1a1","sN":2,"aN":"c13c2c1c7c4c1m1r1a1"}' f-multi-parent="true" id="uhf-navbtn-shellmenu_42-button" type="button">Overig</button>
+<ul aria-hidden="true" aria-labelledby="uhf-navspn-shellmenu_42-span">
+<li class="js-nav-menu single-link" data-m='{"cN":"More_Other_Microsoft Rewards_cont","cT":"Container","id":"c3c13c2c1c7c4c1m1r1a1","sN":3,"aN":"c13c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_More_Other_Microsoft Rewards_nav","id":"n1c3c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c3c13c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/rewards" id="shellmenu_43">Microsoft Rewards </a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont","cT":"Container","id":"c4c13c2c1c7c4c1m1r1a1","sN":4,"aN":"c13c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav","id":"n1c4c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c4c13c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/download/default.aspx" id="shellmenu_44">Gratis downloads &amp; beveiliging</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Products_ForStudentsAndEducators_Education_cont","cT":"Container","id":"c5c13c2c1c7c4c1m1r1a1","sN":5,"aN":"c13c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Products_ForStudentsAndEducators_Education_nav","id":"n1c5c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c5c13c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/education?icid=CNavMSCOML0_Studentsandeducation" id="shellmenu_45">Onderwijs</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Store_More_GiftCards_cont","cT":"Container","id":"c6c13c2c1c7c4c1m1r1a1","sN":6,"aN":"c13c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Store_More_GiftCards_nav","id":"n1c6c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c6c13c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/store/b/gift-cards" id="shellmenu_46">Cadeaubonnen</a>
+</li>
+<li class="js-nav-menu single-link" data-m='{"cN":"Other_Licensing_cont","cT":"Container","id":"c7c13c2c1c7c4c1m1r1a1","sN":7,"aN":"c13c2c1c7c4c1m1r1a1"}'>
+<a class="js-subm-uhf-nav-link" data-m='{"cN":"GlobalNav_Other_Licensing_nav","id":"n1c7c13c2c1c7c4c1m1r1a1","sN":1,"aN":"c7c13c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/licensing/" id="Licensing">Licentieverlening</a>
+</li>
+</ul>
+</li>
+<li class="f-multi-column-info">
+<a aria-label="" class="c-glyph" data-m='{"id":"n14c2c1c7c4c1m1r1a1","sN":14,"aN":"c2c1c7c4c1m1r1a1"}' href="https://www.microsoft.com/nl-nl/sitemap.aspx">Bekijk het siteoverzicht</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+<form action="https://www.microsoft.com/nl-nl/search/explore" aria-expanded="false" autocomplete="off" class="c-search" data-m='{"cN":"GlobalNav_Search_cont","cT":"Container","id":"c3c1c7c4c1m1r1a1","sN":3,"aN":"c1c7c4c1m1r1a1"}' data-seautosuggest='{"queryParams":{"market":"nl-nl","clientId":"7F27B536-CF6B-4C65-8638-A0F8CBDFCA65","sources":"Iris-Products,DCatAll-Products,Microsoft-Terms","filter":"+ClientType:StoreWeb","counts":"1,5,5"},"familyNames":{"Apps":"App","Books":"Boek","Bundles":"Bundel","Devices":"Apparaat","Fees":"Fee","Games":"Game","MusicAlbums":"Album","MusicTracks":"Nummer","MusicVideos":"Video","MusicArtists":"Artiest","OperatingSystem":"Besturingssysteem","Software":"Software","Movies":"Film","TV":"Tv","CSV":"Geschenkbon","VideoActor":"Acteur"}}' data-seautosuggestapi="https://www.microsoft.com/msstoreapiprod/api/autosuggest" id="searchForm" method="GET" name="searchForm" role="search">
+<input aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-expanded="false" aria-label="Zoeken uitgevouwen" aria-owns="universal-header-search-auto-suggest-ul" data-m='{"cN":"SearchBox_nav","id":"n1c3c1c7c4c1m1r1a1","sN":1,"aN":"c3c1c7c4c1m1r1a1"}' data-placement="right" data-toggle="tooltip" id="cli_shellHeaderSearchInput" name="q" placeholder="Zoeken op Microsoft.com" role="combobox" title="Zoeken op Microsoft.com" type="search"/>
+<button aria-expanded="false" aria-label="Zoeken op Microsoft.com" class="c-glyph" data-bi-mto="true" data-m='{"cN":"Search_nav","id":"n2c3c1c7c4c1m1r1a1","sN":2,"aN":"c3c1c7c4c1m1r1a1"}' disabled="disabled" id="search">
+<span role="presentation">Zoeken</span>
+<span class="c-uhf-tooltip c-uhf-search-tooltip" role="tooltip">Zoeken op Microsoft.com</span>
+</button>
+<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+<ul aria-hidden="true" aria-label="Zoeksuggesties" class="c-menu" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" data-m='{"cN":"search suggestions_cont","cT":"Container","id":"c3c3c1c7c4c1m1r1a1","sN":3,"aN":"c3c1c7c4c1m1r1a1"}' data-tel="jsll" id="universal-header-search-auto-suggest-ul" role="listbox"></ul>
+</div>
+</form>
+<button aria-label="Annuleren Zoeken" class="cancel-search" data-m='{"cN":"cancel-search","pid":"Annuleren Zoeken","id":"nn4c1c7c4c1m1r1a1","sN":4,"aN":"c1c7c4c1m1r1a1"}' id="cancel-search">
+<span>Annuleren</span>
+</button>
+<a aria-label="0 items in winkelwagen" class="c-action-trigger c-glyph c-uhf-nav-link glyph-shopping-cart" data-m='{"cN":"GlobalNav_Cart_nav","bhvr":82,"id":"n5c1c7c4c1m1r1a1","sN":5,"aN":"c1c7c4c1m1r1a1"}' data-src-dmn-chk="true" href="https://www.microsoft.com/nl-nl/store/buy" id="uhf-shopping-cart">
+<span aria-hidden="true" class="shopping-cart-amount x-hidden">0</span>
+<span class="c-cart-lbl c-st-lbl">Winkelwagen</span>
+<span class="c-uhf-tooltip" id="uhf-shopping-cart-tooltip" role="tooltip">0 items in winkelwagen</span>
+</a>
+<iframe data-src="//www.microsoft.com/store/buy/cartcount" id="shell-cart-count"></iframe>
+<div class="c-me" data-m='{"cN":"GlobalNav_Account_cont","cT":"Container","id":"c6c1c7c4c1m1r1a1","sN":6,"aN":"c1c7c4c1m1r1a1"}' data-signinsettings='{"containerId":"meControl","enabled":true,"headerHeight":48,"debug":false,"extensibleLinks":[],"userData":{"idp":"msa","firstName":"","lastName":"","memberName":"","cid":"","authenticatedState":"3"},"rpData":{"preferredIdp":"msa","msaInfo":{"signInUrl":"/nl-nl/store/signin","signOutUrl":"/nl-nl/store/signout","meUrl":"https://login.live.com/me.srf?wa=wsignin1.0"},"aadInfo":{"signOutUrl":"/nl-nl/store/signout","appId":"","siteUrl":"","blockMsaFed":true}}}' id="meControl">
+<div class="msame_Header">
+<div class="msame_Header_name st_msame_placeholder">Aanmelden</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="meControl-configInfo" data-isenabled="true" data-msasignouturl="/rpsauth/v1/account/SignOut" data-preferredidp="msa" data-signinurl="/rpsauth/v1/account/SignIn"></div>
+<div class="userInfo-config" data-maxretryattempt="3" data-retrydelayms="2000" data-userinfotimeoutms="1000" data-userinfourl="/rpsauth/account/api/v1/userinfo"></div>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/universalheader/v1/universalheader/clientlibs/site.min.ACSHASH0df7fef27e9de44acae5b384a20f2542.js"></script>
+</div>
+<div class="root responsivegrid">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="28134f1ee1370eee417bc52d1ed0a717">
+<main class="microsoft-template-layout-container" tabindex="-1">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+</div>
+</div>
+<div class="responsivegrid mb-md-5 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="highlightcarousel carouselbase carousel aem-GridColumn aem-GridColumn--default--12" data-component-id="96a15ad1a5dc15e5f04a9e4a63de74fa">
+<link href="../www.microsoft.com/etc.clientlibs/microsoft/components/content/highlightcarousel/v1/highlightcarousel/clientlibs/site.min.ACSHASH58ded7ec79d32269013420240bdd4f9f.css" rel="stylesheet" type="text/css"/>
+<section aria-label="diashow aanbevolen producten en aankondigingen: navigeer met vorige en volgende : navigeer door de dia's met de tabs" aria-roledescription="slideshow" class="slideshowOverflow" role="region">
+<div id="status-container-x045cf64a8dc142eebfcbd07aa0d9469c">
+<span aria-live="polite" class="sr-only" id="status-msg-x045cf64a8dc142eebfcbd07aa0d9469c">Slide %{start} of %{total}. %{slideTitle}</span>
+</div>
+<div class="carousel slide carousel-highlight carousel-variable-height" data-mount="carousel" data-status="status-container-x045cf64a8dc142eebfcbd07aa0d9469c">
+<a class="btn btn-link sr-only-focusable w-100 position-absolute" href="index.html#e1b4e677-d622-436e-8e73-3c2620e77ebe">
+						Skip diashow aanbevolen producten en aankondigingen: navigeer met vorige en volgende : navigeer door de dia's met de tabs 
+						</a>
+<div>
+<div class="carousel-controls">
+<button class="carousel-control-prev" data-bi-bhvr="1" data-bi-cn="Carousel Back" data-bi-compnm="Highlight Carousel" data-bi-ct="Button" data-bi-ecn="Carousel Back" data-bi-pa="Body" data-slide="prev" title="Vorige" type="button">
+<span class="sr-only">Vorige</span>
+</button>
+<ol aria-hidden="true" class="carousel-indicators">
+<li class="active"></li>
+<li></li>
+</ol>
+<button class="carousel-control-next" data-bi-bhvr="3" data-bi-cn="Carousel Forward" data-bi-compnm="Highlight Carousel" data-bi-ct="Button" data-bi-ecn="Carousel Forward" data-bi-pa="Body" data-slide="next" title="Volgende" type="button">
+<span class="sr-only">Volgende</span>
+</button>
+</div>
+<div class="carousel-inner">
+<section aria-hidden="false" aria-label="1 van 2 " aria-roledescription="slide" class="carousel-item depth-4 depth-md-none active" tabindex="0"><div class="highlight" data-component-id="a27bdc16afeeac2a37e8a078a9322fea">
+<script defer="" src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/highlight/v1/highlight/clientlibs/site.min.ACSHASHaae55fd1705718f75074813dfcc832ec.js" type="text/javascript"></script>
+<div class="card-img-overlay" id="highlight-uid44a8">
+<div class="card-background">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/FY23BTS-Highlight-Hero-Surface-Pro-8-Platinum:VP5-1920x600" media="(min-width: 1400px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/FY23BTS-Highlight-Hero-Surface-Pro-8-Platinum:VP4-1399x600" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/FY23BTS-Highlight-Hero-Surface-Pro-8-Platinum:VP3-1083x600" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/FY23BTS-Highlight-Hero-Surface-Pro-8-Platinum:VP2-859x540" media="(min-width: 540px)"/>
+<img alt="Een Surface Pro 8" class="card-img w-100 lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/FY23BTS-Highlight-Hero-Surface-Pro-8-Platinum:VP1-539x440"/>
+</picture>
+</div>
+<div class="card-foreground">
+<div class="container">
+<div class="d-flex mt-md-n5 my-lg-5">
+<div class="w-100 w-lg-col-5">
+<div class="card material-md-card px-g px-md-5 pt-4 pb-3 py-md-5 depth-lg-none bg-lg-transparent-text-dark">
+<div class="card-body" data-highlight-compname="Highlight , background theme of default, Card size w-lg-col-5, Image rendition of Carousel-Highlight-Fullbleed-Slim, Card transparency set to true">
+<span class="badge mb-2" style="background-color: #fef000">
+      Back to school
+</span>
+<h1 class="text-break-keep-all h2">
+        
+            Surface Pro 8
+        
+        
+    </h1>
+<div class="mb-4 text-break-keep-all">
+                                            Het perfecte 2-in-1 apparaat voor school met de kracht om met gemak te leren, creëren en streamen. Prijzen vanaf slechts €1087
+                                        </div>
+<div class="link-group">
+<a aria-label="Koop Surface Pro 8 los" class="text-break-keep-all btn btn-primary" data-bi-bhvr="0" data-bi-cn="Koop Surface Pro 8" data-bi-ct="button" data-bi-ecn="Koop Surface Pro 8" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-pro-8/8QWCRTQ8V8XG?icid=MSCOM-Hero1-CTA1-P85956-SP8-SA-BTS23" target="_self">
+            Koop Surface Pro 8</a>
+<a aria-label="Koop als bundel en bespaar op bijpassende accessoires" class="text-break-keep-all cta text-primary" data-bi-bhvr="0" data-bi-cn="Koop als bundel" data-bi-ct="cta" data-bi-ecn="Koop als bundel" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-pro-8/8qh8v48n82m0?icid=MSCOM-Hero1-CTA2-P85956-SP8-EB-BTS23" target="_self">
+            Koop als bundel
+        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-hidden="true" aria-label="2 van 2 " aria-roledescription="slide" class="carousel-item depth-4 depth-md-none" tabindex="0"><div class="highlight" data-component-id="a27bdc16afeeac2a37e8a078a9322fea">
+<script defer="" src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/highlight/v1/highlight/clientlibs/site.min.ACSHASHaae55fd1705718f75074813dfcc832ec.js" type="text/javascript"></script>
+<div class="card-img-overlay" id="highlight-uida5da">
+<div class="card-background">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-4-black-FY22BTS-en-au:VP5-1920x600" media="(min-width: 1400px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-4-black-FY22BTS-en-au:VP4-1399x600" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-4-black-FY22BTS-en-au:VP3-1083x600" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-4-black-FY22BTS-en-au:VP2-859x540" media="(min-width: 540px)"/>
+<img alt="Surface Laptop 4" class="card-img w-100 lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-4-black-FY22BTS-en-au:VP1-539x440"/>
+</picture>
+</div>
+<div class="card-foreground">
+<div class="container">
+<div class="d-flex mt-md-n5 my-lg-5">
+<div class="w-100 w-lg-col-5">
+<div class="card material-md-card px-g px-md-5 pt-4 pb-3 py-md-5 depth-lg-none bg-lg-transparent-text-dark">
+<div class="card-body" data-highlight-compname="Highlight , background theme of default, Card size w-lg-col-5, Image rendition of Carousel-Highlight-Fullbleed-Slim, Card transparency set to true">
+<span class="badge mb-2" style="background-color: #fef000">
+      Back to school
+</span>
+<h2 class="text-break-keep-all">
+        
+            Surface Laptop 4
+        
+        
+    </h2>
+<div class="mb-4 text-break-keep-all">
+                                            Maak je schoolwerk met de stijl en kracht die je nodig hebt.  Prijzen vanaf slechts €999
+                                        </div>
+<div class="link-group">
+<a aria-label="Koop Surface Laptop 4 los" class="text-break-keep-all btn btn-primary" data-bi-bhvr="0" data-bi-cn="Koop Surface Laptop 4" data-bi-ct="button" data-bi-ecn="Koop Surface Laptop 4" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-laptop-4/946627fb12t1?icid=MSCOM-Hero2-CTA1-P85956-SL4-SA-BTS23" target="_self">
+            Koop Surface Laptop 4</a>
+<a aria-label="Koop als bundel en bespaar op bijpassende accessoires" class="text-break-keep-all cta text-primary" data-bi-bhvr="0" data-bi-cn="Koop als bundel" data-bi-ct="cta" data-bi-ecn="Koop als bundel" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-laptop-4-essentials-bundel/8q410j30qwvb?icid=MSCOM-Hero2-CTA2-P85956-SL4-EB-BTS23" target="_self">
+            Koop als bundel
+        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<a class="sr-only" id="e1b4e677-d622-436e-8e73-3c2620e77ebe" tabindex="-1">End of diashow aanbevolen producten en aankondigingen: navigeer met vorige en volgende : navigeer door de dia's met de tabs section</a>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/highlightcarousel/v1/highlightcarousel/clientlibs/site.min.ACSHASH6ed56cb8f73d7269f8148a22dae6f004.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-base.min.ACSHASHa33966d73000d09955689b5a01aa29d5.js"></script>
+</div>
+</div>
+</div>
+<div class="responsivegrid mb-md-5 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-ecb15d1c-34d3-4a8b-8e38-22f344414db8 default heading-bg-color-ecb15d1c-34d3-4a8b-8e38-22f344414db8">
+<style>
+                    .heading-bg-color-ecb15d1c-34d3-4a8b-8e38-22f344414db8{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uidfa79">
+<div class="link-list parent-list aem-GridColumn aem-GridColumn--default--12" data-component-id="719c9512848ea2270ac91e57592dc97e">
+<nav aria-label="Productcategorieën" id="link-list-uide2d6">
+<ul class="text-center d-flex flex-wrap list-inline justify-content-center">
+<li aria-controls="listitempopoverx3382ac4b4fcb455b892dc044e4f6d2cf" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Kies jouw Microsoft 365" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Kies jouw Microsoft 365" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Quick-Link-Icon-80x80-Microsoft-365?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Kies jouw Microsoft 365" data-bi-bhvr="0" data-bi-cn="Kies jouw Microsoft 365" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Kies jouw Microsoft 365" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/microsoft-365/compare-all-microsoft-365-products?icid=MSCOM_QL_M365" target="_self">
+                Kies jouw Microsoft 365
+            </a>
+</li>
+<li aria-controls="listitempopoverx4a9fcafac749409bbe74a069b104eae3" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Naar Surface store" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Naar Surface store" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-go2-link-list-120x120?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Naar Surface store" data-bi-bhvr="0" data-bi-cn="Naar Surface store" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Naar Surface store" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/store/collections/surfacelist?icid=MSCOM_QL_Surface&amp;headerid=department-surface" target="_self">
+                Naar Surface store
+            </a>
+</li>
+<li aria-controls="listitempopoverx6150fe0438714538a183984e0a5f0ff5" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Naar Xbox store" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Naar Xbox store" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/xbox-blk-logo-link-list-120x120?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Naar Xbox store" data-bi-bhvr="0" data-bi-cn="Naar Xbox store" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Naar Xbox store" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/store/b/xbox?icid=MSCOM_QL_Xbox" target="_self">
+                Naar Xbox store
+            </a>
+</li>
+<li aria-controls="listitempopoverx428872e0712c4e2c8f4e5f84530a1bc6" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Winkelen voor studenten" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Winkelen voor studenten" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Book_Icon_40x40?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Producten voor studenten kopen" data-bi-bhvr="0" data-bi-cn="Winkelen voor studenten" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Winkelen voor studenten" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/store/b/student?icid=MSCOM_LL_Students_BTS23" target="_self">
+                Winkelen voor studenten
+            </a>
+</li>
+<li aria-controls="listitempopoverxb96c68ec001a42cba92a365be54fb1f8" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Windows 11 downloaden" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Windows 11 downloaden" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Quick-Link-Icon-80x80-Microsoft-365?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Windows 11 downloaden" data-bi-bhvr="0" data-bi-cn="Windows 11 downloaden" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Windows 11 downloaden" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/windows/get-windows-11?icid=MSCOM_QL_Windows" target="_self">
+                Windows 11 downloaden
+            </a>
+</li>
+<li aria-controls="listitempopoverxd45c76950e414d9682efe143c7468749" aria-expanded="false" class="font-weight-semibold mx-4 my-3 d-flex align-items-center card flex-grow-0" data-close-label="Close dialog" data-placement="bottom">
+<img alt="" class="img-fluid flex-shrink-0 mb-2 lazyload blur-up lazypreload" data-bi-bhvr="0" data-bi-cn="Koop voor zakelijk" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Koop voor zakelijk" data-bi-pa="Body" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-ICON-LL-briefcase-120x120?wid=40&amp;hei=40" height="40" width="40"/>
+<a aria-label="Koop zakelijke producten" data-bi-bhvr="0" data-bi-cn="Koop voor zakelijk" data-bi-compnm="Link List" data-bi-ct="CTA" data-bi-ecn="Koop voor zakelijk" data-bi-pa="Body" href="https://www.microsoft.com/nl-nl/store/b/business?icid=MSCOM_QL_Business" target="_self">
+                Koop voor zakelijk
+            </a>
+</li>
+</ul>
+</nav></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid mb-md-5 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-2df48887-f301-468d-9206-2283b624b3eb heading-bg-color-2df48887-f301-468d-9206-2283b624b3eb">
+<style>
+                    .heading-bg-color-2df48887-f301-468d-9206-2283b624b3eb{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uid93a4">
+<div class="content-card aem-GridColumn aem-GridColumn--default--12" data-component-id="e4caa97101f9f7cf8317c819b353e6ed">
+<script defer="" src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/content-card/v1/content-card/clientlibs/site.min.ACSHASH48501a4d0f4564d484ac84ade1bb653d.js" type="text/javascript"></script>
+<section id="content-card-uide440">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+<div class="col mb-5 mb-lg-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Surface Laptop Go 2" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Surface Laptop Go 2" data-bi-ehn="Surface Laptop Go 2" data-bi-hn="Surface Laptop Go 2" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Surface Laptop Go 2" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-Go-2-Sage?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h2 class="h3 text-break-keep-all">
+                            Surface Laptop Go 2
+                        </h2>
+<p class="text-break-keep-all"> Maak je schoolwerk met de stijl en kracht die je nodig hebt. Prijzen vanaf slechts €699. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Koop Surface Laptop Go 2 los" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Koop Surface Laptop Go 2" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Koop Surface Laptop Go 2" data-bi-ehn="Surface Laptop Go 2" data-bi-hn="Surface Laptop Go 2" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-laptop-go-2/8pglpv76mjhn?icid=MSCOM-CC1-CTA1-SLG2-SA-P85956-BTS23" target="_self">
+            Koop Surface Laptop Go 2
+        </a>
+<a aria-label="Koop als bundel en bespaar op bijpassende accessoires" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Koop als bundel" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Koop als bundel" data-bi-ehn="Surface Laptop Go 2" data-bi-hn="Surface Laptop Go 2" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-laptop-go-2-essentials-bundle/8RPJ1CK09V7T?icid=MSCOM-CC1-CTA2-SLG2-EB-P85956-BTS23" target="_self">
+            Koop als bundel
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col mb-5 mb-lg-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Microsoft 365" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Microsoft 365" data-bi-ehn="Microsoft 365" data-bi-hn="Microsoft 365" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Pictogrammen voor apps die bij Microsoft 365 horen" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-m365-icons-7up-1668x940?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h2 class="h3 text-break-keep-all">
+                            Microsoft 365
+                        </h2>
+<p class="text-break-keep-all"> Premium Office-apps, extra cloudopslag, geavanceerde beveiliging en meer, allemaal in één handig abonnement. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Koop Microsoft 365 Personal" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Voor 1 persoon" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Voor 1 persoon" data-bi-ehn="Microsoft 365" data-bi-hn="Microsoft 365" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/microsoft-365/p/microsoft-365-personal/cfq7ttc0k5bf?icid=mscom_marcom_CPH2a_M365Personal" target="_self">
+            Voor 1 persoon
+        </a>
+<a aria-label="Koop Microsoft 365 Family" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Tot maximaal 6 personen" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Tot maximaal 6 personen" data-bi-ehn="Microsoft 365" data-bi-hn="Microsoft 365" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/microsoft-365/p/microsoft-365-family/cfq7ttc0k5dm?icid=mscom_marcom_CPH2b_M365Family" target="_self">
+            Tot maximaal 6 personen
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col mb-5 mb-sm-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Power your dreams" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Power your dreams" data-bi-ehn="Power your dreams" data-bi-hn="Power your dreams" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Xbox Series S- en Xbox Series X-consoles met twee Xbox draadloze controllers" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Xbox-Family?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h2 class="h3 text-break-keep-all">
+                            Power your dreams
+                        </h2>
+<p class="text-break-keep-all"> Met het revolutionaire prestatievermogen van de Xbox Series X- en Xbox Series S breekt een nieuwe tijd aan. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Xbox Series X kopen" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Xbox Series X" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Xbox Series X" data-bi-ehn="Power your dreams" data-bi-hn="Power your dreams" data-bi-pa="body" href="https://www.xbox.com/nl-nl/consoles/xbox-series-x?icid=mscom_marcom_CPH3a_XboxSeriesX" target="_self">
+            Xbox Series X
+        </a>
+<a aria-label="Xbox Series S kopen" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Xbox Series S" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Xbox Series S" data-bi-ehn="Power your dreams" data-bi-hn="Power your dreams" data-bi-pa="body" href="https://www.xbox.com/nl-nl/consoles/xbox-series-s?icid=mscom_marcom_CPH3b_XboxSeriesS" target="_self">
+            Xbox Series S
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Xbox-controllers" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Xbox-controllers" data-bi-ehn="Xbox-controllers" data-bi-hn="Xbox-controllers" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Xbox draadloze controllers in rood, wit, blauw of zwart" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Xbox-Controller-Valentine-CP-1?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h2 class="h3 text-break-keep-all">
+                            Xbox-controllers
+                        </h2>
+<p class="text-break-keep-all"> Elite, draadloos, adaptief - vind de controller die bij jouw speelstijl past. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Xbox-controllers kopen" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Koop nu" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Koop nu" data-bi-ehn="Xbox-controllers" data-bi-hn="Xbox-controllers" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/store/collections/XboxControllers?icid=mscom_marcom_CPH4a_XboxControllers" target="_self">
+            Koop nu
+        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid mt-5 mb-md-5 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="highlight aem-GridColumn aem-GridColumn--default--12" data-component-id="a27bdc16afeeac2a37e8a078a9322fea">
+<script defer="" src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/highlight/v1/highlight/clientlibs/site.min.ACSHASHaae55fd1705718f75074813dfcc832ec.js" type="text/javascript"></script>
+<section class="container">
+<div class="card-img-overlay mx-ng mx-lg-0" data-mount="click-group" id="highlight-uidef3b">
+<div class="card-background">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-PC-Game-Pass-Expansion:VP5-1596x600" media="(min-width: 1400px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-PC-Game-Pass-Expansion:VP4-1260x600" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-PC-Game-Pass-Expansion:VP3-1083x600" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-PC-Game-Pass-Expansion:VP2-859x540" media="(min-width: 540px)"/>
+<img alt="Xbox Game Pass-logo met achtergrond van verschillende videogamepersonages." class="card-img w-100 lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-PC-Game-Pass-Expansion:VP1-539x440"/>
+</picture>
+</div>
+<div class="card-foreground d-flex mt-md-n5 my-lg-5 px-g px-lg-0">
+<div class="w-100 w-lg-col-5 mx-lg-5">
+<div class="card material-md-card py-5 px-md-5 depth-lg-none bg-lg-transparent-text-light">
+<div class="card-body" data-highlight-compname="Highlight , background theme of default, Card size w-lg-col-5, Image rendition of Highlight-Slim, Card transparency set to true">
+<h2 class="text-break-keep-all">
+        
+            Game Pass voor pc
+        
+        
+    </h2>
+<div class="mb-4 text-break-keep-all">
+                                            Ontgrendel 100+ geweldige games en EA Play. Krijg bovendien je eerste maand voor maar € 1. Aanbieding alleen voor nieuwe abonnees.
+                                        </div>
+<div class="link-group">
+<a aria-label="Wordt lid van Game Pass voor pc" class="text-break-keep-all btn btn-primary" data-bi-bhvr="0" data-bi-cn="Word nu lid" data-bi-ct="button" data-bi-ecn="Word nu lid" data-bi-pa="body" href="https://www.xbox.com/nl-nl/games/store/pc-game-pass/cfq7ttc0kgq8?icid=mscom_marcom_MPH1a_PCGamePass" target="_self">
+            Word nu lid</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="responsivegrid mt-5 mb-5 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-3fc91c95-ff4b-4b2f-9310-26edb52bd786 heading-bg-color-3fc91c95-ff4b-4b2f-9310-26edb52bd786">
+<style>
+                    .heading-bg-color-3fc91c95-ff4b-4b2f-9310-26edb52bd786{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uidded8">
+<div class="heading aem-GridColumn aem-GridColumn--default--12" data-component-id="6b880e252846ae03b532f40bd58c2fae">
+<h2>Voor bedrijven</h2>
+</div>
+<div class="content-card aem-GridColumn aem-GridColumn--default--12" data-component-id="e4caa97101f9f7cf8317c819b353e6ed">
+<script defer="" src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/content-card/v1/content-card/clientlibs/site.min.ACSHASH48501a4d0f4564d484ac84ade1bb653d.js" type="text/javascript"></script>
+<section id="content-card-uid8e09">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+<div class="col mb-5 mb-lg-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Surface Pro 8 voor zakelijk gebruik" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Surface Pro 8 voor zakelijk gebruik" data-bi-ehn="Surface Pro 8 voor zakelijk gebruik" data-bi-hn="Surface Pro 8 voor zakelijk gebruik" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Een Surface Pro 8 voor zakelijk gebruik" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Pro-8-for-Business-CC?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h3 class="text-break-keep-all">
+                            Surface Pro 8 voor zakelijk gebruik
+                        </h3>
+<p class="text-break-keep-all"> Tijdelijk tot 15% korting op geselecteerde configuraties van Surface Pro 8 voor zakelijk gebruik </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="10% korting op Surface Pro 8 voor zakelijk gebruik" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Koop nu" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Koop nu" data-bi-ehn="Surface Pro 8 voor zakelijk gebruik" data-bi-hn="Surface Pro 8 voor zakelijk gebruik" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/d/surface-pro-8-for-business/8x957cqqp1t4?icid=MSCOM-Business-CC1-P86200-SP8forBusiness" target="_self">
+            Koop nu
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col mb-5 mb-lg-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Download gratis Microsoft Teams" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Download gratis Microsoft Teams" data-bi-ehn="Download gratis Microsoft Teams" data-bi-hn="Download gratis Microsoft Teams" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Microsoft Teams voor je tablet." class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h3 class="text-break-keep-all">
+                            Download gratis Microsoft Teams
+                        </h3>
+<p class="text-break-keep-all"> Online vergaderen, chatten en gedeelde cloudopslag, allemaal op één plek. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Meld je aan voor Microsoft Teams" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Meld je gratis aan" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Meld je gratis aan" data-bi-ehn="Download gratis Microsoft Teams" data-bi-hn="Download gratis Microsoft Teams" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/microsoft-teams/free?icid=mscom_marcom_CPW2a_MicrosoftTeams" target="_self">
+            Meld je gratis aan
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col mb-5 mb-sm-0">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Microsoft 365 voor bedrijven" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Microsoft 365 voor bedrijven" data-bi-ehn="Microsoft 365 voor bedrijven" data-bi-hn="Microsoft 365 voor bedrijven" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Een computer op een bureau in een thuiskantoor met Word en Outlook op het scherm" class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-M365-CP-Microsoft365-Commercial?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h3 class="text-break-keep-all">
+                            Microsoft 365 voor bedrijven
+                        </h3>
+<p class="text-break-keep-all"> Behoud je voorsprong door krachtige apps voor productiviteit, verbinding en beveiliging. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Koop Microsoft 365 voor bedrijven" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Koop nu" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Koop nu" data-bi-ehn="Microsoft 365 voor bedrijven" data-bi-hn="Microsoft 365 voor bedrijven" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/microsoft-365/business/compare-all-microsoft-365-business-products?icid=mscom_marcom_CPW3a_M365forBusiness&amp;activetab=tab%3aprimaryr2" target="_self">
+            Koop nu
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" data-bi-assetid="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=515&amp;hei=293&amp;fit=crop" data-bi-bhvr="0" data-bi-cn="Windows 11 voor Bedrijven is gearriveerd" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="Content Card" data-bi-ecn="Windows 11 voor Bedrijven is gearriveerd" data-bi-ehn="Windows 11 voor Bedrijven is gearriveerd" data-bi-hn="Windows 11 voor Bedrijven is gearriveerd" data-bi-pa="body">
+<picture>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)"/>
+<source data-srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)"/>
+<source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)"/>
+<img alt="Een laptop met Windows 11 actief." class="card-img lazyload blur-up lazypreload" data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=515&amp;hei=293&amp;fit=crop" src="../via.placeholder.com/1.gif"/>
+</picture>
+<!-- If any of the cards in a group contain a badge, all cards should include a card header -->
+<div class="card-body pt-3">
+<h3 class="text-break-keep-all">
+                            Windows 11 voor Bedrijven is gearriveerd
+                        </h3>
+<p class="text-break-keep-all"> Speciaal gericht op hybride werken. Krachtig voor de werknemers. Consistent voor IT. Veilig voor iedereen. </p>
+</div>
+<div class="card-footer pt-3">
+<div class="link-group">
+<a aria-label="Meer informatie over Windows 11 voor Bedrijven" class="text-break-keep-all cta" data-bi-bhvr="0" data-bi-cn="Meer informatie" data-bi-compnm="Content card vertical 4 up - noDepth" data-bi-ct="cta" data-bi-ecn="Meer informatie" data-bi-ehn="Windows 11 voor Bedrijven is gearriveerd" data-bi-hn="Windows 11 voor Bedrijven is gearriveerd" data-bi-pa="body" href="https://www.microsoft.com/nl-nl/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness" target="_self">
+            Meer informatie
+        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid mt-0 mb-0 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-6318e094-47e7-4802-b25b-5dd59e5ec6c4 heading-bg-color-6318e094-47e7-4802-b25b-5dd59e5ec6c4">
+<style>
+                    .heading-bg-color-6318e094-47e7-4802-b25b-5dd59e5ec6c4{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uid629e">
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+</div>
+</div>
+<div class="responsivegrid mt-0 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-105872aa-c7a9-45a5-9180-bcc1d141803f heading-bg-color-105872aa-c7a9-45a5-9180-bcc1d141803f">
+<style>
+                    .heading-bg-color-105872aa-c7a9-45a5-9180-bcc1d141803f{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uidceef">
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="layout-container responsivegrid aem-GridColumn aem-GridColumn--default--12" data-component-id="51e927945f39700e952adb9bd3dc97e7">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 grid-image-3527a6fc-0d7d-42f2-a527-44379d796b03 heading-bg-color-3527a6fc-0d7d-42f2-a527-44379d796b03">
+<style>
+                    .heading-bg-color-3527a6fc-0d7d-42f2-a527-44379d796b03{
+                         background-color:  !important;
+                    }
+          </style>
+<div class="container" id="layout-container-uid866e">
+</div>
+</div></div>
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="back-to-top-button aem-GridColumn aem-GridColumn--default--12" data-component-id="66f104ac83c5ea29ffc13bb793e679c0">
+<link href="../www.microsoft.com/etc.clientlibs/microsoft/components/content/back-to-top-button/v1/back-to-top-button/clientlibs/sites.min.ACSHASHf6ffff8a8fec7f49605eedfe67c90d10.css" rel="stylesheet" type="text/css"/>
+<div class="back-to-top p-g d-flex justify-content-end" data-mount="back-to-top">
+<a aria-label="Terug naar boven" class="btn btn-faint-secondary bg-body text-center w-sm-auto w-100" data-bi-bhvr="0" data-bi-cn="Terug naar boven" data-bi-compnm="Back to top" data-bi-ct="Button" data-bi-ecn="Terug naar boven" data-bi-pa="Body" href="index.html#page-top">
+<span class="glyph-prepend glyph-prepend-xsmall glyph-prepend-up d-inline-flex">
+<span class="px-1"></span>
+                
+                Terug naar boven
+            </span>
+</a>
+</div>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/content/back-to-top-button/v1/back-to-top-button/clientlibs/sites.min.ACSHASH2b973beecf0db761f5e2d0453e76b82e.js"></script>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+</div>
+</div>
+<div class="universalfooter" data-component-id="873fa1f863becf63b38092282d4ea0b1">
+<div class="uhf" data-m='{"cN":"footerArea","cT":"Area_coreuiArea","id":"a2Body","sN":2,"aN":"Body"}' id="footerArea">
+<div data-m='{"cN":"footerRegion","cT":"Region_coreui-region","id":"r1a2","sN":1,"aN":"a2"}' data-region-key="footerregion" id="footerRegion">
+<div data-m='{"cN":"footerUniversalFooter","cT":"Module_coreui-universalfooter","id":"m1r1a2","sN":1,"aN":"r1a2"}' data-module-id="Category|footerRegion|coreui-region|footerUniversalFooter|coreui-universalfooter" id="footerUniversalFooter">
+<footer class="c-uhff context-uhf" data-footer-footprint="/mshomepage/mshomepagefooter, fromService: True" data-m='{"cN":"Uhf footer_cont","cT":"Container","id":"c1m1r1a2","sN":1,"aN":"m1r1a2"}' data-uhf-mscc-rq="false" id="uhf-footer">
+<nav aria-label="Informatiekoppelingen voettekst" class="c-uhff-nav" data-m='{"cN":"Footer nav_cont","cT":"Container","id":"c1c1m1r1a2","sN":1,"aN":"c1m1r1a2"}'>
+<div class="c-uhff-nav-row">
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn1_cont","cT":"Container","id":"c1c1c1m1r1a2","sN":1,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Nieuw
+</div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Surface Laptop Go 2 Nieuw
+" class="c-uhff-link" data-m='{"cN":"Footer_WhatsNew_SurfaceLaptopGo_nav","id":"n1c1c1c1m1r1a2","sN":1,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-laptop-go-2/8PGLPV76MJHN">Surface Laptop Go 2</a>
+</li>
+<li>
+<a aria-label="Surface Pro 8 Nieuw
+" class="c-uhff-link" data-m='{"cN":"Footer_WhatsNew_NewSurfacePro8_nav","id":"n2c1c1c1m1r1a2","sN":2,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-pro-8/8QWCRTQ8V8XG">Surface Pro 8</a>
+</li>
+<li>
+<a aria-label="Surface Laptop Studio Nieuw
+" class="c-uhff-link" data-m='{"cN":"Footer_WhatsNew_SurfaceLaptopStudio_nav","id":"n3c1c1c1m1r1a2","sN":3,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-laptop-studio/8SRDF62SWKPF">Surface Laptop Studio</a>
+</li>
+<li>
+<a aria-label="Surface Pro X Nieuw
+" class="c-uhff-link" data-m='{"cN":"Whatsnew_SurfaceProX_nav","id":"n4c1c1c1m1r1a2","sN":4,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-pro-x/8XTMB6C575MD">Surface Pro X</a>
+</li>
+<li>
+<a aria-label="Surface Go 3 Nieuw
+" class="c-uhff-link" data-m='{"cN":"Footer_WhatsNew_SurfaceGo3_nav","id":"n5c1c1c1m1r1a2","sN":5,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-go-3/904H27D0CBWN">Surface Go 3</a>
+</li>
+<li>
+<a aria-label="Surface Pro 7+ Nieuw
+" class="c-uhff-link" data-m='{"cN":"Whatsnew_SurfacePro7_nav","id":"n6c1c1c1m1r1a2","sN":6,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/d/surface-pro-7-plus/92WRLRCVZ4PR">Surface Pro 7+</a>
+</li>
+<li>
+<a aria-label="Microsoft 365 Nieuw
+" class="c-uhff-link" data-m='{"cN":"Whatsnew_Microsoft365_nav","id":"n7c1c1c1m1r1a2","sN":7,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/microsoft-365">Microsoft 365</a>
+</li>
+<li>
+<a aria-label="Windows 11-apps Nieuw
+" class="c-uhff-link" data-m='{"cN":"Footer_WhatsNew_Windows_11_apps_nav","id":"n8c1c1c1m1r1a2","sN":8,"aN":"c1c1c1m1r1a2"}' href="https://www.microsoft.com/windows/windows-11-apps">Windows 11-apps</a>
+</li>
+</ul>
+</div>
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn2_cont","cT":"Container","id":"c2c1c1m1r1a2","sN":2,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Microsoft Store</div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Accountprofiel Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_StoreandSupport_AccountProfile_nav","id":"n1c2c1c1m1r1a2","sN":1,"aN":"c2c1c1m1r1a2"}' href="https://account.microsoft.com/">Accountprofiel</a>
+</li>
+<li>
+<a aria-label="Downloadcentrum Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_StoreandSupport_DownloadCenter_nav","id":"n2c2c1c1m1r1a2","sN":2,"aN":"c2c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/download">Downloadcentrum</a>
+</li>
+<li>
+<a aria-label="Ondersteuning Microsoft Store Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_StoreandSupport_SalesAndSupport_nav","id":"n3c2c1c1m1r1a2","sN":3,"aN":"c2c1c1m1r1a2"}' href="https://go.microsoft.com/fwlink/?linkid=2139749">Ondersteuning Microsoft Store</a>
+</li>
+<li>
+<a aria-label="Terugzendingen Microsoft Store" class="c-uhff-link" data-m='{"cN":"MicrosoftStore_Returns_nav","id":"n4c2c1c1m1r1a2","sN":4,"aN":"c2c1c1m1r1a2"}' href="https://go.microsoft.com/fwlink/p/?LinkID=824764&amp;clcid=0x413">Terugzendingen</a>
+</li>
+<li>
+<a aria-label="Bestelling traceren Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_StoreandSupport_OrderTracking_nav","id":"n5c2c1c1m1r1a2","sN":5,"aN":"c2c1c1m1r1a2"}' href="https://account.microsoft.com/orders">Bestelling traceren</a>
+</li>
+<li>
+<a aria-label="Recyclage  Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_Recyclying_nav","id":"n6c2c1c1m1r1a2","sN":6,"aN":"c2c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/store/b/recycling?icid=GlobalFooterNav">Recyclage </a>
+</li>
+<li>
+<a aria-label="Commerciële garanties Microsoft Store" class="c-uhff-link" data-m='{"cN":"Footer_Warranties_nav","id":"n7c2c1c1m1r1a2","sN":7,"aN":"c2c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/store/b/aboutwarranties?icid=GlobalFooterNav">Commerciële garanties</a>
+</li>
+</ul>
+</div>
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn3_cont","cT":"Container","id":"c3c1c1m1r1a2","sN":3,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Onderwijs</div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Microsoft Education Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_MicrosoftInEducation_nav","id":"n1c3c1c1m1r1a2","sN":1,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/education">Microsoft Education</a>
+</li>
+<li>
+<a aria-label="Apparaten voor het onderwijs Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_DevicesforEducation_nav","id":"n2c3c1c1m1r1a2","sN":2,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/education/devices/overview">Apparaten voor het onderwijs</a>
+</li>
+<li>
+<a aria-label="Microsoft Teams for Education Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_MicrosoftTeamsforEducation_nav","id":"n3c3c1c1m1r1a2","sN":3,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/education/products/teams">Microsoft Teams for Education</a>
+</li>
+<li>
+<a aria-label="Microsoft 365 Education Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_Microsoft365Education_nav","id":"n4c3c1c1m1r1a2","sN":4,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/education/buy-license/microsoft365">Microsoft 365 Education</a>
+</li>
+<li>
+<a aria-label="Office Education Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_Office Education_nav","id":"n5c3c1c1m1r1a2","sN":5,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/education/products/office">Office Education</a>
+</li>
+<li>
+<a aria-label="Educator-training en -ontwikkeling Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_EducatorTrainingDevelopment_nav","id":"n6c3c1c1m1r1a2","sN":6,"aN":"c3c1c1m1r1a2"}' href="https://education.microsoft.com/">Educator-training en -ontwikkeling</a>
+</li>
+<li>
+<a aria-label="Aanbiedingen voor studenten en ouders Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Education_DealsForStudentsandParents_nav","id":"n7c3c1c1m1r1a2","sN":7,"aN":"c3c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/store/b/student">Aanbiedingen voor studenten en ouders</a>
+</li>
+<li>
+<a aria-label="Azure voor studenten Onderwijs" class="c-uhff-link" data-m='{"cN":"Footer_Azureforstudents_nav","id":"n8c3c1c1m1r1a2","sN":8,"aN":"c3c1c1m1r1a2"}' href="https://azure.microsoft.com/free/students/">Azure voor studenten</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="c-uhff-nav-row">
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn4_cont","cT":"Container","id":"c4c1c1m1r1a2","sN":4,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Zakelijk </div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Microsoft Cloud Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Business_Microsoft_Cloud_nav","id":"n1c4c1c1m1r1a2","sN":1,"aN":"c4c1c1m1r1a2"}' href="https://www.microsoft.com/microsoft-cloud">Microsoft Cloud</a>
+</li>
+<li>
+<a aria-label="Microsoft Beveiliging Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Business_Microsoft Security_nav","id":"n2c4c1c1m1r1a2","sN":2,"aN":"c4c1c1m1r1a2"}' href="https://www.microsoft.com/security">Microsoft Beveiliging</a>
+</li>
+<li>
+<a aria-label="Azure Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Enterprise_MicrosoftAzure_nav","id":"n3c4c1c1m1r1a2","sN":3,"aN":"c4c1c1m1r1a2"}' href="https://azure.microsoft.com/">Azure</a>
+</li>
+<li>
+<a aria-label="Dynamics 365 Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Business_MicrosoftDynamics365_nav","id":"n4c4c1c1m1r1a2","sN":4,"aN":"c4c1c1m1r1a2"}' href="https://dynamics.microsoft.com/">Dynamics 365</a>
+</li>
+<li>
+<a aria-label="Microsoft 365 Zakelijk " class="c-uhff-link" data-m='{"cN":"More_Business_Microsoft365_nav","id":"n5c4c1c1m1r1a2","sN":5,"aN":"c4c1c1m1r1a2"}' href="https://www.microsoft.com/microsoft-365/business/">Microsoft 365</a>
+</li>
+<li>
+<a aria-label="Microsoft Advertising Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_MicrosoftAdvertising_nav","id":"n6c4c1c1m1r1a2","sN":6,"aN":"c4c1c1m1r1a2"}' href="https://about.ads.microsoft.com">Microsoft Advertising</a>
+</li>
+<li>
+<a aria-label="Microsoft Industry Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Business_MicrosoftIndustry_nav","id":"n7c4c1c1m1r1a2","sN":7,"aN":"c4c1c1m1r1a2"}' href="https://www.microsoft.com/industry">Microsoft Industry</a>
+</li>
+<li>
+<a aria-label="Microsoft Teams Zakelijk " class="c-uhff-link" data-m='{"cN":"Footer_Business_Microsoft365_nav","id":"n8c4c1c1m1r1a2","sN":8,"aN":"c4c1c1m1r1a2"}' href="https://www.microsoft.com/microsoft-teams/group-chat-software">Microsoft Teams</a>
+</li>
+</ul>
+</div>
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn5_cont","cT":"Container","id":"c5c1c1m1r1a2","sN":5,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Ontwikkelaar en IT</div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Ontwikkelaarscentrum Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_Developer_DeveloperCenter_nav","id":"n1c5c1c1m1r1a2","sN":1,"aN":"c5c1c1m1r1a2"}' href="https://developer.microsoft.com/">Ontwikkelaarscentrum</a>
+</li>
+<li>
+<a aria-label="Documentatie Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_DeveloperAndIT_Documentation_nav","id":"n2c5c1c1m1r1a2","sN":2,"aN":"c5c1c1m1r1a2"}' href="https://docs.microsoft.com/">Documentatie</a>
+</li>
+<li>
+<a aria-label="Microsoft Learn Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_DeveloperAndIT_MicrosoftLearn_nav","id":"n3c5c1c1m1r1a2","sN":3,"aN":"c5c1c1m1r1a2"}' href="https://docs.microsoft.com/learn/">Microsoft Learn</a>
+</li>
+<li>
+<a aria-label="Microsoft Tech Community Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_DeveloperAndIT_MicrosoftTechCommunity_nav","id":"n4c5c1c1m1r1a2","sN":4,"aN":"c5c1c1m1r1a2"}' href="https://techcommunity.microsoft.com/">Microsoft Tech Community</a>
+</li>
+<li>
+<a aria-label="Azure Marketplace Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"More_DeveloperAndIT_AzureMarketplace_nav","id":"n5c5c1c1m1r1a2","sN":5,"aN":"c5c1c1m1r1a2"}' href="https://azuremarketplace.microsoft.com/">Azure Marketplace</a>
+</li>
+<li>
+<a aria-label="AppSource Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_DeveloperAndIT_AppSource_nav","id":"n6c5c1c1m1r1a2","sN":6,"aN":"c5c1c1m1r1a2"}' href="https://appsource.microsoft.com/">AppSource</a>
+</li>
+<li>
+<a aria-label="Microsoft Power Platform Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_DeveloperAndIT_Power Platform_nav","id":"n7c5c1c1m1r1a2","sN":7,"aN":"c5c1c1m1r1a2"}' href="https://powerplatform.microsoft.com/">Microsoft Power Platform</a>
+</li>
+<li>
+<a aria-label="Visual Studio Ontwikkelaar en IT" class="c-uhff-link" data-m='{"cN":"Footer_Developer_MicrosoftVisualStudio_nav","id":"n8c5c1c1m1r1a2","sN":8,"aN":"c5c1c1m1r1a2"}' href="https://visualstudio.microsoft.com/">Visual Studio</a>
+</li>
+</ul>
+</div>
+<div class="c-uhff-nav-group" data-m='{"cN":"footerNavColumn6_cont","cT":"Container","id":"c6c1c1m1r1a2","sN":6,"aN":"c1c1m1r1a2"}'>
+<div aria-level="2" class="c-heading-4" role="heading">Bedrijf
+</div>
+<ul class="c-list f-bare">
+<li>
+<a aria-label="Vacatures Bedrijf
+" class="c-uhff-link" data-m='{"cN":"Footer_Company_Careers_nav","id":"n1c6c1c1m1r1a2","sN":1,"aN":"c6c1c1m1r1a2"}' href="https://careers.microsoft.com/">Vacatures</a>
+</li>
+<li>
+<a aria-label="Privacy bij Microsoft Bedrijf
+" class="c-uhff-link" data-m='{"cN":"Footer_Company_PrivacyAtMicrosoft_nav","id":"n2c6c1c1m1r1a2","sN":2,"aN":"c6c1c1m1r1a2"}' href="https://privacy.microsoft.com/nl-nl">Privacy bij Microsoft</a>
+</li>
+<li>
+<a aria-label="Investeerders Bedrijf
+" class="c-uhff-link" data-m='{"cN":"Footer_Company_Investors_nav","id":"n3c6c1c1m1r1a2","sN":3,"aN":"c6c1c1m1r1a2"}' href="https://www.microsoft.com/investor/default.aspx">Investeerders</a>
+</li>
+<li>
+<a aria-label="Duurzaamheid Bedrijf
+" class="c-uhff-link" data-m='{"cN":"Footer_Company_Sustainability_nav","id":"n4c6c1c1m1r1a2","sN":4,"aN":"c6c1c1m1r1a2"}' href="https://www.microsoft.com/sustainability/">Duurzaamheid</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="c-uhff-base">
+<a aria-label="Taalkiezer voor inhoud. Momenteel ingesteld op Nederlands (Nederland)" class="c-uhff-link c-uhff-lang-selector c-glyph glyph-world" data-m='{"cN":"locale_picker(NL)_nav","id":"n7c1c1m1r1a2","sN":7,"aN":"c1c1m1r1a2"}' href="https://www.microsoft.com/nl-nl/locale" id="locale-picker-link">Nederlands (Nederland)</a>
+<nav aria-label="Microsoft-bedrijfskoppelingen">
+<ul class="c-list f-bare" data-m='{"cN":"Corp links_cont","cT":"Container","id":"c8c1c1m1r1a2","sN":8,"aN":"c1c1m1r1a2"}'>
+<li id="c-uhff-footer_contactus">
+<a class="c-uhff-link" data-m='{"cN":"Footer_ContactUs_nav","id":"n1c8c1c1m1r1a2","sN":1,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://support.microsoft.com/contactus">Contact opnemen met Microsoft</a>
+</li>
+<li id="c-uhff-footer_privacyandcookies">
+<a class="c-uhff-link" data-m='{"cN":"Footer_PrivacyandCookies_nav","id":"n2c8c1c1m1r1a2","sN":2,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy</a>
+</li>
+<li class="x-hidden" id="c-uhff-footer_managecookies">
+<a class="c-uhff-link" data-m='{"cN":"Footer_ManageCookies_nav","id":"n3c8c1c1m1r1a2","sN":3,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="index.html#">Cookies beheren</a>
+</li>
+<li id="c-uhff-footer_termsofuse">
+<a class="c-uhff-link" data-m='{"cN":"Footer_TermsOfUse_nav","id":"n4c8c1c1m1r1a2","sN":4,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkID=206977">Gebruiksvoorwaarden</a>
+</li>
+<li id="c-uhff-footer_trademarks">
+<a class="c-uhff-link" data-m='{"cN":"Footer_Trademarks_nav","id":"n5c8c1c1m1r1a2","sN":5,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2196228">Handelsmerken</a>
+</li>
+<li id="c-uhff-footer_aboutourads">
+<a class="c-uhff-link" data-m='{"cN":"Footer_AboutourAds_nav","id":"n6c8c1c1m1r1a2","sN":6,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://choice.microsoft.com/">Over onze advertenties</a>
+</li>
+<li id="c-uhff-footer_eucompliancedocs">
+<a class="c-uhff-link" data-m='{"cN":"Footer_EUComplianceDoCs_nav","id":"n7c8c1c1m1r1a2","sN":7,"aN":"c8c1c1m1r1a2"}' data-mscc-ic="false" href="https://www.microsoft.com/en-ie/eucompliancedoc/default.aspx">EU Compliance DoCs</a>
+</li>
+<li>© Microsoft 2022</li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</div>
+</div>
+<script src="../wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script><script src="../www.microsoft.com/onerfstatics/marketingsites-neu-prod/shell/_scrf/js/themes=default/8e-e88b64/82-2a4f02/49-a00ab0/92-02e55d/7c-dcea75/75-fca72d/ed-e77ee7/d5-bf34c0/a9-078595/7a-7ea8cc/2d-40bdad/23-e8cd2b/96-eb5423/e6-6b0cce/d1-98d78a/a0-23c4ba/a7-f7a340/48-6ed936/2e-ca165a/fc-169dd8/8e-60935c/87-fecbed/96-6ed6eb/c3-eb62e0/ad-ffd6bf/35-621acc/b0-07f293/1e-9d9d16/52-f0367f/1f-b57352/bf-517249/e1-ed258e/20-0b10e2/6b-0f1117/fb-5e9831/37-8473b9%3Fver=2.0&amp;_cf=02242021_3231&amp;iife=1"></script><script defer="" src="../mem.gfx.ms/meversion%3Fpartner=mshomepage&amp;market=nl-nl&amp;uhf=1"></script>
+</div>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-mwf-featureControlled/main-light.min.ACSHASHf482e47f46fb33d80b20334060534d1c.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-httpclient.min.ACSHASH3777b76ab25b618eb1cc80790699da8f.js"></script>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-cookieconsent.min.ACSHASHc892f451b0c4db9c8ab2601a427c9b2c.js"></script>
+<!-- Changes for Global Pixel -->
+<script type="text/javascript">
+				(function(){
+					var partnerScripts =
+						{
+							"meta": {
+									"partnerJsHash": "ACSHASHd42874795074a1d69edaa5a5b6bbf84c"
+									}
+	                    };
+	                    window.partnerScripts = partnerScripts;
+				})();
+			</script>
+<script id="mediapixel">
+	            //<![CDATA[
+					//_pageBITags=jsonElement;
+				//]]>
+			</script>
+<script id="contentsquare" type="text/javascript">
+				(function(){
+					var contentSq =
+						{
+							"entryFile": "https://cdnssl.clicktale.net/www32/ptc/05d32363-d534-4d93-9b65-cde674775e71.js",
+	                    };
+					if (typeof window["partnerScripts"]==="undefined"){
+						window["partnerScripts"]={};
+					}
+					window["partnerScripts"]["contentSquare"] = contentSq;
+				})();
+			</script>
+<!--Enable 3rd Party script integration based on the configuration settings-->
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/structure/page/clientlibs/embed-thirdparty.min.ACSHASHebf52f3d1547aaaa48ca65496e01fd9a.js"></script>
+<!-- End of changes for Global Pixel -->
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/structure/page/clientlibs/featurecontrol.min.ACSHASHf120033122e43a4cb0b53bb306afc5dc.js"></script>
+<!-- Feature Control Service:List of all Enabled Features -->
+<div enabledfeatures="contentbackfillgenerate,experimentation,esiproductcards,feature-controlled-mwf,uhf-ms-io-endpoint,uhf-esi-cache,fraud-greenid,contentsquare,mediapixel,holiday-themer,lazyload-static-components,clientlibDefer,componentLocalization,upsellEnabled,contentbackfillpkgdelete,healthcheck,demo-feature,contentbackfillhttpgenerate,remove-jsll,perf-tracker-1ds,dynamic-bundle,cvIncrementer,tentingEnabled,chatCookiesImplemented,alertCountDownWithoutServerTime,pdpDynamicRendering,bundlesDynamicRendering,contentbackfillmetadatachangesvideo,contentbackfillmetadatachangesnonvideo,listDynamicRendering,experimentation-without-personalization,generic-list-importer,cvStoreHomepages,combinedUHF,disbale-experimentation-query-param,exp-load-exp-cc-async,cvCallEnabled" id="customFeatureControl"></div>
+<div class="oneds-config" data-autocapturelineage="false" data-autocaptureresize="false" data-autocapturescroll="false" data-delay1dsinitialization="false" data-env="prod" data-instrumentationkey="aacbcf0ee7614738b1ea4f99c23f2e82-63b77ecc-8c62-4513-aa1f-a12a5ed8c015-6865" data-isenabled="true" data-market="nl-nl" data-pagename="HomePage" data-urlcollecthash="false" data-urlcollectquery="true"></div>
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/components/structure/page/clientlibs/custom-oneds.min.ACSHASH5e3bdd09b4ded66c549038bde6fbc184.js"></script>
+<!--Enable script to inject Green ID iFrame-->
+<script src="../www.microsoft.com/etc.clientlibs/microsoft/clientlibs/clientlib-greenid.min.ACSHASH44a811225ab0a12502f646d624dede72.js"></script>
+<!-- Start of ADDITIONAL DEBUG INFO
+	MS_COMMIT_ID: 2f885be
+	MS-CV: 3pJKLDY4SHW+qDB/.0
+	
+	End of ADDITIONAL DEBUG INFO -->
+</body>
+</html>

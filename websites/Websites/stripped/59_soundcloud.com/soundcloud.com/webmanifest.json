@@ -1,0 +1,36 @@
+{
+  "short_name": "SoundCloud",
+  "name": "SoundCloud",
+  "description": "SoundCloud - Play Music, Audio & New Songs",
+  "icons": [
+    {
+      "src": "/pwa-round-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-round-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/discover",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#FF5500",
+  "theme_color": "#FF5500"
+}

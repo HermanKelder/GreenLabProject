@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/node_modules/perfume.js/dist/perfume.umd.min.js"></script><script>perfumeResults = []; loadResults = []; function xml_http_post(url, data, callback) { var req = new XMLHttpRequest(); req.open("POST", url, true); req.send(data); } const perfume = new Perfume({ analyticsTracker: (options) => { const { metricName, data, eventProperties, navigatorInformation } = options; perfumeResults.push(options); } }); function load_log() { var load_time = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart; loadResults.push({'load' : load_time}); objectToSend = "{'perfumeResults':"+JSON.stringify(perfumeResults)+JSON.stringify(loadResults)+"}"; xml_http_post("http://192.168.40.1:8080/",objectToSend,null); xml_http_post("http://192.168.40.1:8000",objectToSend,null); }; window.addEventListener? window.addEventListener("load",load_log, true) : window.attachEvent && window.attachEvent("onload", load_log);</script><base href=""/><meta charset="utf-8"/><link href="offshoot_assets/favicon.ico" rel="icon"/><link href="https://analytics.archive.org" rel="preconnect"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Q2YSouphkkgHkFNP7FgAkc4TmBs1Gmag3uGNndb53B8" name="google-site-verification"/><meta content="bpjKvUvsX0lxfmjg19TLblckWkDpnptZEYsBntApxUk" name="google-site-verification"/><meta content="no-cache" http-equiv="Pragma"/><meta content="no-cache, no-store, must-revalidate" http-equiv="cache-control"/><link href="offshoot_assets/index.237acf313bce.css" rel="stylesheet"/><title>Internet Archive: Digital Library of Free &amp; Borrowable Books, Movies, Music &amp; Wayback Machine</title><script src="../polyfill.archive.org/v3/polyfill.min.js%3Ffeatures=fetch,IntersectionObserver,ResizeObserver,globalThis,Element.prototype.getAttributeNames,String.prototype.startsWith,Array.prototype.flat,URL,URLSearchParams"></script><script src="offshoot_assets/vendor/lit@2.0.2/polyfill-support.js"></script><script src="offshoot_assets/vendor/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script><script>/* @licstart  The following is the entire license notice for the
+      * JavaScript code in this page.
+      *
+      * This program is free software: you can redistribute it and/or modify
+      * it under the terms of the GNU Affero General Public License as published by
+      * the Free Software Foundation, either version 3 of the License, or
+      * (at your option) any later version.
+      *
+      * This program is distributed in the hope that it will be useful,
+      * but WITHOUT ANY WARRANTY; without even the implied warranty of
+      * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      * GNU Affero General Public License for more details.
+      *
+      * You should have received a copy of the GNU Affero General Public License
+      * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+      *
+      * @licend  The above is the entire license notice
+      * for the JavaScript code in this page.
+      */</script></head><body><app-root></app-root><noscript><div class="no-js-redirect-container" data-owner="nginx"><h2>Redirecting you to a lite version of archive.org...</h2></div><meta content="0; URL=http://archive.org/?noscript=true" data-owner="nginx" http-equiv="refresh"/></noscript><script src="offshoot_assets/js/webpack-runtime.461cb4cbee7f104d8025.js"></script><script src="offshoot_assets/js/index.870f1904d8c745f6d6f9.js"></script></body></html>

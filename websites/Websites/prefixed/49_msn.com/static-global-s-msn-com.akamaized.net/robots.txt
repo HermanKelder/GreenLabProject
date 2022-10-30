@@ -1,0 +1,9 @@
+﻿User-agent: *
+Disallow: /
+Allow: */js
+Allow: */css
+Allow: */jquery
+Allow: */sc
+Allow: */externalscripts
+Allow: */webcore
+Allow: */entityid

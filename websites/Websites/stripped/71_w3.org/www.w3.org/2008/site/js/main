@@ -1,0 +1,135 @@
+/*! See W3C-specific code uncompressed at http://www.w3.org/2008/site/js/core.js */
+var _paq=window._paq||[];
+_paq.push(["trackPageView"]);
+_paq.push(["enableLinkTracking"]);
+(function(){var a="https://www.w3.org/analytics/piwik/";
+_paq.push(["setTrackerUrl",a+"matomo.php"]);
+_paq.push(["setSiteId","447"]);
+var e=document,c=e.createElement("script"),b=e.getElementsByTagName("script")[0];
+c.type="text/javascript";
+c.async=true;
+c.defer=true;
+c.src=a+"matomo.js";
+b.parentNode.insertBefore(c,b)
+})();
+var enquire={config:{imgs:"/2008/site/images/"},init:function(){var e=enquire;
+appliedMedia=false;
+var b=document.getElementsByTagName("style")[0];
+document.addEventListener("DOMContentLoaded",function(){document.body.classList.add("w3c_javascript");
+var h=window.navigator.userAgent;
+var f=h.indexOf("MSIE ");
+if(f>0){Array.prototype.forEach.call(document.querySelector("style"),function(j){j.setAttribute("media","screen")
+});
+var c=parseInt(h.substring(f+5,h.indexOf(".",f)));
+if(c<=6){var g=document.createElement("link");
+g.setAttribute("rel","stylesheet");
+g.setAttribute("href","/2008/site/css/IE6.css'");
+document.head.appendChild(g)
+}}var i=document.createElement("p");
+i.style.marginLeft="2.4%";
+i.style.paddingLeft="10px";
+i.style.color="#666";
+i.style.backgroundColor="#eee";
+i.style.fontStyle="italic";
+i.style.fontSize="1.2em";
+i.innerText="Leading the web to its full potential";
+document.querySelector("#w3c_nav div.w3c_sec_nav").appendChild(i);
+d()
+});
+function a(c){if(c==="handheld"){document.body.classList.add("w3c_handheld");
+document.body.classList.remove("w3c_print");
+document.body.classList.remove("w3c_screen")
+}else{if(c==="print"){document.body.classList.add("w3c_print");
+document.body.classList.remove("w3c_handheld");
+document.body.classList.remove("w3c_screen")
+}else{document.body.classList.add("w3c_screen");
+document.body.classList.remove("w3c_handheld");
+document.body.classList.remove("w3c_print")
+}}e.tree.init("expand_section",c);
+e.toggableInclude.init(c)
+}function d(){var c=window.getComputedStyle(document.querySelector("#w3c_mast h1 a img"));
+if(c.display==="none"){if(!appliedMedia||appliedMedia!="screen"){a("screen");
+appliedMedia="screen"
+}}else{if(!appliedMedia||appliedMedia!="handheld"){a("handheld");
+appliedMedia="handheld"
+}}}},tree:{init:function(e,b){var d=enquire;
+var a=d.tree;
+Array.prototype.forEach.call(document.querySelectorAll(".hierarchy  ."+e),function(g){var c=Array.prototype.filter.call(a.parents(g),function(j){return(j.tagName==="DIV"||j.tagName==="LI")&&j.classList.contains("expand_block")
+});
+if((b!="print")&&(b!="handheld")){if(g.classList.contains("closed")&&c){Array.prototype.forEach.call(c,function(j){j.classList.add("closed")
+})
+}if(!g.querySelector("img")){var i=Array.prototype.some.call(c,function(j){return j.classList.contains("closed")
+});
+var f=document.createElement("img");
+f.setAttribute("width","9");
+f.setAttribute("height","9");
+if(i){f.setAttribute("src","/2008/site/images/ico-plus");
+f.setAttribute("alt","Expand")
+}else{f.setAttribute("src","/2008/site/images/ico-minus");
+f.setAttribute("alt","Collapse")
+}g.insertBefore(f,g.firstChild);
+var h=document.createElement("a");
+h.setAttribute("href","#");
+g.appendChild(h);
+while(g.firstChild!==h){h.appendChild(g.firstChild)
+}}g.addEventListener("click",function(k){var m=g.querySelector("a[href]").getAttribute("href");
+var l=m.substring(m.indexOf("#"));
+if(l!=="#"){window.location.hash=l
+}k.preventDefault();
+a.toggle(g);
+var n=Array.prototype.some.call(c,function(o){return o.classList.contains("closed")
+});
+var j=g.querySelector("img");
+if(n){j.setAttribute("src","/2008/site/images/ico-plus");
+j.setAttribute("alt","Expand")
+}else{j.setAttribute("src","/2008/site/images/ico-minus");
+j.setAttribute("alt","Collapse")
+}})
+}else{g.textContent=g.innerText
+}})
+},parents:function(c){var a=[];
+for(var b=c&&c.parentElement;
+b;
+b=b.parentElement){a.push(b)
+}return a
+},toggle:function(c){var b=enquire.tree;
+var a=Array.prototype.filter.call(b.parents(c),function(d){return(d.tagName==="DIV"||d.tagName==="LI")&&d.classList.contains("expand_block")
+});
+Array.prototype.forEach.call(a,function(d){d.classList.toggle("closed")
+})
+}},toggableInclude:{init:function(e){var g=document.querySelector("#w3c_toggle_include");
+var i=enquire;
+if((e!="print")&&(e!="handheld")&&g){var b=g.classList.contains("default_open")||window.location.hash=="#w3c_all";
+if(!document.querySelector("#w3c_toggle_include_show")){var d=document.createElement("div");
+d.innerHTML="<form class='tMargin lMargin w3c_toggle_form' action=''><div class='noprint'><fieldset><input type='radio' id='w3c_toggle_include_show' name='w3c_toggle_include_radio'"+((b)?" checked='checked'":"")+"/> <label for='w3c_toggle_include_show'>Show details</label> <input type='radio' id='w3c_toggle_include_hide' name='w3c_toggle_include_radio'"+((!b)?" checked='checked'":"")+"/> <label for='w3c_toggle_include_hide'>Hide details</label></fieldset></div></form>";
+document.querySelector("#w3c_toggle_include").insertAdjacentElement("afterend",d)
+}document.querySelector("#w3c_toggle_include_hide").addEventListener("change",function(){var f=document.querySelectorAll("p.expand_description, div.expand_description, ul.expand_description");
+Array.prototype.forEach.call(f,function(l){l.parentElement.classList.add("closed")
+});
+var c=document.querySelectorAll(".expand_section img");
+Array.prototype.forEach.call(c,function(l){l.setAttribute("src","/2008/site/images/ico-plus");
+l.setAttribute("alt","Expand")
+});
+if(window.location.hash=="#w3c_all"){window.location.hash=""
+}});
+document.querySelector("#w3c_toggle_include_show").addEventListener("change",function(){var f=document.querySelectorAll("p.expand_description, div.expand_description, ul.expand_description");
+Array.prototype.forEach.call(f,function(l){l.parentElement.classList.remove("closed")
+});
+var c=document.querySelectorAll(".expand_section img");
+Array.prototype.forEach.call(c,function(l){l.setAttribute("src","/2008/site/images/ico-minus");
+l.setAttribute("alt","Collapse")
+});
+if(window.location.hash=="#w3c_all"){window.location.hash=""
+}});
+if(!b){document.querySelector("#w3c_toggle_include_hide").dispatchEvent(new Event("change"))
+}else{document.querySelector("#w3c_toggle_include_show").dispatchEvent(new Event("change"))
+}}else{var k=enquire.tree;
+var j=document.querySelector("#w3c_toggle_include");
+var h=document.querySelector("#w3c_toggle_include_show");
+var a=Array.prototype.filter.call(k.parents(h),function(c){return c.tagName==="FORM"&&Array.prototype.some.call(c.parentNode.children,function(f){return f===j
+})&&c!==j
+});
+Array.prototype.forEach.call(a,function(c){c.remove()
+})
+}}}};
+enquire.init();
